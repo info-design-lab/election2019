@@ -10,3 +10,31 @@ body, html{
   overflow-x: hidden;
 }
 
+
+.d3-tip {
+  line-height: 1;
+  font-weight: normal;
+  padding: 15px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 1px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  opacity: 0.9;
+  position: absolute;
+  z-index: 10;
+  visibility: hidden;
+  font-size: 20px;
+  fill: #808080;
+  white-space: nowrap;
+}
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.d3-tip hr{
+  margin-top: 0px;
+  border-top: 1px solid #545454;
+}
