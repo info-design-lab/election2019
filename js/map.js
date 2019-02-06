@@ -1,10 +1,8 @@
-var width = document.body.clientWidth * 0.90,
-    height = 275;
-
 queue()
     .defer(d3.json, 'data/election/MH.json')
     .defer(d3.json, 'data/partyColors.json')
-    .defer(d3.json, 'map/MH.json')
+    .defer(d3.json, 'map/cartogram/MH.json')
+    .defer(d3.json, 'map/map/MH.json')
     .await(makeMap);
 
 var map_tooltip = d3.select("#map")
@@ -15,11 +13,12 @@ var map_tooltip_svg;
 
 var unknownColor = "#a8a8a8";
 var yearList = [1999, 2004, 2009, 2014, 2019];
-var yearSlider = document.getElementById('year-slider');
+var yearSliderMap = document.getElementById('year-slider-map');
 var year = 2014; // Current Year
 var map_legend;
+var partyColors;
 
-noUiSlider.create(yearSlider, {
+noUiSlider.create(yearSliderMap, {
     start: [year],
     step: 5,
     range: {
@@ -33,16 +32,18 @@ noUiSlider.create(yearSlider, {
     }
 });
 
-function makeMap(error, data, partyColors, map){
+function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 	if(error){
 		console.log(error);
 	}
+    partyColors = partyColors;
 
     var uncheckedParties = [];
     // Create Map
     var map_width = $('#map').width();
     var map_height = map_width;
-    var geo_obj = topojson.feature(map, map.objects.state);
+    //console.log(mapSatellite);
+    var geo_obj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projection = d3.geoMercator()
         .fitSize([map_width, map_height], geo_obj);
     var path = d3.geoPath().projection(projection);
@@ -95,7 +96,7 @@ function makeMap(error, data, partyColors, map){
     map_legend = legend_svg.append('g')
         .attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
-    yearSlider.noUiSlider.on('update', function(values, handle) {
+    yearSliderMap.noUiSlider.on('update', function(values, handle) {
         year = parseInt(values);
         updateMap();
         createPartyLegend();
@@ -290,7 +291,7 @@ function makeMap(error, data, partyColors, map){
             .attr('x', 145)
             .attr('y', 65)
             .style("font-size", "15px")
-            .text("Margin")
+            .text("Margin(%)")
         map_tooltip_svg.append("text")
             .attr('x', 215)
             .attr('y', 65)
