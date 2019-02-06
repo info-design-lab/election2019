@@ -14,7 +14,7 @@ var map_tooltip_svg;
 var unknownColor = "#a8a8a8";
 var yearList = [1999, 2004, 2009, 2014, 2019];
 var yearSliderMap = document.getElementById('year-slider-map');
-var year = 2014; // Current Year
+var year = 2019; // Current Year
 var map_legend;
 var partyColors;
 
