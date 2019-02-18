@@ -77,6 +77,10 @@ function makeMargin(error, data, partyColors){
 	    			}
 	    		}
 	    		return unknownColor;
+	    	})
+	    	.on('mouseover', function(d){
+	    		constituency = d.key;
+	    		updatePath();
 	    	});
     }
 
@@ -141,33 +145,51 @@ function makeMargin(error, data, partyColors){
     function create_path(d){
     	var path_array = [];
     	
-    	for(var i in yearList){
-    		if(data[state][constituency][yearList[parseInt(i) - 1]]){
-    			if(margin_mode === "votes"){
-    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 + 75/2]);
-		    	} else{
-    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 + 75/2]);
-		    	}
-    		}
+    	for(var i=0; i < yearList.length; i++){
+    		if(data[state][constituency]){
+	    		
 
-    		if(data[state][constituency][yearList[i]]){
-    			if(margin_mode === "votes"){
-    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75]);
-		    	} else{
-    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75]);
-		    	}
-    		}
+	    		if(data[state][constituency][yearList[i]]){
 
-    		if(data[state][constituency][yearList[parseInt(i) + 1]]){
-    			if(margin_mode === "votes"){
-    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 - 75/2]);
-		    	} else{
-    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 - 75/2]);
-		    	}
-    		}
+	    			if(data[state][constituency][yearList[i - 1]]){
+		    			if(margin_mode === "votes"){
+		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 + 75/2]);
+				    	} else{
+		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 + 75/2]);
+				    	}
+		    		}
+
+	    			if(margin_mode === "votes"){
+	    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75]);
+			    	} else{
+	    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75]);
+			    	}
+
+
+		    		if(data[state][constituency][yearList[i + 1]]){
+		    			if(margin_mode === "votes"){
+		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 - 75/2]);
+				    	} else{
+		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 - 75/2]);
+				    	}
+		    		}
+
+	    		}
+	    	}
     	}
-
-    	console.log(path_array);
     	return path_array;
+    }
+
+    function updatePath(){
+	    highlight_line.datum(create_path(constituency))
+            .attr("d", d3.line()
+             //.curve(d3.curveBundle.beta(1))
+                    .x(function(d) {
+                        return d[0];
+                    })
+                    .y(function(d) {
+                        return d[1];
+                    })
+                );
     }
 }
