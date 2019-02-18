@@ -104,8 +104,8 @@ function makeMargin(error, data, partyColors){
 		    		}
 	    		}
 	    	}
-	    	scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 1000]);
+	    	console.log(domain);
+	    	scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 900]);
 	    }
-
     }
 }
