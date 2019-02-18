@@ -17,6 +17,7 @@ var yearSliderMap = document.getElementById('year-slider-map');
 var year = 2019; // Current Year
 var map_legend;
 var partyColors;
+var map_mode = 'cartogram';
 
 noUiSlider.create(yearSliderMap, {
     start: [year],
@@ -42,9 +43,10 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     // Create Map
     var map_width = $('#map').width();
     var map_height = map_width;
-    //console.log(mapSatellite);
-    var geo_obj = topojson.feature(mapSatellite, mapSatellite.objects.state);
-    var projection = d3.geoMercator()
+
+    console.log(mapCarto)
+    var geo_obj = topojson.feature(mapCarto, mapCarto.objects.MH);
+    var projection = d3.geoEquirectangular()
         .fitSize([map_width, map_height], geo_obj);
     var path = d3.geoPath().projection(projection);
     var map_svg = d3.select("#map").append("svg")
@@ -60,8 +62,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
           //console.log(d);
         })
         .style('fill', function(d) {
-            if(data[year][d.properties.PC_NAME.toUpperCase()]){
-                return partyColors[data[year][d.properties.PC_NAME.toUpperCase()].Party];
+            console.log(d);
+            if(data[year][constName(d)]){
+                return partyColors[data[year][constName(d)].Party];
             }
             return unknownColor;
         })
@@ -69,7 +72,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .style('stroke', 'black')
         .on('mouseover', function(d){
             d3.select(this).attr("stroke-width", "2px");
-            if(data[year][d.properties.PC_NAME.toUpperCase()]){
+            if(data[year][constName(d)]){
                 map_tooltip.style("visibility", "visible");
                 createSimpleTooltip(d);
             }
@@ -235,11 +238,11 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     }
     function updateMap(){
         map_svg.selectAll("path").transition().duration(500).style('fill', function(d) {
-            if(data[year][d.properties.PC_NAME.toUpperCase()]){
-                if(uncheckedParties.indexOf(data[year][d.properties.PC_NAME.toUpperCase()].Party) > -1){
+            if(data[year][constName(d)]){
+                if(uncheckedParties.indexOf(data[year][constName(d)].Party) > -1){
                     return "white";
                 }
-                return partyColors[data[year][d.properties.PC_NAME.toUpperCase()].Party];
+                return partyColors[data[year][constName(d)].Party];
             }
             return unknownColor;
         });
@@ -259,18 +262,18 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .style("font-size", "17px")
             .style("fill", "black")
             .style("font-weight", "bold")
-            .text(d.properties.PC_NAME.toUpperCase())
+            .text(constName(d))
         map_tooltip_svg.append("text")
             .attr('x', 10)
             .attr('y', 30)
             .style("font-size", "15px")
-            .text(data[year][d.properties.PC_NAME.toUpperCase()].Name)
+            .text(data[year][constName(d)].Name)
         map_tooltip_svg.append("text")
             .attr('x', 10)
             .attr('y', 45)
             .style("font-size", "15px")
-            .style("fill", partyColors[data[year][d.properties.PC_NAME.toUpperCase()].Party])
-            .text(data[year][d.properties.PC_NAME.toUpperCase()].Party)
+            .style("fill", partyColors[data[year][constName(d)].Party])
+            .text(data[year][constName(d)].Party)
         map_tooltip_svg.append("line")
             .attr("y1", 70)
             .attr("y2", 70)
@@ -308,19 +311,33 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 .attr('x', 85)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px") 
-                .style("fill", partyColors[data[yearList[i]][d.properties.PC_NAME.toUpperCase()].Party])
-                .text(data[yearList[i]][d.properties.PC_NAME.toUpperCase()].Party)
+                .style("fill", partyColors[data[yearList[i]][constName(d)].Party])
+                .text(data[yearList[i]][constName(d)].Party)
             map_tooltip_svg.append("text")
                 .attr('x', 150)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px")
-                .text(Math.round(data[yearList[i]][d.properties.PC_NAME.toUpperCase()].Margin/data[year][d.properties.PC_NAME.toUpperCase()]["Total Votes"]*10000)/100)
+                .text(Math.round(data[yearList[i]][constName(d)].Margin/data[year][constName(d)]["Total Votes"]*10000)/100)
             map_tooltip_svg.append("text")
                 .attr('x', 220)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px")
-                .style("fill", partyColors[data[yearList[i]][d.properties.PC_NAME.toUpperCase()].Runner])
-                .text(data[yearList[i]][d.properties.PC_NAME.toUpperCase()].Runner)
+                .style("fill", partyColors[data[yearList[i]][constName(d)].Runner])
+                .text(data[yearList[i]][constName(d)].Runner)
         }   
+    }
+
+    $('.map-switch').on('change', function(d){
+        map_mode = ((this.checked) ? "map" : "cartogram");
+        updateMap();
+        
+    });
+
+    function constName(d){
+        console.log(d)
+        if(map_mode === "cartogram"){
+            return d.id.toUpperCase();
+        }
+        return d.properties.PC_NAME.toUpperCase();
     }
 }

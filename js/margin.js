@@ -63,7 +63,7 @@ function makeMargin(error, data, partyColors){
 	    	});
     }
 
-    $('.margin-percent').on('change', function(d){
+    $('.margin-switch').on('change', function(d){
     	margin_mode = ((this.checked) ? "percentage" : "votes");
     	getMarginScales();
 
