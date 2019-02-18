@@ -13,6 +13,7 @@ function makeMargin(error, data, partyColors){
         .attr("width", map_width)
         .attr("height", map_height);
     var state = "MAHARASHTRA";
+    var constituency = "AURANGABAD";
 
     for(var i in yearList){
     	margin_svg.append('text')
@@ -35,6 +36,22 @@ function makeMargin(error, data, partyColors){
 	var margin = margin_cards.selectAll("circle")
     	.data(dlist)
     	.enter();
+
+    var highlight_line = margin_cards.append("path")
+        .datum(create_path(constituency))
+        .attr("class", "line")
+        .attr("d", d3.line()
+            //.curve(d3.curveBundle.beta(1))
+            .curve(d3.curveLinear)
+            .x(function(d) {
+                return d[0];
+            })
+            .y(function(d) {
+                return d[1];
+            })
+        )
+        .style('stroke', '#c0c5ce')
+        .style('opacity', 0.8);
 
 	var margin_circles = {};
     for(var i in yearList){
@@ -104,8 +121,28 @@ function makeMargin(error, data, partyColors){
 		    		}
 	    		}
 	    	}
-	    	console.log(domain);
 	    	scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 900]);
 	    }
+    }
+
+    function create_path(d){
+    	var path_array = [];
+    	
+    	for(var i in yearList){
+    		if(data[state][constituency][yearList[parseInt(i) - 1]]){
+    			path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 292 - i*50 + 25]);
+    		}
+
+    		if(data[state][constituency][yearList[i]]){
+    			path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 292 - i*50]);
+    		}
+
+    		if(data[state][constituency][yearList[parseInt(i) + 1]]){
+    			path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 292 - i*50 - 25]);
+    		}
+    	}
+
+    	console.log(path_array);
+    	return path_array;
     }
 }

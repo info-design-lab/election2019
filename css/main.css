@@ -130,3 +130,10 @@ input:checked + .slider:before {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+
+.line {
+  fill: none;
+  stroke-width: 6px;
+  stroke-linejoin: round;
+}
