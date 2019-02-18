@@ -42,7 +42,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     var uncheckedParties = [];
     // Create Map
     var map_width = $('#map').width();
-    var map_height = map_width;
+    var map_height = map_width*0.8;
 
     var CartoGeoObj = topojson.feature(mapCarto, mapCarto.objects.MH);
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.MH);
