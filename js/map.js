@@ -52,7 +52,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .fitSize([map_width, map_height], CartoGeoObj);
     var projection = projectionCarto;
     var path = d3.geoPath().projection(projection);
-    var projectionData = CartoGeoObj.features;
 
     //var map2cart = interpolatedProjection(projectionMap, projectionCarto),
     //   cart2map = interpolatedProjection(projectionCarto, projectionMap);
@@ -60,7 +59,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .attr("width", map_width)
         .attr("height", map_height);
     var map = map_svg.selectAll("path")
-        .data(projectionData)
+        .data(CartoGeoObj.features)
         .enter()
         .append("path")
         .attr("d", path)
@@ -338,13 +337,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         //updateMap();
         projection = ((this.checked) ? projectionMap : projectionCarto);
         path.projection(projection);
-        console.log(projectionData);
 
-        map.data(MapGeoObj.features)
-        //for(var i in projectionData){
-        //    console.log(MapGeoObj.features[i].geometry.coordinates);
-        //    projectionData[i].geometry.coordinates = MapGeoObj.features[i].geometry.coordinates;
-        //}
+        map.data(((this.checked) ? MapGeoObj.features : CartoGeoObj.features))
         transtionMap(projection);
 
     });
@@ -357,8 +351,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     }
 
     function transtionMap(interProj){
-        map.transition()
-              .duration(2000)
+        map//.transition()
               .attr("d", path);
     }
 }
