@@ -44,16 +44,23 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     var map_width = $('#map').width();
     var map_height = map_width;
 
-    console.log(mapCarto)
-    var geo_obj = topojson.feature(mapCarto, mapCarto.objects.MH);
-    var projection = d3.geoEquirectangular()
-        .fitSize([map_width, map_height], geo_obj);
+    var CartoGeoObj = topojson.feature(mapCarto, mapCarto.objects.MH);
+    var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.MH);
+    var projectionMap = d3.geoMercator()
+        .fitSize([map_width, map_height], MapGeoObj);;
+    var projectionCarto = d3.geoEquirectangular()
+        .fitSize([map_width, map_height], CartoGeoObj);
+    var projection = projectionCarto;
     var path = d3.geoPath().projection(projection);
+    var projectionData = CartoGeoObj.features;
+
+    //var map2cart = interpolatedProjection(projectionMap, projectionCarto),
+    //   cart2map = interpolatedProjection(projectionCarto, projectionMap);
     var map_svg = d3.select("#map").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
     var map = map_svg.selectAll("path")
-        .data(geo_obj.features)
+        .data(projectionData)
         .enter()
         .append("path")
         .attr("d", path)
@@ -62,7 +69,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
           //console.log(d);
         })
         .style('fill', function(d) {
-            console.log(d);
             if(data[year][constName(d)]){
                 return partyColors[data[year][constName(d)].Party];
             }
@@ -329,15 +335,30 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
     $('.map-switch').on('change', function(d){
         map_mode = ((this.checked) ? "map" : "cartogram");
-        updateMap();
-        
+        //updateMap();
+        projection = ((this.checked) ? projectionMap : projectionCarto);
+        path.projection(projection);
+        console.log(projectionData);
+
+        map.data(MapGeoObj.features)
+        //for(var i in projectionData){
+        //    console.log(MapGeoObj.features[i].geometry.coordinates);
+        //    projectionData[i].geometry.coordinates = MapGeoObj.features[i].geometry.coordinates;
+        //}
+        transtionMap(projection);
+
     });
 
     function constName(d){
-        console.log(d)
         if(map_mode === "cartogram"){
             return d.id.toUpperCase();
         }
         return d.properties.PC_NAME.toUpperCase();
+    }
+
+    function transtionMap(interProj){
+        map.transition()
+              .duration(2000)
+              .attr("d", path);
     }
 }
