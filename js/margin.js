@@ -18,7 +18,7 @@ function makeMargin(error, data, partyColors){
     for(var i in yearList){
     	margin_svg.append('text')
     		.attr('x', 10)
-    		.attr('y', 300 - 50*i)
+    		.attr('y', 350 - 75*i)
     		.style("font-size", "20px")
     		.text(yearList[i]);
     }
@@ -62,7 +62,7 @@ function makeMargin(error, data, partyColors){
 	    		}
 	    		return 0;
 	    	})
-	    	.attr("cy", 292 - i*50)
+	    	.attr("cy", 342 - i*75)
 	    	.attr('r', function(d){
 				if(d["value"][yearList[i]]){
 	    			return 7;
@@ -99,6 +99,19 @@ function makeMargin(error, data, partyColors){
 		    		return 0;
 		    	});
 	    }
+
+	    highlight_line.datum(create_path(constituency))
+            .transition()
+            .duration(500)
+            .attr("d", d3.line()
+             //.curve(d3.curveBundle.beta(1))
+                    .x(function(d) {
+                        return d[0];
+                    })
+                    .y(function(d) {
+                        return d[1];
+                    })
+                );
     });
 
     function getMarginScales(){
@@ -130,15 +143,27 @@ function makeMargin(error, data, partyColors){
     	
     	for(var i in yearList){
     		if(data[state][constituency][yearList[parseInt(i) - 1]]){
-    			path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 292 - i*50 + 25]);
+    			if(margin_mode === "votes"){
+    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 + 75/2]);
+		    	} else{
+    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 + 75/2]);
+		    	}
     		}
 
     		if(data[state][constituency][yearList[i]]){
-    			path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 292 - i*50]);
+    			if(margin_mode === "votes"){
+    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75]);
+		    	} else{
+    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75]);
+		    	}
     		}
 
     		if(data[state][constituency][yearList[parseInt(i) + 1]]){
-    			path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 292 - i*50 - 25]);
+    			if(margin_mode === "votes"){
+    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 - 75/2]);
+		    	} else{
+    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 - 75/2]);
+		    	}
     		}
     	}
 
