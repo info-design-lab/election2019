@@ -1,4 +1,6 @@
 var margin_mode = "votes";
+var state = "MAHARASHTRA";
+var constituency = "RAJAPUR";
 
 queue()
     .defer(d3.json, 'data/margin/margin.json')
@@ -12,8 +14,6 @@ function makeMargin(error, data, partyColors){
 	var margin_svg = d3.select("#margin").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
-    var state = "MAHARASHTRA";
-    var constituency = "AURANGABAD";
 
     for(var i in yearList){
     	margin_svg.append('text')
@@ -54,6 +54,36 @@ function makeMargin(error, data, partyColors){
         .style('opacity', 0.8);
 
 	var margin_circles = {};
+	var margin_tooltip = {};
+	for(var i in yearList){
+		margin_tooltip[yearList[i]] = margin_cards.append('g');
+		margin_tooltip[yearList[i]].append('text')
+			.attr('x', 0)
+			.attr('y', 342 - i*75 - 10)
+			.text("margin")
+			.attr('text-anchor', 'end')
+			.style('fill', "#696969")
+			.attr('font-size', '20px')
+			.attr('class', "margin");
+		margin_tooltip[yearList[i]].append('text')
+			.attr('x', 0)
+			.attr('y', 342 - i*75 - 10)
+			.text("winner")
+			.attr('text-anchor', 'start')
+			.attr('font-size', '20px')
+			.attr('class', "winner");
+		margin_tooltip[yearList[i]].append('text')
+			.attr('x', 0)
+			.attr('y', 342 - i*75 + 10)
+			.text("runner")
+			.attr('text-anchor', 'start')
+			.attr('font-size', '20px')
+			.attr('alignment-baseline', 'hanging')
+			.attr('class', "runner");
+	}
+
+	updateTooltipText(0);
+
     for(var i in yearList){
 	    margin_circles[yearList[i]] = margin.append('circle')
 	    	.attr("cx", function(d){
@@ -81,12 +111,14 @@ function makeMargin(error, data, partyColors){
 	    	.on('mouseover', function(d){
 	    		constituency = d.key;
 	    		updatePath();
+	    		updateTooltipText(0);
 	    	});
     }
 
     $('.margin-switch').on('change', function(d){
     	margin_mode = ((this.checked) ? "percentage" : "votes");
     	getMarginScales();
+        updateTooltipText(500);
 
 	    for(var i in yearList){
 		    margin_circles[yearList[i]]
@@ -108,14 +140,13 @@ function makeMargin(error, data, partyColors){
             .transition()
             .duration(500)
             .attr("d", d3.line()
-             //.curve(d3.curveBundle.beta(1))
-                    .x(function(d) {
-                        return d[0];
-                    })
-                    .y(function(d) {
-                        return d[1];
-                    })
-                );
+	            .x(function(d) {
+	                return d[0];
+	            })
+	            .y(function(d) {
+	                return d[1];
+	            })
+           	);
     });
 
     function getMarginScales(){
@@ -147,10 +178,7 @@ function makeMargin(error, data, partyColors){
     	
     	for(var i=0; i < yearList.length; i++){
     		if(data[state][constituency]){
-	    		
-
 	    		if(data[state][constituency][yearList[i]]){
-
 	    			if(data[state][constituency][yearList[i - 1]]){
 		    			if(margin_mode === "votes"){
 		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 + 75/2]);
@@ -165,7 +193,6 @@ function makeMargin(error, data, partyColors){
 	    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75]);
 			    	}
 
-
 		    		if(data[state][constituency][yearList[i + 1]]){
 		    			if(margin_mode === "votes"){
 		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 - 75/2]);
@@ -173,17 +200,71 @@ function makeMargin(error, data, partyColors){
 		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 - 75/2]);
 				    	}
 		    		}
-
 	    		}
 	    	}
     	}
     	return path_array;
     }
 
+    function updateTooltipText(t){
+    	var present = false;
+    	var margin = 0;
+    	var total = 0;
+    	for(var i=0; i < yearList.length; i++){
+    		present = false;
+    		if(data[state][constituency]){
+	    		if(data[state][constituency][yearList[i]]){
+	    			present = true;
+	    			margin = data[state][constituency][yearList[i]].Margin;
+	    			total = data[state][constituency][yearList[i]]["Total Votes"];
+	    			if(margin_mode === "votes"){
+	    				margin_tooltip[yearList[i]].select(".margin")
+	    					.transition().duration(t)
+	    					.attr('x', scales[yearList[i]](margin) - 7)
+		    				.text(margin)
+		    			margin_tooltip[yearList[i]].select(".winner")
+		    				.transition().duration(t)
+	    					.attr('x', scales[yearList[i]](margin) + 7)
+	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Party])
+	    					.text(data[state][constituency][yearList[i]].Party)
+	    				margin_tooltip[yearList[i]].select(".runner")
+	    					.transition().duration(t)
+	    					.attr('x', scales[yearList[i]](margin) + 7)
+	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Runner])
+	    					.text(data[state][constituency][yearList[i]].Runner)
+			    	} else{
+						margin_tooltip[yearList[i]].select(".margin")
+							.transition().duration(t)
+	    					.attr('x', scales[yearList[i]](margin/total) - 7)
+	    					.text(Math.round(margin/total*10000)/100);
+	    				margin_tooltip[yearList[i]].select(".winner")
+	    					.transition().duration(t)
+	    					.attr('x', scales[yearList[i]](margin/total) + 7)
+	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Party])
+	    					.text(data[state][constituency][yearList[i]].Party)
+	    				margin_tooltip[yearList[i]].select(".runner")
+	    					.transition().duration(t)
+	    					.attr('x', scales[yearList[i]](margin/total) + 7)
+	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Runner])
+	    					.text(data[state][constituency][yearList[i]].Runner)		    	
+	    			}
+			    	
+	    		}
+	    	}
+	    	if(!present){
+				margin_tooltip[yearList[i]].select(".margin")
+					.text("");
+				margin_tooltip[yearList[i]].select(".winner")
+					.text("");
+				margin_tooltip[yearList[i]].select(".runner")
+					.text("");
+	    	}
+    	}
+    }
+
     function updatePath(){
 	    highlight_line.datum(create_path(constituency))
             .attr("d", d3.line()
-             //.curve(d3.curveBundle.beta(1))
                     .x(function(d) {
                         return d[0];
                     })
@@ -191,5 +272,9 @@ function makeMargin(error, data, partyColors){
                         return d[1];
                     })
                 );
+    }
+
+    function animateTooltipText(){
+
     }
 }
