@@ -10,7 +10,7 @@ function openTab(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+  console.log('here');
 }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("Map-Tab").click();
+openTab(null, 'map-tab');
