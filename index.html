@@ -3,10 +3,12 @@
 		<title>India 2019 Election</title>
 
 		<!--Scripts-->
-	    <script src="scripts/d3.v4.js"></script>
+
+	   	<script src="scripts/jquery-3.1.1.min.js"></script>
+	   	<script src="scripts/bootstrap/bootstrap.min.js"></script>
+	   	
+	   	<script src="scripts/d3.v4.js"></script>
 	    <script src="scripts/queue.js"></script>
-	    <script src="scripts/jquery-3.1.1.min.js"></script>
-	    <script src="scripts/bootstrap/bootstrap.min.js"/>
 	    <script src="scripts/select2.min.js"></script>
 	    <script src="scripts/topojson.v2.min.js"></script>
 	    <script src="scripts/nouislider/nouislider.js"></script>
@@ -14,14 +16,25 @@
 	    <link href="css/select2.min.css" rel="stylesheet" />
 	    <link href="css/main.css" rel="stylesheet">
 	    <link href="scripts/nouislider/nouislider.css" rel="stylesheet">
-
-
 	</head>
 	<body>
-		<ul class="nav nav-tabs">
-		    <li class="active"><a data-toggle="tab" href="#map-tab">Map</a></li>
-		    <li><a data-toggle="tab" href="#margin-tab">Margin</a></li>
-		</ul>
+		
+		<div class="section">
+			<ul class="nav nav-tabs">
+			    <li class="active"><a data-toggle="tab" href="#map-tab">Map</a></li>
+			    <li><a data-toggle="tab" href="#margin-tab">Margin</a></li>
+
+			    <ul class="nav navbar-nav navbar-right">
+			      State: <select class="state-select" name="states">
+					</select>
+
+			      Constituency: 
+			      	<select class="constituency-select" name="states">
+					</select>
+			    </ul>
+			</ul>
+		</div>
+
 
 		<div class="tab-content">
 			<div id="map-tab" class="tab-pane fade in active">
@@ -85,5 +98,13 @@
 
 	  	<script src="js/map.js">  </script>
 	  	<script src="js/margin.js">  </script>
+	  	<script>
+	  	// In your Javascript (external .js resource or <script> tag)
+		$(document).ready(function() {
+		    $('.state-select').select2();
+		    $('.constituency-select').select2();
+		});
+
+	  	</script>
 	</body>
 </html>

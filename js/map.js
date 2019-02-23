@@ -5,6 +5,8 @@ queue()
     .defer(d3.json, 'map/map/MH.json')
     .await(makeMap);
 
+
+
 var map_tooltip = d3.select("#map")
     .append("div")
     .attr('class', 'd3-tip')
@@ -37,6 +39,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 	if(error){
 		console.log(error);
 	}
+    // In your Javascript (external .js resource or <script> tag)
+    $('.dropdown').select2();
+    
     partyColors = partyColors;
 
     var uncheckedParties = [];
@@ -81,6 +86,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 map_tooltip.style("visibility", "visible");
                 createSimpleTooltip(d);
             }
+            $(".constituency-select").val(constName(d)).change();
         })
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);

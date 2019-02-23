@@ -10,13 +10,39 @@ queue()
     .await(makeMargin);
 
 function makeMargin(error, data, partyColors, mapSatellite){
+	// Add the data to select tool
+	var stateData = [];
+	for(var i in Object.keys(data)){
+		stateData.push({
+			id: Object.keys(data)[i],
+			text: Object.keys(data)[i]
+		})
+	}
+	$(".state-select").select2({
+	  data: stateData
+	})
+	$(".state-select").val(state).change();
+
+    constList = Object.keys(data[state]);
+	var constData = []
+	for(var i in constList){
+		constData.push({
+			id: constList[i],
+			text: constList[i]
+		})
+	}
+	$(".constituency-select").select2({
+	  data: constData
+	});
+	$(".constituency-select").val(constituency).change();
+
+	// Create the visualization
 	var map_width = 10/12*document.body.clientWidth;
     var map_height = 400;
 	var margin_svg = d3.select("#margin").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
 
-    constList = Object.keys(data[state]);
     for(var i in yearList){
     	margin_svg.append('text')
     		.attr('x', 10)
@@ -62,6 +88,7 @@ function makeMargin(error, data, partyColors, mapSatellite){
         		constituency = constName;
         		updatePath();
 	    		updateTooltipText(0);
+	    		$(".constituency-select").val(constituency).change();
         	} else{ //hide path
 
         	}
@@ -157,6 +184,7 @@ function makeMargin(error, data, partyColors, mapSatellite){
 	    		updatePath();
 	    		updateTooltipText(0);
 	    		highlightMapPath();
+	    		$(".constituency-select").val(constituency).change();
 	    	});
     }
 
@@ -193,6 +221,13 @@ function makeMargin(error, data, partyColors, mapSatellite){
 	            })
            	);
     });
+
+    $(".constituency-select").on("change", function(d){
+    	constituency = $(this).val();
+    	updatePath();
+	    updateTooltipText(0);
+	    highlightMapPath();
+    })
 
     function getMarginScales(){
     	 for(var i in yearList){
