@@ -1,20 +1,22 @@
 var margin_mode = "votes";
 var state = "MAHARASHTRA";
-var constituency = "RAJAPUR";
+var constituency = "RAMTEK";
+var constList = [];
 
 queue()
     .defer(d3.json, 'data/margin/margin.json')
     .defer(d3.json, 'data/partyColors.json')
+    .defer(d3.json, 'map/map/MH.json')
     .await(makeMargin);
 
-function makeMargin(error, data, partyColors){
+function makeMargin(error, data, partyColors, mapSatellite){
 	var map_width = $('#margin').width();
     var map_height = 400;
-
 	var margin_svg = d3.select("#margin").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
 
+    constList = Object.keys(data[state]);
     for(var i in yearList){
     	margin_svg.append('text')
     		.attr('x', 10)
@@ -22,6 +24,48 @@ function makeMargin(error, data, partyColors){
     		.style("font-size", "20px")
     		.text(yearList[i]);
     }
+
+    var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.MH);
+    var projectionMap = d3.geoMercator()
+        .fitSize([map_width, map_height], MapGeoObj);
+    var path = d3.geoPath().projection(projectionMap);
+    var map_width = $('#margin-map').width();
+    var map_height = map_width*0.8;
+    var map_svg = d3.select("#margin-map").append("svg")
+        .attr("width", map_width)
+        .attr("height", map_height);
+
+    var mapSelectedConst;
+    var map = map_svg.selectAll("path")
+        .data(MapGeoObj.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr('class', 'map-margin-const')
+        .style('fill', function(d) {
+        	return "white";
+        })
+        .attr('stroke-width', function(d){
+        	if(constituency === d.properties.PC_NAME.toUpperCase()){
+        		mapSelectedConst = d3.select(this);
+        		return "2px";
+        	}
+        	return '0.3px';
+        })
+        .style('stroke', 'black')
+        .on('mouseover', function(d){
+        	mapSelectedConst.attr("stroke-width", "0.3px"); 
+        	mapSelectedConst = d3.select(this);
+        	mapSelectedConst.attr("stroke-width", "2px");
+        	const constName = d.properties.PC_NAME.toUpperCase();
+        	if(constList.indexOf(constName) > -1){
+        		constituency = constName;
+        		updatePath();
+	    		updateTooltipText(0);
+        	} else{ //hide path
+
+        	}
+        });
 
     // get axis scales
     var scales = {}
@@ -112,6 +156,7 @@ function makeMargin(error, data, partyColors){
 	    		constituency = d.key;
 	    		updatePath();
 	    		updateTooltipText(0);
+	    		highlightMapPath();
 	    	});
     }
 
@@ -274,7 +319,16 @@ function makeMargin(error, data, partyColors){
                 );
     }
 
-    function animateTooltipText(){
-
+    function highlightMapPath(){
+    	map.transition().duration(0)
+    		.attr('stroke-width', function(d){
+    			if(constituency === d.properties.PC_NAME.toUpperCase()){
+    				mapSelectedConst = d3.select(this);
+    				return '2px';
+    			}
+    			return '0.3px';
+    		})
     }
+
+
 }
