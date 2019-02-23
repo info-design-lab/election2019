@@ -15,7 +15,14 @@
 	    <link href="scripts/nouislider/nouislider.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="section">
+
+		<div class="tab">
+		  <button class="tablinks" onclick="openTab(event, 'Map-Tab')">Map</button>
+		  <button class="tablinks" onclick="openTab(event, 'Margin-Tab')">Margin</button>
+		</div>
+
+		<div class="tabcontent" id="Map-Tab">
+			<div class="section">
 		    <div class='row'>
 		    	<!-- Rounded switch -->
 		    	<br>
@@ -27,13 +34,6 @@
 		    	<div class="col-md-4">
 		    	</div>
 		    </div>
-	  	</div>
-		<div class="section">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8"></div>
-				<div class="col-md-2"></div>
-			</div>
 		    <div class='row'>
 		    	<div class="col-md-1"></div>
 		    	<div class="col-md-7">
@@ -50,22 +50,11 @@
 		    		<div id="map-legend"></div>
 		    	</div>
 		    </div>
+			</div>
 	  	</div>
 
-		<div class="section">
-		    <div class='row'>
-		    	<!-- Rounded switch -->
-		    	<br>
-		    	<div class="col-md-4"></div>
-		    	<div class="col-md-4">
-		    		<div id="year-slider-margin"></div>
-		    	</div>
-		    	<div class="col-md-4">
-		    	</div>
-		    </div>
-	  	</div>
-
-	  	<div class="section">
+	  	<div class="tabcontent" id="Margin-Tab">
+	  		<div class="section">
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8"></div>
@@ -82,13 +71,16 @@
 						</label>
 						Percentage
 		    		</div>
+		    		<div id="margin-map"></div>
 		    	</div>
 		    	<div class="col-md-1">
 		    	</div>
+		    </div>
 		    </div>
 	  	</div>
 
 	  	<script src="js/map.js">  </script>
 	  	<script src="js/margin.js">  </script>
+	  	<script src="js/tab.js">  </script>
 	</body>
 </html>

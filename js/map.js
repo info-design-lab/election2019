@@ -41,13 +41,13 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
     var uncheckedParties = [];
     // Create Map
-    var map_width = $('#map').width();
+    var map_width = 7/12*document.body.clientWidth;
     var map_height = map_width*0.8;
 
     var CartoGeoObj = topojson.feature(mapCarto, mapCarto.objects.MH);
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.MH);
     var projectionMap = d3.geoMercator()
-        .fitSize([map_width, map_height], MapGeoObj);;
+        .fitSize([map_width, map_height], MapGeoObj);
     var projectionCarto = d3.geoEquirectangular()
         .fitSize([map_width, map_height], CartoGeoObj);
     var projection = projectionCarto;
@@ -91,7 +91,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             map_tooltip.style("visibility", "hidden");
         });
 
-    var legend_width = $('#map-legend').width();
+    var legend_width = 4/12*document.body.clientWidth;//$('#map-legend').width();
     var legend_height = 500;
     var legend_margin = {
         left: 100,

@@ -10,7 +10,7 @@ queue()
     .await(makeMargin);
 
 function makeMargin(error, data, partyColors, mapSatellite){
-	var map_width = $('#margin').width();
+	var map_width = 10/12*document.body.clientWidth;
     var map_height = 400;
 	var margin_svg = d3.select("#margin").append("svg")
         .attr("width", map_width)
@@ -29,8 +29,8 @@ function makeMargin(error, data, partyColors, mapSatellite){
     var projectionMap = d3.geoMercator()
         .fitSize([map_width, map_height], MapGeoObj);
     var path = d3.geoPath().projection(projectionMap);
-    var map_width = $('#margin-map').width();
-    var map_height = map_width*0.8;
+    var map_width = 10/12*document.body.clientWidth;
+    var map_height = 500;
     var map_svg = d3.select("#margin-map").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
