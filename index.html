@@ -6,6 +6,7 @@
 	    <script src="scripts/d3.v4.js"></script>
 	    <script src="scripts/queue.js"></script>
 	    <script src="scripts/jquery-3.1.1.min.js"></script>
+	    <script src="scripts/bootstrap/bootstrap.min.js"/>
 	    <script src="scripts/select2.min.js"></script>
 	    <script src="scripts/topojson.v2.min.js"></script>
 	    <script src="scripts/nouislider/nouislider.js"></script>
@@ -13,74 +14,76 @@
 	    <link href="css/select2.min.css" rel="stylesheet" />
 	    <link href="css/main.css" rel="stylesheet">
 	    <link href="scripts/nouislider/nouislider.css" rel="stylesheet">
+
+
 	</head>
 	<body>
+		<ul class="nav nav-tabs">
+		    <li class="active"><a data-toggle="tab" href="#map-tab">Map</a></li>
+		    <li><a data-toggle="tab" href="#margin-tab">Margin</a></li>
+		</ul>
 
-		<div class="tab">
-		  <button class="tablinks" onclick="openTab(event, 'map-tab')">Map</button>
-		  <button class="tablinks" onclick="openTab(event, 'margin-tab')">Margin</button>
+		<div class="tab-content">
+			<div id="map-tab" class="tab-pane fade in active">
+				<div class="section">
+			    <div class='row'>
+			    	<!-- Rounded switch -->
+			    	<br>
+			    	<div class="col-md-4"></div>
+			    	<div class="col-md-4">
+			    		<div id="year-slider-map"></div>
+			    		<br><br>
+			    	</div>
+			    	<div class="col-md-4">
+			    	</div>
+			    </div>
+			    <div class='row'>
+			    	<div class="col-md-1"></div>
+			    	<div class="col-md-7">
+			    		<div id="map"></div>
+			    		<div style="color: #696969; font-size: 20px;">
+			    			Cartogram<label class="switch">
+							  <input type="checkbox" class="map-switch">
+							  <span class="slider round"></span>
+							</label>
+							Geographic Map
+			    		</div>
+			    	</div>
+			    	<div class="col-md-4">
+			    		<div id="map-legend"></div>
+			    	</div>
+			    </div>
+				</div>
+		  	</div>
+
+		  	<div id="margin-tab" class="tab-pane fade">
+		  		<div class="section">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8"></div>
+					<div class="col-md-2"></div>
+				</div>
+			    <div class='row'>
+			    	<div class="col-md-1"></div>
+			    	<div class="col-md-10">
+			    		<div id="margin"></div>
+			    		<div style="color: #696969; font-size: 20px;">
+			    			Votes<label class="switch">
+							  <input type="checkbox" class="margin-switch">
+							  <span class="slider round"></span>
+							</label>
+							Percentage
+			    		</div>
+			    		<div id="margin-map"></div>
+			    	</div>
+			    	<div class="col-md-1">
+			    	</div>
+			    </div>
+			    </div>
+		  	</div>
 		</div>
-
-		<div class="tabcontent" id="map-tab">
-			<div class="section">
-		    <div class='row'>
-		    	<!-- Rounded switch -->
-		    	<br>
-		    	<div class="col-md-4"></div>
-		    	<div class="col-md-4">
-		    		<div id="year-slider-map"></div>
-		    		<br><br>
-		    	</div>
-		    	<div class="col-md-4">
-		    	</div>
-		    </div>
-		    <div class='row'>
-		    	<div class="col-md-1"></div>
-		    	<div class="col-md-7">
-		    		<div id="map"></div>
-		    		<div style="color: #696969; font-size: 20px;">
-		    			Cartogram<label class="switch">
-						  <input type="checkbox" class="map-switch">
-						  <span class="slider round"></span>
-						</label>
-						Geographic Map
-		    		</div>
-		    	</div>
-		    	<div class="col-md-4">
-		    		<div id="map-legend"></div>
-		    	</div>
-		    </div>
-			</div>
-	  	</div>
-
-	  	<div class="tabcontent" id="margin-tab">
-	  		<div class="section">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8"></div>
-				<div class="col-md-2"></div>
-			</div>
-		    <div class='row'>
-		    	<div class="col-md-1"></div>
-		    	<div class="col-md-10">
-		    		<div id="margin"></div>
-		    		<div style="color: #696969; font-size: 20px;">
-		    			Votes<label class="switch">
-						  <input type="checkbox" class="margin-switch">
-						  <span class="slider round"></span>
-						</label>
-						Percentage
-		    		</div>
-		    		<div id="margin-map"></div>
-		    	</div>
-		    	<div class="col-md-1">
-		    	</div>
-		    </div>
-		    </div>
-	  	</div>
 
 	  	<script src="js/map.js">  </script>
 	  	<script src="js/margin.js">  </script>
-	  	<script src="js/tab.js">  </script>
 	</body>
 </html>
