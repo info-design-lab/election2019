@@ -54,6 +54,7 @@ body, html{
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  background-color: #6a51a3;
 }
 
 .slider:before {
@@ -63,13 +64,13 @@ body, html{
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  background-color: white;
 }
 
 input:checked + .slider {
-  background-color: #ccc;
+  background-color: #e7298a;
 }
 
 input:focus + .slider {
@@ -97,6 +98,6 @@ input:checked + .slider:before {
 
 .line {
   fill: none;
-  stroke-width: 6px;
+  stroke-width: 3px;
   stroke-linejoin: round;
 }

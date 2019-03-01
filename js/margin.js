@@ -2,6 +2,16 @@ var margin_mode = "votes";
 var state = "MAHARASHTRA";
 var constituency = "RAMTEK";
 var constList = [];
+var latestYear = 2019;
+var marginLegendList = [];
+var marginLegendNumber = 8;
+var margin_legend;
+var margin_colours_percentage = [
+	"#e7298a", "#eb53a1", "#ee69ad", "#f07eb8", "#f5a9d0", "#fad4e7"
+] 
+var margin_colours_votes = [
+	"#6a51a3", "#7862ac", "#8773b5", "#a596c7", "#c3b9da", "#e1dcec"
+] 
 
 queue()
     .defer(d3.json, 'data/margin/margin.json')
@@ -62,6 +72,17 @@ function makeMargin(error, data, partyColors, mapSatellite){
         .attr("height", map_height);
 
     var mapSelectedConst;
+    getMarginLegendList();
+
+    var legend_margin = {
+        left: map_width*0.8,
+        top: 40
+    }
+
+    legend_svg = map_svg.append('g')
+    	.attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
+    createLegend();
+
     var map = map_svg.selectAll("path")
         .data(MapGeoObj.features)
         .enter()
@@ -69,7 +90,14 @@ function makeMargin(error, data, partyColors, mapSatellite){
         .attr("d", path)
         .attr('class', 'map-margin-const')
         .style('fill', function(d) {
-        	return "white";
+        	const constName = d.properties.PC_NAME.toUpperCase();
+        	if(data[state][constName]){
+        		if(data[state][constName][latestYear]){
+        			const val = (margin_mode === "votes") ? data[state][constName][latestYear].Margin : Math.round(data[state][constName][latestYear].Margin/data[state][constName][latestYear]["Total Votes"]*10000)/100
+        			return mapColour(val)
+        		}
+        	}
+        	return unknownColor;
         })
         .attr('stroke-width', function(d){
         	if(constituency === d.properties.PC_NAME.toUpperCase()){
@@ -77,7 +105,7 @@ function makeMargin(error, data, partyColors, mapSatellite){
         		return "2px";
         	}
         	return '0.3px';
-        })
+        })  
         .style('stroke', 'black')
         .on('mouseover', function(d){
         	mapSelectedConst.attr("stroke-width", "0.3px"); 
@@ -220,14 +248,29 @@ function makeMargin(error, data, partyColors, mapSatellite){
 	                return d[1];
 	            })
            	);
-    });
+
+       	getMarginLegendList();
+	    createLegend();
+	    
+	    map.transition().duration(500)
+	    	.style('fill', function(d) {
+        	const constName = d.properties.PC_NAME.toUpperCase();
+        	if(data[state][constName]){
+        		if(data[state][constName][latestYear]){
+        			const val = (margin_mode === "votes") ? data[state][constName][latestYear].Margin : Math.round(data[state][constName][latestYear].Margin/data[state][constName][latestYear]["Total Votes"]*10000)/100
+        			return mapColour(val)
+        		}
+        	}
+        	return unknownColor;
+        })
+	    });
 
     $(".constituency-select").on("change", function(d){
     	constituency = $(this).val();
     	updatePath();
 	    updateTooltipText(0);
 	    highlightMapPath();
-    })
+    });
 
     function getMarginScales(){
     	 for(var i in yearList){
@@ -301,7 +344,7 @@ function makeMargin(error, data, partyColors, mapSatellite){
 	    				margin_tooltip[yearList[i]].select(".margin")
 	    					.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin) - 7)
-		    				.text(margin)
+		    				.text(margin.toLocaleString())
 		    			margin_tooltip[yearList[i]].select(".winner")
 		    				.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin) + 7)
@@ -365,5 +408,82 @@ function makeMargin(error, data, partyColors, mapSatellite){
     		})
     }
 
+    function getMarginLegendList(){
+    	var marginValueList = [];
+    	for(var j in data[state]){
+    		if(data[state][j][latestYear]){
+    			marginValueList.push(
+    				(margin_mode === "votes") ? data[state][j][latestYear].Margin : Math.round(data[state][j][latestYear].Margin/data[state][j][latestYear]["Total Votes"]*10000)/100
+    				);
+    		}
+    	}
+    	
+    	marginValueList.sort(function(a, b){return a - b});
+    	marginLegendList = [];
 
+    	const vals = Math.floor(marginValueList.length/marginLegendNumber/2);
+    	for(var i = 1; i < marginLegendNumber - 1; i++){
+    		marginLegendList.push(marginValueList[i * vals*2]);
+    	}
+    }
+
+    function createLegend(){
+    	legend_svg.remove()
+
+    	 legend_svg = map_svg.append('g')
+    		.attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
+
+    	console.log('here')
+
+    	legend_svg.append('text')
+    		.attr('x', 0)
+    		.attr('y', 0)
+    		.attr('font-size', '30px')
+    		.text('Legend')
+
+    	for(var i in marginLegendList){
+    		legend_svg.append('circle')
+    			.attr('cx', 10)
+    			.attr('cy', i * 24 + 30)
+    			.attr('r', 10)
+    			.attr('fill', function(){
+    				if(margin_mode === "votes"){
+    					return margin_colours_votes[i];
+    				}
+    				return margin_colours_percentage[i];
+    			});
+    		legend_svg.append('text')
+    			.attr('x', 25)
+    			.attr('y', i * 24 + 35)
+    			.attr('font-size', "15px")
+    			.text(function(){
+    				var str = "";
+    				if(i == 0){
+    					str += "< "
+    				} else if(i == marginLegendList.length - 1){
+    					str += "> "
+    				}
+    				str += marginLegendList[i];
+    				return str;
+    			})
+    	}
+    }
+
+    function mapColour(d){
+    	for(var i = 0; i < marginLegendList.length - 1; i++){
+    		if(d >=  marginLegendList[i] && d <=  marginLegendList[i + 1]){
+    			if(margin_mode === "votes"){
+    					return margin_colours_votes[i];
+    				}
+    				return margin_colours_percentage[i]; 
+    		}
+    	}
+
+
+    	if(margin_mode === "votes"){
+			return margin_colours_votes[marginLegendNumber - 3];
+		}
+    	return margin_colours_percentage[marginLegendNumber - 3]; 
+
+    }
 }

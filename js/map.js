@@ -5,15 +5,13 @@ queue()
     .defer(d3.json, 'map/map/MH.json')
     .await(makeMap);
 
-
-
 var map_tooltip = d3.select("#map")
     .append("div")
     .attr('class', 'd3-tip')
     .attr("id", "map-tooltip");
 var map_tooltip_svg;
 
-var unknownColor = "#a8a8a8";
+var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
 var yearSliderMap = document.getElementById('year-slider-map');
 var year = 2019; // Current Year
