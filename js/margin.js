@@ -8,10 +8,10 @@ var marginLegendNumber = 8;
 var margin_legend;
 var margin_colours_percentage = [
 	"#e7298a", "#eb53a1", "#ee69ad", "#f07eb8", "#f5a9d0", "#fad4e7"
-] 
+];
 var margin_colours_votes = [
 	"#6a51a3", "#7862ac", "#8773b5", "#a596c7", "#c3b9da", "#e1dcec"
-] 
+];
 
 queue()
     .defer(d3.json, 'data/margin/margin.json')
@@ -432,8 +432,6 @@ function makeMargin(error, data, partyColors, mapSatellite){
 
     	 legend_svg = map_svg.append('g')
     		.attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
-
-    	console.log('here')
 
     	legend_svg.append('text')
     		.attr('x', 0)
