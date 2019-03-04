@@ -1,6 +1,4 @@
 var margin_mode = "votes";
-var state = "MAHARASHTRA";
-var constituency = "RAMTEK";
 var constList = [];
 var latestYear = 2019;
 var marginLegendList = [];
@@ -13,13 +11,20 @@ var margin_colours_votes = [
 	"#6a51a3", "#7862ac", "#8773b5", "#a596c7", "#c3b9da", "#e1dcec"
 ];
 
+var margin_svg;
+var margin_map_svg;
+
+var data; // margin map data
+
 queue()
     .defer(d3.json, 'data/margin/margin.json')
     .defer(d3.json, 'data/partyColors.json')
-    .defer(d3.json, 'map/map/MH.json')
-    .await(makeMargin);
+    .await(getMarginData);
 
-function makeMargin(error, data, partyColors, mapSatellite){
+function getMarginData(err, d, colors){
+	partyColors = colors;
+	data = d;
+
 	// Add the data to select tool
 	var stateData = [];
 	for(var i in Object.keys(data)){
@@ -30,7 +35,7 @@ function makeMargin(error, data, partyColors, mapSatellite){
 	}
 	$(".state-select").select2({
 	  data: stateData
-	})
+	});
 	$(".state-select").val(state).change();
 
     constList = Object.keys(data[state]);
@@ -39,17 +44,62 @@ function makeMargin(error, data, partyColors, mapSatellite){
 		constData.push({
 			id: constList[i],
 			text: constList[i]
-		})
+		});
 	}
+
+	constituency = constList[0];
+
 	$(".constituency-select").select2({
 	  data: constData
 	});
 	$(".constituency-select").val(constituency).change();
 
+	$(".state-select").on("change", function(d){
+		state = $(this).val();
+
+		constList = Object.keys(data[state]);
+		var constData = []
+		for(var i in constList){
+			constData.push({
+				id: constList[i],
+				text: constList[i]
+			});
+		}
+
+		constituency = constList[0];
+		$(".constituency-select").select2({
+		  data: constData
+		});
+		$(".constituency-select").val(constituency).change();
+
+		createMarginVis(state);
+		createMapVis(state);
+	});
+
+	createMarginVis(state);
+	createMapVis(state);
+}
+
+
+function createMarginVis(s){
+    if(margin_svg){
+        margin_svg.remove();
+    }
+    if(margin_map_svg){
+        margin_map_svg.remove();
+    }
+
+    queue()
+        .defer(d3.json, 'map/map/' + s + '.json')
+        .await(makeMargin);
+}
+
+function makeMargin(error, mapSatellite){
+
 	// Create the visualization
 	var map_width = 10/12*document.body.clientWidth;
     var map_height = 400;
-	var margin_svg = d3.select("#margin").append("svg")
+	margin_svg = d3.select("#margin").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
 
@@ -61,13 +111,13 @@ function makeMargin(error, data, partyColors, mapSatellite){
     		.text(yearList[i]);
     }
 
-    var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.MH);
+    var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
         .fitSize([map_width, map_height], MapGeoObj);
     var path = d3.geoPath().projection(projectionMap);
     var map_width = 10/12*document.body.clientWidth;
     var map_height = 500;
-    var map_svg = d3.select("#margin-map").append("svg")
+    margin_map_svg = d3.select("#margin-map").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
 
@@ -79,11 +129,11 @@ function makeMargin(error, data, partyColors, mapSatellite){
         top: 40
     }
 
-    legend_svg = map_svg.append('g')
+    legend_svg = margin_map_svg.append('g')
     	.attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
     createLegend();
 
-    var map = map_svg.selectAll("path")
+    var map = margin_map_svg.selectAll("path")
         .data(MapGeoObj.features)
         .enter()
         .append("path")
@@ -430,7 +480,7 @@ function makeMargin(error, data, partyColors, mapSatellite){
     function createLegend(){
     	legend_svg.remove()
 
-    	 legend_svg = map_svg.append('g')
+    	 legend_svg = margin_map_svg.append('g')
     		.attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
     	legend_svg.append('text')
@@ -485,3 +535,4 @@ function makeMargin(error, data, partyColors, mapSatellite){
 
     }
 }
+

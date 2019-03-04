@@ -1,15 +1,5 @@
-queue()
-    .defer(d3.json, 'data/election/MH.json')
-    .defer(d3.json, 'data/partyColors.json')
-    .defer(d3.json, 'map/cartogram/MH.json')
-    .defer(d3.json, 'map/map/MH.json')
-    .await(makeMap);
-
-var map_tooltip = d3.select("#map")
-    .append("div")
-    .attr('class', 'd3-tip')
-    .attr("id", "map-tooltip");
-var map_tooltip_svg;
+var state = "MADHYA PRADESH";
+var constituency = "RAMTEK";
 
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -18,6 +8,14 @@ var year = 2019; // Current Year
 var map_legend;
 var partyColors;
 var map_mode = 'cartogram';
+
+var map_svg, legend_svg;
+
+var map_tooltip = d3.select("#map")
+    .append("div")
+    .attr('class', 'd3-tip')
+    .attr("id", "map-tooltip");
+var map_tooltip_svg;
 
 noUiSlider.create(yearSliderMap, {
     start: [year],
@@ -33,6 +31,23 @@ noUiSlider.create(yearSliderMap, {
     }
 });
 
+function createMapVis(s){
+    console.log(s)
+    if(map_svg){
+        map_svg.remove();
+    }
+    if(legend_svg){
+        legend_svg.remove();
+    }
+
+    queue()
+        .defer(d3.json, 'data/election/' + s + '.json')
+        .defer(d3.json, 'data/partyColors.json')
+        .defer(d3.json, 'map/cartogram/' + s + '.json')
+        .defer(d3.json, 'map/map/' + s + '.json')
+        .await(makeMap);
+}
+
 function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 	if(error){
 		console.log(error);
@@ -47,8 +62,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     var map_width = 7/12*document.body.clientWidth;
     var map_height = map_width*0.8;
 
-    var CartoGeoObj = topojson.feature(mapCarto, mapCarto.objects.MH);
-    var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.MH);
+    var CartoGeoObj = topojson.feature(mapCarto, mapCarto.objects.state);
+    var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
         .fitSize([map_width, map_height], MapGeoObj);
     var projectionCarto = d3.geoEquirectangular()
@@ -58,7 +73,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
     //var map2cart = interpolatedProjection(projectionMap, projectionCarto),
     //   cart2map = interpolatedProjection(projectionCarto, projectionMap);
-    var map_svg = d3.select("#map").append("svg")
+    map_svg = d3.select("#map").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
     var map = map_svg.selectAll("path")
@@ -101,7 +116,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         left: 100,
         top: 30
     }
-    var legend_svg = d3.select("#map-legend").append("svg")
+    legend_svg = d3.select("#map-legend").append("svg")
         .attr("width", legend_width)
         .attr("height", legend_height);
 
@@ -262,8 +277,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         }
         
         map_tooltip_svg = d3.select("#map-tooltip").append("svg")
-        .attr("width", 300)
-        .attr("height", 200);
+            .attr("width", 300)
+            .attr("height", 200);
 
         map_tooltip_svg.append("text")
             .attr('x', 10)
