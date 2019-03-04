@@ -101,3 +101,8 @@ input:checked + .slider:before {
   stroke-width: 3px;
   stroke-linejoin: round;
 }
+
+.search{
+  margin-top: 8px;
+  padding-right: 20px;
+}
