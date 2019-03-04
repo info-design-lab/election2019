@@ -110,6 +110,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             map_tooltip.style("visibility", "hidden");
         });
 
+    $('#map-switch-div').css('display', 'block');
+
     var legend_width = 4/12*document.body.clientWidth;//$('#map-legend').width();
     var legend_height = 500;
     var legend_margin = {

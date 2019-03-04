@@ -55,6 +55,9 @@ function getMarginData(err, d, colors){
 	$(".constituency-select").val(constituency).change();
 
 	$(".state-select").on("change", function(d){
+		$('#margin-switch-div').css('display', 'none');
+		$('#map-switch-div').css('display', 'none');
+
 		state = $(this).val();
 
 		constList = Object.keys(data[state]);
@@ -71,6 +74,7 @@ function getMarginData(err, d, colors){
 		  data: constData
 		});
 		$(".constituency-select").val(constituency).change();
+
 
 		createMarginVis(state);
 		createMapVis(state);
@@ -171,6 +175,9 @@ function makeMargin(error, mapSatellite){
 
         	}
         });
+
+
+	$('#margin-switch-div').css('display', 'block');
 
     // get axis scales
     var scales = {}
