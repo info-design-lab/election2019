@@ -329,7 +329,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .text("Runner")
 
         for(var i in yearList){
-            map_tooltip_svg.append("text")
+            if(data[yearList[i]][constName(d)]){
+                            map_tooltip_svg.append("text")
                 .attr('x', 10)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px")
@@ -351,6 +352,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 .style("font-size", "20px")
                 .style("fill", partyColors[data[yearList[i]][constName(d)].Runner])
                 .text(data[yearList[i]][constName(d)].Runner)
+            }
+
         }   
     }
 
