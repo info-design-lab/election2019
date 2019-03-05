@@ -9,7 +9,7 @@ var map_legend;
 var partyColors;
 var map_mode = 'cartogram';
 
-var map_svg, legend_svg;
+var map_svg, map_legend_svg;
 
 var map_tooltip = d3.select("#map")
     .append("div")
@@ -36,8 +36,8 @@ function createMapVis(s){
     if(map_svg){
         map_svg.remove();
     }
-    if(legend_svg){
-        legend_svg.remove();
+    if(map_legend_svg){
+        map_legend_svg.remove();
     }
 
     queue()
@@ -118,11 +118,12 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         left: 100,
         top: 30
     }
-    legend_svg = d3.select("#map-legend").append("svg")
+
+    map_legend_svg = d3.select("#map-legend").append("svg")
         .attr("width", legend_width)
         .attr("height", legend_height);
 
-    map_legend = legend_svg.append('g')
+    map_legend = map_legend_svg.append('g')
         .attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
     yearSliderMap.noUiSlider.on('update', function(values, handle) {
@@ -142,7 +143,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         */
         map_legend.remove();
         
-        map_legend = legend_svg.append('g')
+        map_legend = map_legend_svg.append('g')
             .attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
         var partiesData = getPartyList(data);  

@@ -14,7 +14,7 @@ var margin_colours_votes = [
 var margin_svg;
 var margin_map_svg;
 
-var data; // margin map data
+var marginData; // margin map data
 
 queue()
     .defer(d3.json, 'data/margin/margin.json')
@@ -23,14 +23,14 @@ queue()
 
 function getMarginData(err, d, colors){
 	partyColors = colors;
-	data = d;
+	marginData = d;
 
 	// Add the data to select tool
 	var stateData = [];
-	for(var i in Object.keys(data)){
+	for(var i in Object.keys(marginData)){
 		stateData.push({
-			id: Object.keys(data)[i],
-			text: Object.keys(data)[i]
+			id: Object.keys(marginData)[i],
+			text: Object.keys(marginData)[i]
 		})
 	}
 	$(".state-select").select2({
@@ -38,7 +38,7 @@ function getMarginData(err, d, colors){
 	});
 	$(".state-select").val(state).change();
 
-    constList = Object.keys(data[state]);
+    constList = Object.keys(marginData[state]);
 	var constData = []
 	for(var i in constList){
 		constData.push({
@@ -60,7 +60,7 @@ function getMarginData(err, d, colors){
 
 		state = $(this).val();
 
-		constList = Object.keys(data[state]);
+		constList = Object.keys(marginData[state]);
 		var constData = []
 		for(var i in constList){
 			constData.push({
@@ -145,9 +145,9 @@ function makeMargin(error, mapSatellite){
         .attr('class', 'map-margin-const')
         .style('fill', function(d) {
         	const constName = d.properties.PC_NAME.toUpperCase();
-        	if(data[state][constName]){
-        		if(data[state][constName][latestYear]){
-        			const val = (margin_mode === "votes") ? data[state][constName][latestYear].Margin : Math.round(data[state][constName][latestYear].Margin/data[state][constName][latestYear]["Total Votes"]*10000)/100
+        	if(marginData[state][constName]){
+        		if(marginData[state][constName][latestYear]){
+        			const val = (margin_mode === "votes") ? marginData[state][constName][latestYear].Margin : Math.round(marginData[state][constName][latestYear].Margin/marginData[state][constName][latestYear]["Total Votes"]*10000)/100
         			return mapColour(val)
         		}
         	}
@@ -188,7 +188,7 @@ function makeMargin(error, mapSatellite){
     	.attr('height', map_width)
     	.attr('transform', "translate(100, 0)");
 
-    var dlist = d3.entries(data[state]);
+    var dlist = d3.entries(marginData[state]);
 	var margin = margin_cards.selectAll("circle")
     	.data(dlist)
     	.enter();
@@ -312,9 +312,9 @@ function makeMargin(error, mapSatellite){
 	    map.transition().duration(500)
 	    	.style('fill', function(d) {
         	const constName = d.properties.PC_NAME.toUpperCase();
-        	if(data[state][constName]){
-        		if(data[state][constName][latestYear]){
-        			const val = (margin_mode === "votes") ? data[state][constName][latestYear].Margin : Math.round(data[state][constName][latestYear].Margin/data[state][constName][latestYear]["Total Votes"]*10000)/100
+        	if(marginData[state][constName]){
+        		if(marginData[state][constName][latestYear]){
+        			const val = (margin_mode === "votes") ? marginData[state][constName][latestYear].Margin : Math.round(marginData[state][constName][latestYear].Margin/marginData[state][constName][latestYear]["Total Votes"]*10000)/100
         			return mapColour(val)
         		}
         	}
@@ -331,16 +331,16 @@ function makeMargin(error, mapSatellite){
 
     function getMarginScales(){
     	 for(var i in yearList){
-	    	if(data[state][Object.keys(data[state])[0]][yearList[i]]){
+	    	if(marginData[state][Object.keys(marginData[state])[0]][yearList[i]]){
 	    		var val = ((margin_mode === "votes") ? 
-	    				data[state][Object.keys(data[state])[0]][yearList[i]].Margin : data[state][Object.keys(data[state])[0]][yearList[i]].Margin/data[state][Object.keys(data[state])[0]][yearList[i]]["Total Votes"]);
+	    				marginData[state][Object.keys(marginData[state])[0]][yearList[i]].Margin : marginData[state][Object.keys(marginData[state])[0]][yearList[i]].Margin/marginData[state][Object.keys(marginData[state])[0]][yearList[i]]["Total Votes"]);
 	   			var domain = [val, val];
 	    	}
 
-	    	for(var j in data[state]){
-	    		if(data[state][j][yearList[i]]){
+	    	for(var j in marginData[state]){
+	    		if(marginData[state][j][yearList[i]]){
 	    			var val = ((margin_mode === "votes") ? 
-	    				data[state][j][yearList[i]].Margin : data[state][j][yearList[i]].Margin/data[state][j][yearList[i]]["Total Votes"]);
+	    				marginData[state][j][yearList[i]].Margin : marginData[state][j][yearList[i]].Margin/marginData[state][j][yearList[i]]["Total Votes"]);
 	    			if(domain[0] >= val){
 		    			domain[0] = val;
 		    		}
@@ -357,27 +357,27 @@ function makeMargin(error, mapSatellite){
     	var path_array = [];
     	
     	for(var i=0; i < yearList.length; i++){
-    		if(data[state][constituency]){
-	    		if(data[state][constituency][yearList[i]]){
-	    			if(data[state][constituency][yearList[i - 1]]){
+    		if(marginData[state][constituency]){
+	    		if(marginData[state][constituency][yearList[i]]){
+	    			if(marginData[state][constituency][yearList[i - 1]]){
 		    			if(margin_mode === "votes"){
-		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 + 75/2]);
+		    				path_array.push([scales[yearList[i]](marginData[state][constituency][yearList[i]].Margin), 342 - i*75 + 75/2]);
 				    	} else{
-		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 + 75/2]);
+		    				path_array.push([scales[yearList[i]](marginData[state][constituency][yearList[i]].Margin/marginData[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 + 75/2]);
 				    	}
 		    		}
 
 	    			if(margin_mode === "votes"){
-	    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75]);
+	    				path_array.push([scales[yearList[i]](marginData[state][constituency][yearList[i]].Margin), 342 - i*75]);
 			    	} else{
-	    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75]);
+	    				path_array.push([scales[yearList[i]](marginData[state][constituency][yearList[i]].Margin/marginData[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75]);
 			    	}
 
-		    		if(data[state][constituency][yearList[i + 1]]){
+		    		if(marginData[state][constituency][yearList[i + 1]]){
 		    			if(margin_mode === "votes"){
-		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin), 342 - i*75 - 75/2]);
+		    				path_array.push([scales[yearList[i]](marginData[state][constituency][yearList[i]].Margin), 342 - i*75 - 75/2]);
 				    	} else{
-		    				path_array.push([scales[yearList[i]](data[state][constituency][yearList[i]].Margin/data[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 - 75/2]);
+		    				path_array.push([scales[yearList[i]](marginData[state][constituency][yearList[i]].Margin/marginData[state][constituency][yearList[i]]["Total Votes"]), 342 - i*75 - 75/2]);
 				    	}
 		    		}
 	    		}
@@ -392,11 +392,11 @@ function makeMargin(error, mapSatellite){
     	var total = 0;
     	for(var i=0; i < yearList.length; i++){
     		present = false;
-    		if(data[state][constituency]){
-	    		if(data[state][constituency][yearList[i]]){
+    		if(marginData[state][constituency]){
+	    		if(marginData[state][constituency][yearList[i]]){
 	    			present = true;
-	    			margin = data[state][constituency][yearList[i]].Margin;
-	    			total = data[state][constituency][yearList[i]]["Total Votes"];
+	    			margin = marginData[state][constituency][yearList[i]].Margin;
+	    			total = marginData[state][constituency][yearList[i]]["Total Votes"];
 	    			if(margin_mode === "votes"){
 	    				margin_tooltip[yearList[i]].select(".margin")
 	    					.transition().duration(t)
@@ -405,13 +405,13 @@ function makeMargin(error, mapSatellite){
 		    			margin_tooltip[yearList[i]].select(".winner")
 		    				.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin) + 7)
-	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Party])
-	    					.text(data[state][constituency][yearList[i]].Party)
+	    					.style('fill', partyColors[marginData[state][constituency][yearList[i]].Party])
+	    					.text(marginData[state][constituency][yearList[i]].Party)
 	    				margin_tooltip[yearList[i]].select(".runner")
 	    					.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin) + 7)
-	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Runner])
-	    					.text(data[state][constituency][yearList[i]].Runner)
+	    					.style('fill', partyColors[marginData[state][constituency][yearList[i]].Runner])
+	    					.text(marginData[state][constituency][yearList[i]].Runner)
 			    	} else{
 						margin_tooltip[yearList[i]].select(".margin")
 							.transition().duration(t)
@@ -420,13 +420,13 @@ function makeMargin(error, mapSatellite){
 	    				margin_tooltip[yearList[i]].select(".winner")
 	    					.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin/total) + 7)
-	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Party])
-	    					.text(data[state][constituency][yearList[i]].Party)
+	    					.style('fill', partyColors[marginData[state][constituency][yearList[i]].Party])
+	    					.text(marginData[state][constituency][yearList[i]].Party)
 	    				margin_tooltip[yearList[i]].select(".runner")
 	    					.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin/total) + 7)
-	    					.style('fill', partyColors[data[state][constituency][yearList[i]].Runner])
-	    					.text(data[state][constituency][yearList[i]].Runner)		    	
+	    					.style('fill', partyColors[marginData[state][constituency][yearList[i]].Runner])
+	    					.text(marginData[state][constituency][yearList[i]].Runner)		    	
 	    			}
 			    	
 	    		}
@@ -467,10 +467,10 @@ function makeMargin(error, mapSatellite){
 
     function getMarginLegendList(){
     	var marginValueList = [];
-    	for(var j in data[state]){
-    		if(data[state][j][latestYear]){
+    	for(var j in marginData[state]){
+    		if(marginData[state][j][latestYear]){
     			marginValueList.push(
-    				(margin_mode === "votes") ? data[state][j][latestYear].Margin : Math.round(data[state][j][latestYear].Margin/data[state][j][latestYear]["Total Votes"]*10000)/100
+    				(margin_mode === "votes") ? marginData[state][j][latestYear].Margin : Math.round(marginData[state][j][latestYear].Margin/marginData[state][j][latestYear]["Total Votes"]*10000)/100
     				);
     		}
     	}
@@ -487,7 +487,7 @@ function makeMargin(error, mapSatellite){
     function createLegend(){
     	legend_svg.remove()
 
-    	 legend_svg = margin_map_svg.append('g')
+    	legend_svg = margin_map_svg.append('g')
     		.attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
     	legend_svg.append('text')
