@@ -1,35 +1,17 @@
 var state = "MADHYA PRADESH";
 var constituency = "RAMTEK";
-
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
-var yearSliderMap = document.getElementById('year-slider-map');
 var year = 2019; // Current Year
 var map_legend;
 var partyColors;
 var map_mode = 'cartogram';
-
-var map_svg, map_legend_svg;
-
 var map_tooltip = d3.select("#map")
     .append("div")
     .attr('class', 'd3-tip')
     .attr("id", "map-tooltip");
-var map_tooltip_svg;
 
-noUiSlider.create(yearSliderMap, {
-    start: [year],
-    step: 5,
-    range: {
-        'min': [1999],
-        'max': [2019]
-    },
-    pips: {
-        mode: 'values',
-        values: yearList,
-        density: 20
-    }
-});
+var map_svg, map_legend_svg, yearSliderSVG, map_tooltip_svg;
 
 function createMapVis(s){
     if(map_svg){
@@ -125,11 +107,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     map_legend = map_legend_svg.append('g')
         .attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
-    yearSliderMap.noUiSlider.on('update', function(values, handle) {
-        year = parseInt(values);
-        updateMap();
-        createPartyLegend();
-    });
+    createYearSlider();
+    createPartyLegend();
 
     function createPartyLegend(){
         // Create Party legend
@@ -377,5 +356,72 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     function transtionMap(interProj){
         map//.transition()
               .attr("d", path);
+    }
+
+    function createYearSlider(){
+        if(yearSliderSVG){
+            yearSliderSVG.remove();
+        }
+
+        yearSliderSVG = d3.select("#year-slider-map").append("svg")
+            .attr("width", 110*(yearList.length - 1))
+            .attr("height", 50);
+
+        const r = 8;
+        const offsetX = 14;
+        for(var i in yearList){
+            if(i != yearList.length - 1){
+                yearSliderSVG.append('line')
+                    .attr('x1', offsetX + i*100 + r)
+                    .attr('x2', offsetX + (i)*100 + 100 - r)
+                    .attr('y1', offsetX)
+                    .attr('y2', offsetX)
+                    .attr('stroke', '#7e7e7e')
+                    .attr('stroke-width', '2px');
+            }
+
+            yearSliderSVG.append('text')
+                .attr('x', offsetX + i*100)
+                .attr('y', 40)
+                .attr('font-size', "15px")
+                .attr('fill', "#7e7e7e")
+                .attr('text-anchor', 'middle')
+                .text(yearList[i]);
+
+        }
+
+        yearSliderSVG.selectAll('circle')
+            .data(yearList)
+            .enter()
+            .append('circle')
+            .attr('cx', function(d, i){
+                return  offsetX + i*100;
+            })
+            .attr('cy', offsetX)
+            .attr('r', r)
+            .attr('fill', "transparent")
+            .attr('stroke', "#7e7e7e")
+            .attr('stroke-width', '2px')
+            .on('click', function(d, i){
+                year = d;
+                selectionCircle
+                    .transition().duration(500)
+                    .attr('cx', function(){
+                        return  offsetX + i*100;
+                    });
+
+                updateMap();
+                createPartyLegend();
+            });  
+
+        var selectionCircle = yearSliderSVG.append('circle')
+            .attr('cx', function(){
+                const i = yearList.indexOf(year);
+                return  offsetX + i*100;
+            })
+            .attr('cy', offsetX)
+            .attr('r', r - 3)
+            .attr('fill', "#545454");
+
     }
 }

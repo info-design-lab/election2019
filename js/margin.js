@@ -530,7 +530,6 @@ function makeMargin(error, mapSatellite){
     }
 
     function mapColour(d){
-    	console.log(marginLegendList)
     	if(d >=  marginLegendList[0]){
 			if(margin_mode === "votes"){
 					return margin_colours_votes[0];
