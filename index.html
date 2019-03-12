@@ -45,9 +45,17 @@
 			<div id="map-tab" class="tab-pane fade  in active">
 				<div class="section">
 			    <div class='row'>
-			    	<!-- Rounded switch -->
-			    	<br>
-			    	<div class="col-md-4"></div>
+			    	<div class="col-md-1">
+			    	</div>
+			    	<div class="col-md-3">
+						<div style="color: #696969; font-size: 20px;" id="map-switch-div">
+			    			Cartogram<label class="switch">
+							  <input type="checkbox" class="map-switch">
+							  <span class="slider round"></span>
+							</label>
+							Geographic Map
+			    		</div>
+			    	</div>
 			    	<div class="col-md-4">
 			    		<div id="year-slider-map"></div>
 			    		<br><br>
@@ -59,13 +67,7 @@
 			    	<div class="col-md-1"></div>
 			    	<div class="col-md-7">
 			    		<div id="map"></div>
-			    		<div style="color: #696969; font-size: 20px;" id="map-switch-div">
-			    			Cartogram<label class="switch">
-							  <input type="checkbox" class="map-switch">
-							  <span class="slider round"></span>
-							</label>
-							Geographic Map
-			    		</div>
+			    		
 			    	</div>
 			    	<div class="col-md-4">
 			    		<div id="map-legend"></div>
@@ -77,21 +79,22 @@
 		  	<div id="margin-tab" class="tab-pane fade">
 		  		<div class="section">
 				<div class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-8"></div>
-					<div class="col-md-2"></div>
-				</div>
-			    <div class='row'>
-			    	<div class="col-md-1"></div>
-			    	<div class="col-md-10">
-			    		<div id="margin"></div>
-			    		<div style="color: #696969; font-size: 20px;" id="margin-switch-div">
+					<div class="col-md-1"></div>
+					<div class="col-md-10">
+						<div style="color: #696969; font-size: 20px;" id="margin-switch-div">
 			    			Votes<label class="switch">
 							  <input type="checkbox" class="margin-switch" >
 							  <span class="slider round"></span>
 							</label>
 							Percentage
 			    		</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			    <div class='row'>
+			    	<div class="col-md-1"></div>
+			    	<div class="col-md-10">
+			    		<div id="margin"></div>
 			    		<div id="margin-map"></div>
 			    	</div>
 			    	<div class="col-md-1">
