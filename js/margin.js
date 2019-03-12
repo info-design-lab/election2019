@@ -480,7 +480,7 @@ function makeMargin(error, mapSatellite){
     		}
     	}
     	
-    	marginValueList.sort(function(a, b){return a - b});
+    	marginValueList.sort(function(a, b){return b - a});
     	marginLegendList = [];
 
     	const vals = Math.floor(marginValueList.length/marginLegendNumber/2);
@@ -519,9 +519,9 @@ function makeMargin(error, mapSatellite){
     			.text(function(){
     				var str = "";
     				if(i == 0){
-    					str += "< "
-    				} else if(i == marginLegendList.length - 1){
     					str += "> "
+    				} else if(i == marginLegendList.length - 1){
+    					str += "< "
     				}
     				str += marginLegendList[i];
     				return str;
@@ -530,15 +530,22 @@ function makeMargin(error, mapSatellite){
     }
 
     function mapColour(d){
+    	console.log(marginLegendList)
+    	if(d >=  marginLegendList[0]){
+			if(margin_mode === "votes"){
+					return margin_colours_votes[0];
+				}
+				return margin_colours_percentage[0]; 
+		}
+
     	for(var i = 0; i < marginLegendList.length - 1; i++){
-    		if(d >=  marginLegendList[i] && d <=  marginLegendList[i + 1]){
+    		if(d >=  marginLegendList[i + 1] && d <=  marginLegendList[i]){
     			if(margin_mode === "votes"){
     					return margin_colours_votes[i];
     				}
     				return margin_colours_percentage[i]; 
     		}
     	}
-
 
     	if(margin_mode === "votes"){
 			return margin_colours_votes[marginLegendNumber - 3];
