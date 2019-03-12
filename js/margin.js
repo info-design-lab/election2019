@@ -467,11 +467,16 @@ function makeMargin(error, mapSatellite){
 
     function getMarginLegendList(){
     	var marginValueList = [];
+    	var val = 0;
+    	var p = 0;
     	for(var j in marginData[state]){
     		if(marginData[state][j][latestYear]){
-    			marginValueList.push(
-    				(margin_mode === "votes") ? marginData[state][j][latestYear].Margin : Math.round(marginData[state][j][latestYear].Margin/marginData[state][j][latestYear]["Total Votes"]*10000)/100
-    				);
+    			val = (margin_mode === "votes") ? marginData[state][j][latestYear].Margin : Math.round(marginData[state][j][latestYear].Margin/marginData[state][j][latestYear]["Total Votes"]*10000)/100
+    			if(Math.trunc(val).toString().length > 2){
+    				p = Math.pow(10, Math.trunc(val).toString().length - 2)
+    				val = Math.ceil(val / p) * p;
+    			}
+    			marginValueList.push(val);
     		}
     	}
     	

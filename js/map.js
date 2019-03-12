@@ -32,7 +32,6 @@ noUiSlider.create(yearSliderMap, {
 });
 
 function createMapVis(s){
-    console.log(s)
     if(map_svg){
         map_svg.remove();
     }
