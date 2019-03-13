@@ -235,6 +235,7 @@ function makeMargin(error, mapSatellite){
 			.attr('text-anchor', 'start')
 			.attr('font-size', '20px')
 			.attr('alignment-baseline', 'hanging')
+			.attr('dominant-baseline', 'hanging')
 			.attr('class', "runner");
 	}
 
