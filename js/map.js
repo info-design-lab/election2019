@@ -10,6 +10,7 @@ var map_tooltip = d3.select("#map")
     .append("div")
     .attr('class', 'd3-tip')
     .attr("id", "map-tooltip");
+var rankOverlay = false;
 
 var map_svg, map_legend_svg, yearSliderSVG, map_tooltip_svg;
 
@@ -57,15 +58,13 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     map_svg = d3.select("#map").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
+
     var map = map_svg.selectAll("path")
         .data(CartoGeoObj.features)
         .enter()
         .append("path")
         .attr("d", path)
         .attr('class', 'map-margin-const')
-        .attr("id", function(d){
-          //console.log(d);
-        })
         .style('fill', function(d) {
             if(data[year][constName(d)]){
                 return partyColors[data[year][constName(d)].Party];
@@ -75,20 +74,32 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .attr('stroke-width', '0.3px')
         .style('stroke', 'black')
         .on('mouseover', function(d){
-            d3.select(this).attr("stroke-width", "2px");
-            if(data[year][constName(d)]){
-                map_tooltip.style("visibility", "visible");
-                createSimpleTooltip(d);
+            if(!rankOverlay){
+                d3.select(this).attr("stroke-width", "2px");
+                if(data[year][constName(d)]){
+                    map_tooltip.style("visibility", "visible");
+                    createSimpleTooltip(d);
+                }
+                $(".constituency-select").val(constName(d)).change();
             }
-            $(".constituency-select").val(constName(d)).change();
         })
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);
             return map_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
+            
         })
         .on('mouseout', function(d){
             d3.select(this).attr("stroke-width", "0.3px"); 
-            map_tooltip.style("visibility", "hidden");
+            rankOverlay = false;
+            map_tooltip.style("visibility", "hidden");   
+        })
+        .on('click', function(d){
+            if(!rankOverlay){
+                createRankVis(d);
+            } else{
+                createSimpleTooltip(d);
+            }
+            rankOverlay = !rankOverlay;
         });
 
     $('#map-switch-div').css('display', 'block');
@@ -214,6 +225,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .style("text-anchor", "end")
             .text(total);    
     }
+
     function getPartyList(d){
         var list = {};
         for(var i in d[year]){
@@ -235,12 +247,14 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         })
         return l;
     }
+
 	function arrayRemoveElement(array, e){
         var index = array.indexOf(e);
         if (index > -1) {
           array.splice(index, 1);
         }
     }
+
     function updateMap(){
         map_svg.selectAll("path").transition().duration(500).style('fill', function(d) {
             if(data[year][constName(d)]){
@@ -252,14 +266,25 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             return unknownColor;
         });
     }
+
     function createSimpleTooltip(d){
-        if(map_tooltip_svg){
-            map_tooltip_svg.remove();
+        if(rankOverlay){
+            d3.selectAll('.party-table').remove();
+            d3.selectAll('.party-winner-info').remove();
+            d3.selectAll('.party-rank-info').remove();
+            map_tooltip_svg.transition().duration(500)
+                .attr('width', 300);
         }
-        
-        map_tooltip_svg = d3.select("#map-tooltip").append("svg")
-            .attr("width", 300)
-            .attr("height", 200);
+        else if(map_tooltip_svg){
+            map_tooltip_svg.remove();
+            map_tooltip_svg = d3.select("#map-tooltip").append("svg")
+                .attr("width", 300)
+                .attr("height", 200);
+        } else{
+            map_tooltip_svg = d3.select("#map-tooltip").append("svg")
+                .attr("width", 300)
+                .attr("height", 200);
+        }
 
         map_tooltip_svg.append("text")
             .attr('x', 10)
@@ -267,16 +292,19 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .style("font-size", "17px")
             .style("fill", "black")
             .style("font-weight", "bold")
+            .attr('class', 'party-winner-info')
             .text(constName(d))
         map_tooltip_svg.append("text")
             .attr('x', 10)
             .attr('y', 30)
             .style("font-size", "15px")
+            .attr('class', 'party-winner-info')
             .text(data[year][constName(d)].Name)
         map_tooltip_svg.append("text")
             .attr('x', 10)
             .attr('y', 45)
             .style("font-size", "15px")
+            .attr('class', 'party-winner-info')
             .style("fill", partyColors[data[year][constName(d)].Party])
             .text(data[year][constName(d)].Party)
         map_tooltip_svg.append("line")
@@ -284,50 +312,59 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr("y2", 70)
             .attr('x1', 10)
             .attr('x2', 290)
+            .attr('class', 'party-table')
             .attr('stroke', "black")
         map_tooltip_svg.append("text")
-            .attr('x', 10)
+            .attr('x', 15)
             .attr('y', 65)
             .style("font-size", "15px")
+            .attr('class', 'party-table')
             .text("Year")
         map_tooltip_svg.append("text")
             .attr('x', 80)
             .attr('y', 65)
             .style("font-size", "15px")
+            .attr('class', 'party-table')
             .text("Winner")
         map_tooltip_svg.append("text")
             .attr('x', 145)
             .attr('y', 65)
             .style("font-size", "15px")
+            .attr('class', 'party-table')
             .text("Margin(%)")
         map_tooltip_svg.append("text")
             .attr('x', 215)
             .attr('y', 65)
             .style("font-size", "15px")
+            .attr('class', 'party-table')
             .text("Runner")
 
         for(var i in yearList){
             if(data[yearList[i]][constName(d)]){
-                            map_tooltip_svg.append("text")
+            map_tooltip_svg.append("text")
                 .attr('x', 10)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px")
+                .attr('class', 'party-table')
                 .text(yearList[i])
             map_tooltip_svg.append("text")
                 .attr('x', 85)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px") 
+                .attr('class', 'party-table')
                 .style("fill", partyColors[data[yearList[i]][constName(d)].Party])
                 .text(data[yearList[i]][constName(d)].Party)
             map_tooltip_svg.append("text")
                 .attr('x', 150)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px")
+                .attr('class', 'party-table')
                 .text(Math.round(data[yearList[i]][constName(d)].Margin/data[year][constName(d)]["Total Votes"]*10000)/100)
             map_tooltip_svg.append("text")
                 .attr('x', 220)
                 .attr('y', 190 - 25*i)
                 .style("font-size", "20px")
+                .attr('class', 'party-table')
                 .style("fill", partyColors[data[yearList[i]][constName(d)].Runner])
                 .text(data[yearList[i]][constName(d)].Runner)
             }
@@ -340,10 +377,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         //updateMap();
         projection = ((this.checked) ? projectionMap : projectionCarto);
         path.projection(projection);
+        map.data(((this.checked) ? MapGeoObj.features : CartoGeoObj.features));
 
-        map.data(((this.checked) ? MapGeoObj.features : CartoGeoObj.features))
         transtionMap(projection);
-
     });
 
     function constName(d){
@@ -354,8 +390,17 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     }
 
     function transtionMap(interProj){
-        map//.transition()
-              .attr("d", path);
+        map.transition()
+            .duration(500)
+            .style('opacity', 0)
+            .on('end', function(){
+                 map.attr("d", path);
+            });
+
+        map.transition()
+            .delay(500)
+            .duration(500)
+            .style('opacity', 1);
     }
 
     function createYearSlider(){
@@ -422,6 +467,148 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('cy', offsetX)
             .attr('r', r - 3)
             .attr('fill', "#545454");
+    }
 
+    function createRankVis(d){
+        d3.selectAll('.party-table').remove();
+
+        const cName = constName(d);
+        const numRank = 5;
+        var parties = [];
+        var rankData = [];
+        var rankPath = {};
+        var d = [];
+        const xGap = 80;
+        const yGap = 25;
+
+        for(var i in yearList){
+            if(data[yearList[i]][cName]){
+                d = [];
+                if(data[yearList[i]][cName].Ranks.length > numRank){
+                    for(var j = 0; j < numRank; j++){
+                        d.push(data[yearList[i]][cName].Ranks[j]);
+                    }
+                } else{
+                    for(var j = 0; j < data[yearList[i]][cName].Ranks.length; j++){
+                        d.push(data[yearList[i]][cName].Ranks[j]);
+                    }
+                    d = data[yearList[i]][cName].Ranks;
+                }
+                rankData.push(d);
+
+                for(var j in d){
+                    if(parties.indexOf(d[j]) < 0){
+                        parties.push(d[j]);
+                    }
+
+                    if(!rankPath[d[j]]){
+                        rankPath[d[j]] = [];
+                    }
+                    rankPath[d[j]].push([parseInt(i), parseInt(j)]);
+                }
+            }
+        }
+
+        map_tooltip_svg.transition().duration(500)
+           .attr('width', 100*yearList.length);
+        map_tooltip_svg.append('line')
+            .attr('x1', 10)
+            .attr('y1', 70)
+            .attr('x2', 490)
+            .attr('y2', 70)
+            .attr('class', 'party-table')
+            .attr('class', 'party-rank-info')
+            .attr('stroke', "black");
+        map_tooltip_svg.append('line')
+            .attr('x1', 80)
+            .attr('y1', 50)
+            .attr('x2', 80)
+            .attr('y2', 100 + 80*4)
+            .attr('class', 'party-table')
+            .attr('class', 'party-rank-info')
+            .attr('stroke', "black");
+        map_tooltip_svg.append('text')
+            .attr('x', 50)
+            .attr('y', 65)
+            .attr('text-anchor', 'middle')
+            .attr('class', 'party-rank-info')
+            .text('Rank');
+ 
+        for(var i in yearList){
+            map_tooltip_svg.append('text')
+                .attr('x', 100 + i * xGap)
+                .attr('y', 65)
+                .attr('font-size', '15px')
+                .attr('class', 'party-rank-info')
+                .text(yearList[i])
+        }
+
+        for(var i = 0; i < numRank; i++){
+            map_tooltip_svg.append('text')
+                .attr('x', 45)
+                .attr('y', 93 + i * yGap)
+                .attr('font-size', '20px')
+                .attr('class', 'party-rank-info')
+                .text(i + 1)
+        }
+
+        var g = map_tooltip_svg.append('g')
+            .attr("transform", "translate("+ 115 +", "+ 85 +")");
+
+        for(var i in rankData){
+            for(var j in rankData[i]){
+                g.append('circle')
+                    .attr('cx', i*xGap)
+                    .attr('cy', j*yGap)
+                    .attr('r', 5)
+                    .attr('class', 'party-rank-info')
+                    .attr('fill', function(){
+                        if(partyColors[rankData[i][j]]){
+                            return partyColors[rankData[i][j]];
+                        }
+                        return unknownColor;
+                    });
+                g.append('text')
+                    .attr('x', i*xGap)
+                    .attr('y', 15 + j*yGap)
+                    .attr('font-size', '10px')
+                    .attr('text-anchor', 'middle')
+                    .attr('class', 'party-rank-info')
+                    .text(rankData[i][j])
+            }
+        }
+
+        for(var i in rankPath){
+            if(i != "IND" && i!= "INDEPENDENT"){
+                g.append("path")
+                    .datum(createPath(rankPath[i], xGap, yGap))
+                    .attr("class", "line party-rank-info")
+                    .attr("d", d3.line()
+                        .curve(d3.curveLinear)
+                        .x(function(d) {
+                            return d[0];
+                        })
+                        .y(function(d) {
+                            return d[1];
+                        })
+                    )
+                    .style('stroke', function(){
+                        if(partyColors[i]){
+                            return partyColors[i];
+                        }
+                        return unknownColor;
+                    })
+                    .style('stroke-width', "10px")
+                    .style('opacity', 0.8);
+            }
+        }
+    }
+
+    function createPath(d, xGap, yGap){
+        var result = []
+        for(var i in d){
+            result.push([xGap*d[i][0], yGap*d[i][1]])
+        }
+        return result;
     }
 }
