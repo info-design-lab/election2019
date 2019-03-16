@@ -164,7 +164,9 @@ function makeMargin(error, mapSatellite){
         })  
         .style('stroke', 'black')
         .on('mouseover', function(d){
-        	mapSelectedConst.attr("stroke-width", "0.3px"); 
+        	if(mapSelectedConst){
+        		mapSelectedConst.attr("stroke-width", "0.3px"); 
+        	}
         	mapSelectedConst = d3.select(this);
         	mapSelectedConst.attr("stroke-width", "2px");
         	const constName = d.properties.PC_NAME.toUpperCase();
