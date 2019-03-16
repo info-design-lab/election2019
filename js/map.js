@@ -34,6 +34,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 	if(error){
 		console.log(error);
 	}
+
+    $('#map-switch-div').css('display', 'block');
+
     // In your Javascript (external .js resource or <script> tag)
     $('.dropdown').select2();
     
@@ -101,8 +104,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             }
             rankOverlay = !rankOverlay;
         });
-
-    $('#map-switch-div').css('display', 'block');
 
     var legend_width = 4/12*document.body.clientWidth;//$('#map-legend').width();
     var legend_height = 500;
@@ -388,8 +389,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         } else if(map_mode === "map"){
             return d.properties.PC_NAME.toUpperCase();
         }
-        console.log('not working');
-        console.log(d);
     }
 
     function transtionMap(interProj){

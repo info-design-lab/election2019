@@ -75,7 +75,6 @@ function getMarginData(err, d, colors){
 		});
 		$(".constituency-select").val(constituency).change();
 
-
 		createMarginVis(state);
 		createMapVis(state);
 	});
