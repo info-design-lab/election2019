@@ -75,6 +75,9 @@ function getMarginData(err, d, colors){
 		});
 		$(".constituency-select").val(constituency).change();
 
+		$(".constituency-select").off("change");
+		$('.margin-switch').off('change');
+
 		createMarginVis(state);
 		createMapVis(state);
 	});
@@ -243,11 +246,15 @@ function makeMargin(error, mapSatellite){
     for(var i in yearList){
 	    margin_circles[yearList[i]] = margin.append('circle')
 	    	.attr("cx", function(d){
-	    		if(d["value"][yearList[i]]){
-	    			return scales[yearList[i]](d["value"][yearList[i]].Margin);
-	    		}
-	    		return 0;
-	    	})
+		    		if(d["value"][yearList[i]]){
+		    			if(margin_mode === "votes"){
+		    				return scales[yearList[i]](d["value"][yearList[i]].Margin);
+		    			} else{
+		    				return scales[yearList[i]](d["value"][yearList[i]].Margin / d["value"][yearList[i]]["Total Votes"]);
+		    			}
+		    		}
+		    		return 0;
+		    })
 	    	.attr("cy", 342 - i*75)
 	    	.attr('r', function(d){
 				if(d["value"][yearList[i]]){

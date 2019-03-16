@@ -22,6 +22,8 @@ function createMapVis(s){
         map_legend_svg.remove();
     }
 
+    $('.map-switch').off('change');
+
     queue()
         .defer(d3.json, 'data/election/' + s + '.json')
         .defer(d3.json, 'data/partyColors.json')
@@ -53,7 +55,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .fitSize([map_width, map_height], MapGeoObj);
     var projectionCarto = d3.geoEquirectangular()
         .fitSize([map_width, map_height], CartoGeoObj);
-    var projection = projectionCarto;
+    var projection = ((map_mode === "map") ? projectionMap : projectionCarto);
     var path = d3.geoPath().projection(projection);
 
     //var map2cart = interpolatedProjection(projectionMap, projectionCarto),
@@ -63,7 +65,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .attr("height", map_height);
 
     var map = map_svg.selectAll("path")
-        .data(CartoGeoObj.features)
+        .data(
+            ((map_mode === "map") ? MapGeoObj.features : CartoGeoObj.features)
+            )
         .enter()
         .append("path")
         .attr("d", path)
