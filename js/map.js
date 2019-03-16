@@ -1,4 +1,4 @@
-var state = "MAHARASHTRA";
+var state = "NCT OF DELHI";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -482,9 +482,14 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         var d = [];
         const xGap = 80;
         const yGap = 25;
+        var startIndex = null;
 
         for(var i in yearList){
             if(data[yearList[i]][cName]){
+                if(startIndex === null){
+                    startIndex = parseInt(i);
+                }
+
                 d = [];
                 if(data[yearList[i]][cName].Ranks.length > numRank){
                     for(var j = 0; j < numRank; j++){
@@ -560,7 +565,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         for(var i in rankData){
             for(var j in rankData[i]){
                 g.append('circle')
-                    .attr('cx', i*xGap)
+                    .attr('cx', (parseInt(i) + startIndex)*xGap)
                     .attr('cy', j*yGap)
                     .attr('r', 5)
                     .attr('class', 'party-rank-info')
@@ -571,7 +576,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                         return unknownColor;
                     });
                 g.append('text')
-                    .attr('x', i*xGap)
+                    .attr('x', (parseInt(i) + startIndex)*xGap)
                     .attr('y', 15 + j*yGap)
                     .attr('font-size', '10px')
                     .attr('text-anchor', 'middle')
