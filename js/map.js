@@ -1,4 +1,4 @@
-var state = "MADHYA PRADESH";
+var state = "MAHARASHTRA";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -385,8 +385,11 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     function constName(d){
         if(map_mode === "cartogram"){
             return d.id.toUpperCase();
+        } else if(map_mode === "map"){
+            return d.properties.PC_NAME.toUpperCase();
         }
-        return d.properties.PC_NAME.toUpperCase();
+        console.log('not working');
+        console.log(d);
     }
 
     function transtionMap(interProj){
