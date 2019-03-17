@@ -120,7 +120,7 @@ function makeMargin(error, mapSatellite){
 
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
-        .fitSize([map_width, map_height], MapGeoObj);
+        .fitSize([map_width*0.9, map_height], MapGeoObj);
     var path = d3.geoPath().projection(projectionMap);
     var map_width = 10/12*document.body.clientWidth;
     var map_height = 500;
@@ -147,38 +147,46 @@ function makeMargin(error, mapSatellite){
         .attr("d", path)
         .attr('class', 'map-margin-const')
         .style('fill', function(d) {
-        	const constName = d.properties.PC_NAME.toUpperCase();
-        	if(marginData[state][constName]){
-        		if(marginData[state][constName][latestYear]){
-        			const val = (margin_mode === "votes") ? marginData[state][constName][latestYear].Margin : Math.round(marginData[state][constName][latestYear].Margin/marginData[state][constName][latestYear]["Total Votes"]*10000)/100
-        			return mapColour(val)
-        		}
+        	if(d.properties.PC_NAME){
+        		const constName = d.properties.PC_NAME.toUpperCase();
+        		if(marginData[state][constName]){
+	        		if(marginData[state][constName][latestYear]){
+	        			const val = (margin_mode === "votes") ? marginData[state][constName][latestYear].Margin : Math.round(marginData[state][constName][latestYear].Margin/marginData[state][constName][latestYear]["Total Votes"]*10000)/100
+	        			return mapColour(val)
+	        		}
+	        	}
         	}
+        	
         	return unknownColor;
         })
         .attr('stroke-width', function(d){
-        	if(constituency === d.properties.PC_NAME.toUpperCase()){
-        		mapSelectedConst = d3.select(this);
-        		return "2px";
+        	if(d.properties.PC_NAME){
+        		if(constituency === d.properties.PC_NAME.toUpperCase()){
+	        		mapSelectedConst = d3.select(this);
+	        		return "2px";
+	        	}
         	}
         	return '0.3px';
         })  
         .style('stroke', 'black')
         .on('mouseover', function(d){
-        	if(mapSelectedConst){
-        		mapSelectedConst.attr("stroke-width", "0.3px"); 
-        	}
-        	mapSelectedConst = d3.select(this);
-        	mapSelectedConst.attr("stroke-width", "2px");
-        	const constName = d.properties.PC_NAME.toUpperCase();
-        	if(constList.indexOf(constName) > -1){
-        		constituency = constName;
-        		updatePath();
-	    		updateTooltipText(0);
-	    		$(".constituency-select").val(constituency).change();
-        	} else{ //hide path
+        	if(d.properties.PC_NAME){
+	        	if(mapSelectedConst){
+	        		mapSelectedConst.attr("stroke-width", "0.3px"); 
+	        	}
+	        	mapSelectedConst = d3.select(this);
+	        	mapSelectedConst.attr("stroke-width", "2px");
+	        	const constName = d.properties.PC_NAME.toUpperCase();
+	        	if(constList.indexOf(constName) > -1){
+	        		constituency = constName;
+	        		updatePath();
+		    		updateTooltipText(0);
+		    		$(".constituency-select").val(constituency).change();
+	        	} else{ //hide path
 
+	        	}   		
         	}
+
         });
 
 
@@ -473,10 +481,13 @@ function makeMargin(error, mapSatellite){
     function highlightMapPath(){
     	map.transition().duration(0)
     		.attr('stroke-width', function(d){
-    			if(constituency === d.properties.PC_NAME.toUpperCase()){
-    				mapSelectedConst = d3.select(this);
-    				return '2px';
+    			if(d.properties.PC_NAME){
+    				if(constituency === d.properties.PC_NAME.toUpperCase()){
+	    				mapSelectedConst = d3.select(this);
+	    				return '2px';
+	    			}
     			}
+    			
     			return '0.3px';
     		})
     }
