@@ -101,7 +101,6 @@ function createMarginVis(s){
 }
 
 function makeMargin(error, mapSatellite){
-
 	// Create the visualization
 	var map_width = 10/12*document.body.clientWidth;
     var map_height = 400;
@@ -196,6 +195,7 @@ function makeMargin(error, mapSatellite){
 	var margin = margin_cards.selectAll("circle")
     	.data(dlist)
     	.enter();
+
 
     var highlight_line = margin_cards.append("path")
         .datum(create_path(constituency))
@@ -358,7 +358,10 @@ function makeMargin(error, mapSatellite){
 		    		}
 	    		}
 	    	}
-	    	scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 900]);
+
+	    	if(domain){
+	    		scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 900]);
+	    	}
 	    }
     }
 
