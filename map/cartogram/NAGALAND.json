@@ -1,0 +1,1 @@
+{"type":"Topology","arcs":[[[0,1],[0.5,0.86],[0.5,-0.86],[0,-1],[-0.5,-0.86],[-0.5,0.86],[0, 1]]],"transform":{"scale":[1, 0.5],"translate":[0, 0]},"objects":{"state":{"type":"GeometryCollection","geometries":[{"arcs":[[0]],"type":"Polygon","id":"Nagaland"}]}}}
