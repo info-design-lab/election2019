@@ -52,6 +52,7 @@ function getMarginData(err, d, colors){
 	$(".constituency-select").select2({
 	  data: constData
 	});
+
 	$(".constituency-select").val(constituency).change();
 
 	$(".state-select").on("change", function(d){
@@ -61,7 +62,7 @@ function getMarginData(err, d, colors){
 		state = $(this).val();
 
 		constList = Object.keys(marginData[state]);
-		var constData = []
+		var constData = [];
 		for(var i in constList){
 			constData.push({
 				id: constList[i],
@@ -69,7 +70,9 @@ function getMarginData(err, d, colors){
 			});
 		}
 
+
 		constituency = constList[0];
+		$(".constituency-select").empty();
 		$(".constituency-select").select2({
 		  data: constData
 		});
