@@ -70,7 +70,6 @@ function getMarginData(err, d, colors){
 			});
 		}
 
-
 		constituency = constList[0];
 		$(".constituency-select").empty();
 		$(".constituency-select").select2({
@@ -364,6 +363,8 @@ function makeMargin(error, mapSatellite){
 
 	    	if(domain){
 	    		scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 900]);
+	    	} else{
+	    		scales[yearList[i]] = d3.scaleLinear().domain([0,0]).range([0, 900]);
 	    	}
 	    }
     }
