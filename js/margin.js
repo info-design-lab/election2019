@@ -545,7 +545,12 @@ function makeMargin(error, mapSatellite){
     				return margin_colours_percentage[i];
     			});
     		legend_svg.append('text')
-    			.attr('x', 25)
+    			.attr('x', function(){
+    				if(i == 0 || i == marginLegendList.length - 1){
+    					return 25;
+    				}
+    				return 25 + 10;
+    			})
     			.attr('y', i * 24 + 35)
     			.attr('font-size', "15px")
     			.text(function(){
@@ -555,7 +560,7 @@ function makeMargin(error, mapSatellite){
     				} else if(i == marginLegendList.length - 1){
     					str += "< "
     				}
-    				str += marginLegendList[i];
+    				str += marginLegendList[i].toLocaleString();
     				return str;
     			})
     	}
