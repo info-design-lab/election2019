@@ -120,7 +120,7 @@ function makeMargin(error, mapSatellite){
 
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
-        .fitSize([map_width*0.9, map_height], MapGeoObj);
+        .fitSize([map_width*0.8, map_height], MapGeoObj);
     var path = d3.geoPath().projection(projectionMap);
     var map_width = 10/12*document.body.clientWidth;
     var map_height = 500;
@@ -510,9 +510,14 @@ function makeMargin(error, mapSatellite){
     	marginValueList.sort(function(a, b){return b - a});
     	marginLegendList = [];
 
-    	const vals = Math.floor(marginValueList.length/marginLegendNumber/2);
+    	var vals = Math.floor(marginValueList.length/marginLegendNumber);
+    	if(vals === 0){
+    		vals = 1;
+    	}
     	for(var i = 1; i < marginLegendNumber - 1; i++){
-    		marginLegendList.push(marginValueList[i * vals*2]);
+    		if(marginValueList[i * vals]){
+    			marginLegendList.push(marginValueList[i * vals]);
+    		}
     	}
     }
 
