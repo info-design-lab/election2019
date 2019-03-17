@@ -77,7 +77,6 @@ function getMarginData(err, d, colors){
 		});
 		$(".constituency-select").val(constituency).change();
 
-		$(".constituency-select").off("change");
 		$('.margin-switch').off('change');
 
 		createMarginVis(state);
@@ -340,6 +339,7 @@ function makeMargin(error, mapSatellite){
         	return unknownColor;
         })
 	    });
+
 
     $(".constituency-select").on("change", function(d){
     	constituency = $(this).val();
