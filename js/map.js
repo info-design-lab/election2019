@@ -1,4 +1,4 @@
-var state = "JHARKHAND";
+var state = "ANDHRA PRADESH";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -53,8 +53,15 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
         .fitSize([map_width, map_height], MapGeoObj);
+
     var projectionCarto = d3.geoEquirectangular()
         .fitSize([map_width, map_height], CartoGeoObj);
+
+    console.log(projectionCarto.scale())
+    console.log(projectionCarto.center())
+    console.log(projectionCarto.translate())
+    console.log(projectionCarto.rotate())
+
     var projection = ((map_mode === "map") ? projectionMap : projectionCarto);
     var path = d3.geoPath().projection(projection);
 
@@ -93,7 +100,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);
             return map_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
-            
         })
         .on('mouseout', function(d){
             d3.select(this).attr("stroke-width", "0.3px"); 
@@ -612,7 +618,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                         }
                         return unknownColor;
                     })
-                    .style('stroke-width', "10px")
+                    .style('stroke-width', "5px")
                     .style('opacity', 0.8);
             }
         }
