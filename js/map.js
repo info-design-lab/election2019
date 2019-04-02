@@ -1,4 +1,4 @@
-var state = "ANDHRA PRADESH";
+var state = "ARUNACHAL PRADESH";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -49,35 +49,36 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     var map_width = 7/12*document.body.clientWidth;
     var map_height = map_width*0.8;
 
-    var CartoGeoObj = topojson.feature(mapCarto, mapCarto.objects.state);
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
         .fitSize([map_width, map_height], MapGeoObj);
 
-    var projectionCarto = d3.geoEquirectangular()
-        .fitSize([map_width, map_height], CartoGeoObj);
+    var path = d3.geoPath().projection(projectionMap);
 
-    console.log(projectionCarto.scale())
-    console.log(projectionCarto.center())
-    console.log(projectionCarto.translate())
-    console.log(projectionCarto.rotate())
+    var CartoScale = 4;
+    var CartoLineFunction = d3.line()
+        .x(function(d) { console.log(); return d[0]*CartoScale; })
+        .y(function(d) { return d[1]*CartoScale; });
 
-    var projection = ((map_mode === "map") ? projectionMap : projectionCarto);
-    var path = d3.geoPath().projection(projection);
-
-    //var map2cart = interpolatedProjection(projectionMap, projectionCarto),
-    //   cart2map = interpolatedProjection(projectionCarto, projectionMap);
     map_svg = d3.select("#map").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
 
     var map = map_svg.selectAll("path")
         .data(
-            ((map_mode === "map") ? MapGeoObj.features : CartoGeoObj.features)
+            ((map_mode === "map") ? MapGeoObj.features : mapCarto.features)
             )
         .enter()
         .append("path")
-        .attr("d", path)
+        .attr("d", function(d){
+                    if((map_mode === "map")){
+                        return path(d);
+                    }
+                    var array = d.geometry.coordinates[0];
+                    array.push(array[0]);
+                    return CartoLineFunction(array);
+                }
+            )
         .attr('class', 'map-margin-const')
         .style('fill', function(d) {
             if(data[year][constName(d)]){
@@ -387,11 +388,8 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     $('.map-switch').on('change', function(d){
         map_mode = ((this.checked) ? "map" : "cartogram");
         //updateMap();
-        projection = ((this.checked) ? projectionMap : projectionCarto);
-        path.projection(projection);
-        map.data(((this.checked) ? MapGeoObj.features : CartoGeoObj.features));
-
-        transtionMap(projection);
+        map.data(((map_mode === "map") ? MapGeoObj.features : mapCarto.features));
+        transtionMap();
     });
 
     function constName(d){
@@ -402,12 +400,20 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         }
     }
 
-    function transtionMap(interProj){
+    function transtionMap(){
         map.transition()
             .duration(500)
             .style('opacity', 0)
             .on('end', function(){
-                 map.attr("d", path);
+                 map.attr("d", function(d){
+                    if((map_mode === "map")){
+                        return path(d);
+                    }
+                    var array = d.geometry.coordinates[0];
+                    array.push(array[0]);
+                    return CartoLineFunction(array);
+                }
+            );
             });
 
         map.transition()
