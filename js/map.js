@@ -1,4 +1,4 @@
-var state = "ARUNACHAL PRADESH";
+var state = "TAMIL NADU";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -82,7 +82,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .attr('class', 'map-margin-const')
         .style('fill', function(d) {
             if(data[year][constName(d)]){
-                return partyColors[data[year][constName(d)].Party];
+                return getPartyColor(data[year][constName(d)].Party)
             }
             return unknownColor;
         })
@@ -273,7 +273,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 if(uncheckedParties.indexOf(data[year][constName(d)].Party) > -1){
                     return "white";
                 }
-                return partyColors[data[year][constName(d)].Party];
+                return getPartyColor(data[year][constName(d)].Party);
             }
             return unknownColor;
         });
@@ -636,5 +636,12 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             result.push([xGap*d[i][0], yGap*d[i][1]])
         }
         return result;
+    }
+
+    function getPartyColor(party){
+        if(partyColors[party]){
+            return partyColors[party];
+        }
+        return "#deebf7";
     }
 }
