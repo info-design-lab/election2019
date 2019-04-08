@@ -91,9 +91,11 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         .on('mouseover', function(d){
             if(!rankOverlay){
                 d3.select(this).attr("stroke-width", "2px");
+                map_tooltip.style("visibility", "visible");
                 if(data[year][constName(d)]){
-                    map_tooltip.style("visibility", "visible");
                     createSimpleTooltip(d);
+                } else{
+                    unknownDataTooltip(d);
                 }
                 $(".constituency-select").val(constName(d)).change();
             }
@@ -643,5 +645,21 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             return partyColors[party];
         }
         return "#deebf7";
+    }
+
+    function unknownDataTooltip(d){
+        if(map_tooltip_svg){
+            map_tooltip_svg.remove();
+        }
+        
+        map_tooltip_svg = d3.select("#map-tooltip").append("svg")
+            .attr("width", 150)
+            .attr("height", 30);
+        
+        map_tooltip_svg.append('text')
+            .attr('x', 20)
+            .attr('y', 20)
+            .attr('font-size', '16px')
+            .text('Data Unavailable')
     }
 }
