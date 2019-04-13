@@ -1,4 +1,4 @@
-var state = "TAMIL NADU";
+var state = "UTTAR PRADESH";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014, 2019];
@@ -55,10 +55,16 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
     var path = d3.geoPath().projection(projectionMap);
 
-    var CartoScale = 4;
+    var cartoMargin = {
+    	x: 0,
+    	y: 0,
+    }
+    var CartoScale = 3.4;
+    updateCartoMargin(mapCarto.features, CartoScale);
+
     var CartoLineFunction = d3.line()
-        .x(function(d) { console.log(); return d[0]*CartoScale; })
-        .y(function(d) { return d[1]*CartoScale; });
+        .x(function(d) { return (map_width/2 - cartoMargin.x) + d[0]*CartoScale; })
+        .y(function(d) { return (map_height/2 - cartoMargin.y) + d[1]*CartoScale; });
 
     map_svg = d3.select("#map").append("svg")
         .attr("width", map_width)
@@ -583,29 +589,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         var g = map_tooltip_svg.append('g')
             .attr("transform", "translate("+ 115 +", "+ 85 +")");
 
-        for(var i in rankData){
-            for(var j in rankData[i]){
-                g.append('circle')
-                    .attr('cx', (parseInt(i) + startIndex)*xGap)
-                    .attr('cy', j*yGap)
-                    .attr('r', 5)
-                    .attr('class', 'party-rank-info')
-                    .attr('fill', function(){
-                        if(partyColors[rankData[i][j]]){
-                            return partyColors[rankData[i][j]];
-                        }
-                        return unknownColor;
-                    });
-                g.append('text')
-                    .attr('x', (parseInt(i) + startIndex)*xGap)
-                    .attr('y', 15 + j*yGap)
-                    .attr('font-size', '10px')
-                    .attr('text-anchor', 'middle')
-                    .attr('class', 'party-rank-info')
-                    .text(rankData[i][j])
-            }
-        }
-
         for(var i in rankPath){
             if(i != "IND" && i!= "INDEPENDENT"){
                 g.append("path")
@@ -621,15 +604,33 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                         })
                     )
                     .style('stroke', function(){
-                        if(partyColors[i]){
-                            return partyColors[i];
-                        }
-                        return unknownColor;
+                        return getPartyColor(i)
                     })
                     .style('stroke-width', "5px")
                     .style('opacity', 0.8);
             }
         }
+
+        for(var i in rankData){
+            for(var j in rankData[i]){
+                g.append('circle')
+                    .attr('cx', (parseInt(i) + startIndex)*xGap)
+                    .attr('cy', j*yGap)
+                    .attr('r', 5)
+                    .attr('class', 'party-rank-info')
+                    .attr('fill', function(){
+                        return getPartyColor(rankData[i][j])
+                    });
+                g.append('text')
+                    .attr('x', (parseInt(i) + startIndex)*xGap)
+                    .attr('y', 15 + j*yGap)
+                    .attr('font-size', '10px')
+                    .attr('text-anchor', 'middle')
+                    .attr('class', 'party-rank-info')
+                    .text(rankData[i][j])
+            }
+        }
+
     }
 
     function createPath(d, xGap, yGap){
@@ -661,5 +662,24 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('y', 20)
             .attr('font-size', '16px')
             .text('Data Unavailable')
+    }
+
+    function updateCartoMargin(data, scale){
+    	// Updates the parameters of cartoMargin to centre it in the screen
+    	var x = 0;
+    	var y = 0;
+    	var count = 0;
+
+    	for(var i in data){
+    		for(j in data[i].geometry.coordinates[0]){
+    			x += data[i].geometry.coordinates[0][j][0]*scale;
+    			y += data[i].geometry.coordinates[0][j][1]*scale;
+    			count += 1;
+    		}
+    	} 
+    	x = x/count;
+    	y = y/count;
+    	cartoMargin.x = x;
+    	cartoMargin.y = y;
     }
 }
