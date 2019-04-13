@@ -1,8 +1,8 @@
 var state = "UTTAR PRADESH";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
-var yearList = [1999, 2004, 2009, 2014, 2019];
-var year = 2019; // Current Year
+var yearList = [1999, 2004, 2009, 2014];
+var year = 2014; // Current Year
 var map_legend;
 var partyColors;
 var map_mode = 'cartogram';
@@ -359,31 +359,33 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('class', 'party-table')
             .text("Runner")
 
+        const offset = 42*yearList.length;
+
         for(var i in yearList){
             if(data[yearList[i]]){
                 if(data[yearList[i]][constName(d)]){
                     map_tooltip_svg.append("text")
                         .attr('x', 10)
-                        .attr('y', 190 - 25*i)
+                        .attr('y', offset - 25*i)
                         .style("font-size", "20px")
                         .attr('class', 'party-table')
                         .text(yearList[i])
                     map_tooltip_svg.append("text")
                         .attr('x', 85)
-                        .attr('y', 190 - 25*i)
+                        .attr('y', offset - 25*i)
                         .style("font-size", "20px") 
                         .attr('class', 'party-table')
                         .style("fill", partyColors[data[yearList[i]][constName(d)].Party])
                         .text(data[yearList[i]][constName(d)].Party)
                     map_tooltip_svg.append("text")
                         .attr('x', 150)
-                        .attr('y', 190 - 25*i)
+                        .attr('y', offset - 25*i)
                         .style("font-size", "20px")
                         .attr('class', 'party-table')
                         .text(Math.round(data[yearList[i]][constName(d)].Margin/data[year][constName(d)]["Total Votes"]*10000)/100)
                     map_tooltip_svg.append("text")
                         .attr('x', 220)
-                        .attr('y', 190 - 25*i)
+                        .attr('y', offset - 25*i)
                         .style("font-size", "20px")
                         .attr('class', 'party-table')
                         .style("fill", partyColors[data[yearList[i]][constName(d)].Runner])
@@ -436,7 +438,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         }
 
         yearSliderSVG = d3.select("#year-slider-map").append("svg")
-            .attr("width", 110*(yearList.length - 1))
+            .attr("width", 110*(yearList.length))
             .attr("height", 50);
 
         const r = 8;
@@ -494,6 +496,33 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('cy', offsetX)
             .attr('r', r - 3)
             .attr('fill', "#545454");
+
+        // Placeholder
+        yearSliderSVG.append('line')
+                    .attr('x1', offsetX + 3*100 + r)
+                    .attr('x2', offsetX + (3)*100 + 100 - r)
+                    .attr('y1', offsetX)
+                    .attr('y2', offsetX)
+                    .attr('stroke', '#D3D3D3')
+                    .attr('stroke-width', '2px');
+
+        yearSliderSVG.append('circle')
+            .attr('cx', function(){
+                return  offsetX + (4)*100;
+            })
+            .attr('cy', offsetX)
+            .attr('r', r)
+            .attr('fill', "transparent")
+            .attr('stroke', "#D3D3D3")
+            .attr('stroke-width', '2px');
+
+        yearSliderSVG.append('text')
+            .attr('x', offsetX + 4*100)
+            .attr('y', 40)
+            .attr('font-size', "15px")
+            .attr('fill', "#D3D3D3")
+            .attr('text-anchor', 'middle')
+            .text("2019");
     }
 
     function createRankVis(d){
