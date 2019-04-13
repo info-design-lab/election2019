@@ -116,12 +116,15 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             map_tooltip.style("visibility", "hidden");   
         })
         .on('click', function(d){
-            if(!rankOverlay){
-                createRankVis(d);
-            } else{
-                createSimpleTooltip(d);
+            if(data[year][constName(d)]){
+                if(!rankOverlay){
+                    createRankVis(d);
+                } else{
+                    createSimpleTooltip(d);
+                }
+                rankOverlay = !rankOverlay;
             }
-            rankOverlay = !rankOverlay;
+
         });
 
     var legend_width = 4/12*document.body.clientWidth;//$('#map-legend').width();
