@@ -112,5 +112,9 @@ input:checked + .slider:before {
     width: 100%;
 }
 
-.navbar-brand {float:none;}
-
+.vis-heading{
+  position: absolute;
+  margin-top: 5px;
+  text-align: center;
+  left:50%;
+}
