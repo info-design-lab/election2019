@@ -41,7 +41,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
     // In your Javascript (external .js resource or <script> tag)
     $('.dropdown').select2();
-    
+
     partyColors = partyColors;
 
     var uncheckedParties = [];
@@ -59,7 +59,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     	x: 0,
     	y: 0,
     }
-    var CartoScale = 3.4;
+
+    // set scale according to the size of window
+    var CartoScale = 13/7400*document.body.clientWidth + 278/185;
     updateCartoMargin(mapCarto.features, CartoScale);
 
     var CartoLineFunction = d3.line()
@@ -111,9 +113,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             return map_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
         })
         .on('mouseout', function(d){
-            d3.select(this).attr("stroke-width", "0.3px"); 
+            d3.select(this).attr("stroke-width", "0.3px");
             rankOverlay = false;
-            map_tooltip.style("visibility", "hidden");   
+            map_tooltip.style("visibility", "hidden");
         })
         .on('click', function(d){
             if(data[year][constName(d)]){
@@ -154,11 +156,11 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .text("Summary")
         */
         map_legend.remove();
-        
+
         map_legend = map_legend_svg.append('g')
             .attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
-        var partiesData = getPartyList(data);  
+        var partiesData = getPartyList(data);
         var total = 0;
         for(var i in partiesData){
             total = total + partiesData[i][1];
@@ -246,7 +248,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr("y", 30)
             .style("font-size", "35")
             .style("text-anchor", "end")
-            .text(total);    
+            .text(total);
     }
 
     function getPartyList(d){
@@ -376,7 +378,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                     map_tooltip_svg.append("text")
                         .attr('x', 85)
                         .attr('y', offset - 25*i)
-                        .style("font-size", "20px") 
+                        .style("font-size", "20px")
                         .attr('class', 'party-table')
                         .style("fill", partyColors[data[yearList[i]][constName(d)].Party])
                         .text(data[yearList[i]][constName(d)].Party)
@@ -393,9 +395,9 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                         .attr('class', 'party-table')
                         .style("fill", partyColors[data[yearList[i]][constName(d)].Runner])
                         .text(data[yearList[i]][constName(d)].Runner)
-                }               
+                }
             }
-        }   
+        }
     }
 
     $('.map-switch').on('change', function(d){
@@ -489,7 +491,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
                 updateMap();
                 createPartyLegend();
-            });  
+            });
 
         var selectionCircle = yearSliderSVG.append('circle')
             .attr('cx', function(){
@@ -599,7 +601,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('text-anchor', 'middle')
             .attr('class', 'party-rank-info')
             .text('Rank');
- 
+
         for(var i in yearList){
             map_tooltip_svg.append('text')
                 .attr('x', 100 + i * xGap)
@@ -684,11 +686,11 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         if(map_tooltip_svg){
             map_tooltip_svg.remove();
         }
-        
+
         map_tooltip_svg = d3.select("#map-tooltip").append("svg")
             .attr("width", 150)
             .attr("height", 30);
-        
+
         map_tooltip_svg.append('text')
             .attr('x', 20)
             .attr('y', 20)
@@ -708,7 +710,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     			y += data[i].geometry.coordinates[0][j][1]*scale;
     			count += 1;
     		}
-    	} 
+    	}
     	x = x/count;
     	y = y/count;
     	cartoMargin.x = x;
