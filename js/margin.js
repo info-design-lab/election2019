@@ -104,7 +104,7 @@ function createMarginVis(s){
 function makeMargin(error, mapSatellite){
 	// Create the visualization
 	var map_width = 10/12*document.body.clientWidth;
-    var map_height = 400;
+  var map_height = 400;
 	margin_svg = d3.select("#margin").append("svg")
         .attr("width", map_width)
         .attr("height", map_height);
@@ -162,7 +162,7 @@ function makeMargin(error, mapSatellite){
 	        		}
 	        	}
         	}
-        	
+
         	return unknownColor;
         })
         .attr('stroke-width', function(d){
@@ -173,12 +173,12 @@ function makeMargin(error, mapSatellite){
 	        	}
         	}
         	return '0.3px';
-        })  
+        })
         .style('stroke', 'black')
         .on('mouseover', function(d){
         	if(d.properties.PC_NAME){
 	        	if(mapSelectedConst){
-	        		mapSelectedConst.attr("stroke-width", "0.3px"); 
+	        		mapSelectedConst.attr("stroke-width", "0.3px");
 	        	}
 	        	mapSelectedConst = d3.select(this);
 	        	mapSelectedConst.attr("stroke-width", "2px");
@@ -190,7 +190,7 @@ function makeMargin(error, mapSatellite){
 		    		$(".constituency-select").val(constituency).change();
 	        	} else{ //hide path
 
-	        	}   		
+	        	}
         	}
 
         });
@@ -333,7 +333,7 @@ function makeMargin(error, mapSatellite){
 
        	getMarginLegendList();
 	    createLegend();
-	    
+
 	    map.transition().duration(500)
 	    	.style('fill', function(d) {
         	const constName = d.properties.PC_NAME.toUpperCase();
@@ -358,14 +358,14 @@ function makeMargin(error, mapSatellite){
     function getMarginScales(){
     	 for(var i in yearList){
 	    	if(marginData[state][Object.keys(marginData[state])[0]][yearList[i]]){
-	    		var val = ((margin_mode === "votes") ? 
+	    		var val = ((margin_mode === "votes") ?
 	    				marginData[state][Object.keys(marginData[state])[0]][yearList[i]].Margin : marginData[state][Object.keys(marginData[state])[0]][yearList[i]].Margin/marginData[state][Object.keys(marginData[state])[0]][yearList[i]]["Total Votes"]);
 	   			var domain = [val, val];
 	    	}
 
 	    	for(var j in marginData[state]){
 	    		if(marginData[state][j][yearList[i]]){
-	    			var val = ((margin_mode === "votes") ? 
+	    			var val = ((margin_mode === "votes") ?
 	    				marginData[state][j][yearList[i]].Margin : marginData[state][j][yearList[i]].Margin/marginData[state][j][yearList[i]]["Total Votes"]);
 	    			if(domain[0] >= val){
 		    			domain[0] = val;
@@ -377,16 +377,16 @@ function makeMargin(error, mapSatellite){
 	    	}
 
 	    	if(domain){
-	    		scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, 900]);
+	    		scales[yearList[i]] = d3.scaleLinear().domain(domain).range([0, map_width*0.9]);
 	    	} else{
-	    		scales[yearList[i]] = d3.scaleLinear().domain([0,0]).range([0, 900]);
+	    		scales[yearList[i]] = d3.scaleLinear().domain([0,0]).range([0, map_width*0.9]);
 	    	}
 	    }
     }
 
     function create_path(d){
     	var path_array = [];
-    	
+
     	for(var i=0; i < yearList.length; i++){
     		if(marginData[state][constituency]){
 	    		if(marginData[state][constituency][yearList[i]]){
@@ -457,9 +457,9 @@ function makeMargin(error, mapSatellite){
 	    					.transition().duration(t)
 	    					.attr('x', scales[yearList[i]](margin/total) + 7)
 	    					.style('fill', partyColors[marginData[state][constituency][yearList[i]].Runner])
-	    					.text(marginData[state][constituency][yearList[i]].Runner)		    	
+	    					.text(marginData[state][constituency][yearList[i]].Runner)
 	    			}
-			    	
+
 	    		}
 	    	}
 	    	if(!present){
@@ -494,7 +494,7 @@ function makeMargin(error, mapSatellite){
 	    				return '2px';
 	    			}
     			}
-    			
+
     			return '0.3px';
     		})
     }
@@ -513,7 +513,7 @@ function makeMargin(error, mapSatellite){
     			marginValueList.push(val);
     		}
     	}
-    	
+
     	marginValueList.sort(function(a, b){return b - a});
     	marginLegendList = [];
 
@@ -578,7 +578,7 @@ function makeMargin(error, mapSatellite){
 			if(margin_mode === "votes"){
 					return margin_colours_votes[0];
 				}
-				return margin_colours_percentage[0]; 
+				return margin_colours_percentage[0];
 		}
 
     	for(var i = 0; i < marginLegendList.length - 1; i++){
@@ -586,15 +586,14 @@ function makeMargin(error, mapSatellite){
     			if(margin_mode === "votes"){
     					return margin_colours_votes[i];
     				}
-    				return margin_colours_percentage[i]; 
+    				return margin_colours_percentage[i];
     		}
     	}
 
     	if(margin_mode === "votes"){
 			return margin_colours_votes[marginLegendNumber - 3];
 		}
-    	return margin_colours_percentage[marginLegendNumber - 3]; 
+    	return margin_colours_percentage[marginLegendNumber - 3];
 
     }
 }
-
