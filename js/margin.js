@@ -85,6 +85,7 @@ function getMarginData(err, d, colors){
 
 	createMarginVis(state);
 	createMapVis(state);
+	createIndiaVis();
 }
 
 

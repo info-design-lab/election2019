@@ -11,8 +11,7 @@ var map_tooltip = d3.select("#map")
     .attr('class', 'd3-tip')
     .attr("id", "map-tooltip");
 var rankOverlay = false;
-
-var map_svg, map_legend_svg, yearSliderSVG, map_tooltip_svg;
+var map_svg, map_legend_svg, map_yearSliderSVG, map_tooltip_svg;
 
 function createMapVis(s){
     if(map_svg){
@@ -438,11 +437,11 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
     }
 
     function createYearSlider(){
-        if(yearSliderSVG){
-            yearSliderSVG.remove();
+        if(map_yearSliderSVG){
+            map_yearSliderSVG.remove();
         }
 
-        yearSliderSVG = d3.select("#year-slider-map").append("svg")
+        map_yearSliderSVG = d3.select("#year-slider-map").append("svg")
             .attr("width", 110*(yearList.length))
             .attr("height", 50);
 
@@ -450,7 +449,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
         const offsetX = 14;
         for(var i in yearList){
             if(i != yearList.length - 1){
-                yearSliderSVG.append('line')
+                map_yearSliderSVG.append('line')
                     .attr('x1', offsetX + i*100 + r)
                     .attr('x2', offsetX + (i)*100 + 100 - r)
                     .attr('y1', offsetX)
@@ -459,7 +458,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                     .attr('stroke-width', '2px');
             }
 
-            yearSliderSVG.append('text')
+            map_yearSliderSVG.append('text')
                 .attr('x', offsetX + i*100)
                 .attr('y', 40)
                 .attr('font-size', "15px")
@@ -469,7 +468,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
         }
 
-        yearSliderSVG.selectAll('circle')
+        map_yearSliderSVG.selectAll('circle')
             .data(yearList)
             .enter()
             .append('circle')
@@ -493,7 +492,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 createPartyLegend();
             });
 
-        var selectionCircle = yearSliderSVG.append('circle')
+        var selectionCircle = map_yearSliderSVG.append('circle')
             .attr('cx', function(){
                 const i = yearList.indexOf(year);
                 return  offsetX + i*100;
@@ -503,7 +502,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('fill', "#545454");
 
         // Placeholder
-        yearSliderSVG.append('line')
+        map_yearSliderSVG.append('line')
                     .attr('x1', offsetX + 3*100 + r)
                     .attr('x2', offsetX + (3)*100 + 100 - r)
                     .attr('y1', offsetX)
@@ -511,7 +510,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                     .attr('stroke', '#D3D3D3')
                     .attr('stroke-width', '2px');
 
-        yearSliderSVG.append('circle')
+        map_yearSliderSVG.append('circle')
             .attr('cx', function(){
                 return  offsetX + (4)*100;
             })
@@ -521,7 +520,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
             .attr('stroke', "#D3D3D3")
             .attr('stroke-width', '2px');
 
-        yearSliderSVG.append('text')
+        map_yearSliderSVG.append('text')
             .attr('x', offsetX + 4*100)
             .attr('y', 40)
             .attr('font-size', "15px")

@@ -6,7 +6,7 @@
 
 	   	<script src="scripts/jquery-3.1.1.min.js"></script>
 	   	<script src="scripts/bootstrap/bootstrap.min.js"></script>
-	   	
+
 	   	<script src="scripts/d3.v4.js"></script>
 	    <script src="scripts/queue.js"></script>
 	    <script src="scripts/select2.min.js"></script>
@@ -20,7 +20,7 @@
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
-					
+
 				</div>
 				<div class="col-md-3"></div>
 			</div>
@@ -29,17 +29,17 @@
 		  <div class="vis-heading"><div style="margin-left: -100%; color: black; font-size: 20px; z-index:-10">General Election Results Explorer</div></div>
 		  <div class="container-fluid">
 		    <ul class="nav nav-tabs">
-		    	<li class="active"><a data-toggle="tab" href="#map-tab">Map</a></li>
-			    <li><a data-toggle="tab" href="#margin-tab">Margin</a></li>
+		    	<li class="active"><a data-toggle="tab" href="#map-tab">State Map</a></li>
+			    <li><a data-toggle="tab" href="#margin-tab">State Margin</a></li>
 
 			    <ul class="nav navbar-nav navbar-right">
 		      	<li class="search">
-			      		State: 
+			      		State:
 			      		<select class="state-select" name="states">
 						</select>
 					</li>
-					<li class="search">			      
-						Constituency: 
+					<li class="search">
+						Constituency:
 			      		<select class="constituency-select" name="states">
 						</select>
 				</li>
@@ -48,8 +48,8 @@
 		  </div>
 		</nav>
 
-		<div class="tab-content">
-			<div id="map-tab" class="tab-pane fade  in active">
+		<div class="tab-content" >
+			<div id="map-tab" class="tab-pane fade in active">
 				<div class="section">
 			    <div class='row'>
 			    	<div class="col-md-1">
@@ -70,11 +70,11 @@
 			    	<div class="col-md-4">
 			    	</div>
 			    </div>
-			    <div class='row'>
+			    <div class='row' style="overflow-x: hidden;">
 			    	<div class="col-md-1"></div>
 			    	<div class="col-md-7">
 			    		<div id="map"></div>
-			    		
+
 			    	</div>
 			    	<div class="col-md-4">
 			    		<div id="map-legend"></div>
@@ -142,6 +142,7 @@
 			</div>
 		</div>
 
+			<script src="js/india.js">  </script>
 	  	<script src="js/map.js">  </script>
 	  	<script src="js/margin.js">  </script>
 	  	<script>
@@ -155,7 +156,7 @@
 		/**
 		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-		
+
 		var disqus_config = function () {
 		this.page.url = "https://info-design-lab.github.io/election2019/";  // Replace PAGE_URL with your page's canonical URL variable
 		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
