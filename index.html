@@ -29,7 +29,8 @@
 		  <div class="vis-heading"><div style="margin-left: -100%; color: black; font-size: 20px; z-index:-10">General Election Results Explorer</div></div>
 		  <div class="container-fluid">
 		    <ul class="nav nav-tabs">
-		    	<li class="active"><a data-toggle="tab" href="#map-tab">State Map</a></li>
+					<li class="active"><a data-toggle="tab" href="#india-tab">Geeral Election 2019</a></li>
+		    	<li><a data-toggle="tab" href="#map-tab">State Map</a></li>
 			    <li><a data-toggle="tab" href="#margin-tab">State Margin</a></li>
 
 			    <ul class="nav navbar-nav navbar-right">
@@ -49,7 +50,36 @@
 		</nav>
 
 		<div class="tab-content" >
-			<div id="map-tab" class="tab-pane fade in active">
+			<div id="india-tab" class="tab-pane fade in active">
+				<div class="section">
+					<div class='row'>
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-3">
+						<div style="color: #696969; font-size: 20px;" id="india-switch-div">
+								Cartogram &nbsp<label class="switch">
+								<input type="checkbox" class="india-switch">
+								<span class="slider round"></span>
+							</label>
+							&nbsp Geographic Map
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div id="year-slider-india"></div>
+							<br><br>
+						</div>
+						<div class="col-md-4">
+						</div>
+					</div>
+					<div class='row' style="overflow-x: hidden;">
+						<div class="col-md-12">
+							<div id="india"></div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+			<div id="map-tab" class="tab-pane fade">
 				<div class="section">
 			    <div class='row'>
 			    	<div class="col-md-1">
