@@ -1,4 +1,4 @@
-var state = "UTTAR PRADESH";
+var state = "MIZORAM";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014];
@@ -189,7 +189,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 if(partyColors[d[0]]){
                     return partyColors[d[0]];
                 }
-                return unknownColor;
+                return "#deebf7";
             });
         legendParties.append('circle')
             .attr('cx', -5)
@@ -209,7 +209,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                 if(partyColors[d[0]]){
                     return partyColors[d[0]];
                 }
-                return unknownColor;
+                return "#deebf7";
             })
             .on('click', function(d){
                 if(uncheckedParties.indexOf(d[0]) < 0){
@@ -221,7 +221,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                     if(partyColors[d[0]]){
                         d3.select(this).attr('fill', partyColors[d[0]]);
                     } else{
-                        d3.select(this).attr('fill', unknownColor);
+                        d3.select(this).attr('fill', "#deebf7");
                     }
                 }
                 updateMap();
