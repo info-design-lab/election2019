@@ -1,5 +1,5 @@
 var india_svg, india_legend_svg, india_yearSliderSVG, india_tooltip_svg;
-var india_mode = "cartogram";
+var india_mode = "map";
 
 function createIndiaVis(s){
     if(india_svg){
@@ -11,14 +11,15 @@ function createIndiaVis(s){
 
     $('.india-switch').off('change');
     queue()
-        .defer(d3.json, 'data/india/india.json')
-        .defer(d3.json, 'data/partyColors.json')
+        .defer(d3.json, 'data/india/india2014.json')
+        .defer(d3.json, 'data/india/india2019.json')
+        .defer(d3.json, 'data/frontColors.json')
         .defer(d3.json, 'map/india/cartogram.json')
         .defer(d3.json, 'map/india/india.json')
         .await(makeIndiaVis);
 }
 
-function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
+function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatellite){
   	if(error){
   		console.log(error);
   	}
@@ -47,7 +48,7 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
     }
 
     // set scale according to the size of window
-    var CartoScale = 1.3;
+    var CartoScale = 0.0005*document.body.clientWidth - 0.0046;
     updateCartoMargin(mapCarto.features, CartoScale);
 
     var CartoLineFunction = d3.line()
@@ -61,6 +62,20 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
     var india1 = india_svg.append("g");
     var india2 = india_svg.append("g").attr("transform", "translate(" + (0.5*document.body.clientWidth) + ", 0)")
 
+    // Add year name
+    india1.append("text")
+        .attr("x", 100)
+        .attr("y", 100)
+        .attr('font-size', "50px")
+        .text("2014")
+
+    india2.append("text")
+        .attr("x", 100)
+        .attr("y", 100)
+        .attr('font-size', "50px")
+        .text("2019")
+
+    // Create maps
     var map1 = india1.selectAll("path")
         .data(
             ((india_mode === "map") ? MapGeoObj.features : mapCarto.features)
@@ -78,9 +93,17 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
             )
         .attr('class', 'india-margin-const')
         .style('fill', function(d) {
-            return unknownColor;
-            if(data[year][constName(d)]){
-                return getPartyColor(data[year][constName(d)].Party)
+            if(india_mode == "map"){
+                    if(data2014[d.properties.ST_CODE]){
+                        if(partyColors[data2014[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]]){
+                            return partyColors[data2014[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]];
+                    }
+                }
+                return unknownColor;
+            }
+
+            if(data2014[constName(d)]){
+                return getPartyColor(data2014[constName(d)].Party)
             }
             return unknownColor;
         })
@@ -119,9 +142,17 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
             )
         .attr('class', 'india-margin-const')
         .style('fill', function(d) {
-            return unknownColor;
-            if(data[year][constName(d)]){
-                return getPartyColor(data[year][constName(d)].Party)
+            if(india_mode == "map"){
+                    if(data2019[d.properties.ST_CODE]){
+                        if(partyColors[data2019[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]]){
+                            return partyColors[data2019[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]];
+                    }
+                }
+                return unknownColor;
+            }
+
+            if(data2019[constName(d)]){
+                return getPartyColor(data2019[constName(d)].Party)
             }
             return unknownColor;
         })
@@ -159,27 +190,6 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
 
     //createPartyLegend();
 
-    function getPartyList(d){
-        var list = {};
-        for(var i in d[year]){
-            if (list[d[year][i].Party]){
-                list[d[year][i].Party] = list[d[year][i].Party] + 1;
-            }
-            else{
-                list[d[year][i].Party] = 1;
-            }
-        }
-
-        var l = []
-        for(var i in list){
-            l.push([i, list[i]]);
-        }
-
-        l.sort(function(a, b){
-            return b[1] - a[1];
-        })
-        return l;
-    }
 
 	function arrayRemoveElement(array, e){
         var index = array.indexOf(e);
@@ -189,24 +199,24 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
     }
 
     $('.india-switch').on('change', function(d){
-        map_mode = ((this.checked) ? "map" : "cartogram");
+        india_mode = ((this.checked) ? "map" : "cartogram");
         //updateMap();
-        map1.data(((map_mode === "map") ? MapGeoObj.features : mapCarto.features));
-        map2.data(((map_mode === "map") ? MapGeoObj.features : mapCarto.features));
+        map1.data(((india_mode === "map") ? MapGeoObj.features : mapCarto.features));
+        map2.data(((india_mode === "map") ? MapGeoObj.features : mapCarto.features));
         transtionMap();
     });
 
     function constName(d){
-        if(map_mode === "cartogram"){
+        if(india_mode === "cartogram"){
             return d.id.toUpperCase();
-        } else if(map_mode === "map"){
+        } else if(india_mode === "map"){
             return d.properties.PC_NAME.toUpperCase();
         }
     }
 
     function transtionMap(){
         map1.attr("d", function(d){
-                    if((map_mode === "map")){
+                    if((india_mode === "map")){
                         return path(d);
                     }
                     var array = d.geometry.coordinates[0];
@@ -215,7 +225,7 @@ function makeIndiaVis(error, data, partyColors, mapCarto, mapSatellite){
                 }
             );
         map2.attr("d", function(d){
-                    if((map_mode === "map")){
+                    if((india_mode === "map")){
                         return path(d);
                     }
                     var array = d.geometry.coordinates[0];
