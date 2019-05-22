@@ -57,7 +57,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
         legend_data2019[i] = 0;
     }
 
-    var screenScaleX = d3.scaleLinear([0, 2560], [0, document.body.clientWidth]);
+    var screenScaleX = d3.scaleLinear().domain([0, 2560]).range([0, document.body.clientWidth]);
     var screenScaleY = function(d){ return d*document.body.clientWidth/2560 };
 
     // set scale according to the size of window
@@ -242,7 +242,6 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
         var fronts = Object.keys(legend_data2014)
         
         const h = 40;
-        let x = d3.scaleLinear([0, 100], []);
         let font = 25
 
         var legend2014 = india1.append('g');
