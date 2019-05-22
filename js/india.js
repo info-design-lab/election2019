@@ -1,5 +1,10 @@
 var india_svg, india_legend_svg, india_yearSliderSVG, india_tooltip_svg;
-var india_mode = "map";
+var india_mode = "cartogram";
+
+india_tooltip = d3.select("#india")
+    .append("div")
+    .attr('class', 'd3-tip')
+    .attr("id", "india-tooltip");
 
 function createIndiaVis(s){
     if(india_svg){
@@ -19,7 +24,7 @@ function createIndiaVis(s){
         .await(makeIndiaVis);
 }
 
-function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatellite){
+function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatellite){
   	if(error){
   		console.log(error);
   	}
@@ -28,8 +33,6 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
 
     // In your Javascript (external .js resource or <script> tag)
     $('.dropdown').select2();
-
-    partyColors = partyColors;
 
     var uncheckedParties = [];
     // Create Map
@@ -46,6 +49,16 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
     	x: 0,
     	y: 0,
     }
+
+    var legend_data2014 = {};
+    var legend_data2019 = {};
+    for(i in frontColors){
+        legend_data2014[i] = 0;
+        legend_data2019[i] = 0;
+    }
+
+    var screenScaleX = d3.scaleLinear([0, 2560], [0, document.body.clientWidth]);
+    var screenScaleY = function(d){ return d*document.body.clientWidth/2560 };
 
     // set scale according to the size of window
     var CartoScale = 0.0005*document.body.clientWidth - 0.0046;
@@ -64,15 +77,17 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
 
     // Add year name
     india1.append("text")
-        .attr("x", 100)
+        .attr("x", 0.0391*document.body.clientWidth)
         .attr("y", 100)
-        .attr('font-size', "50px")
+        .attr('font-size', Math.round(0.0195*document.body.clientWidth) + "px")
+        .attr('fill', '#585858')
         .text("2014")
 
     india2.append("text")
-        .attr("x", 100)
+        .attr("x", 0.0391*document.body.clientWidth)
         .attr("y", 100)
-        .attr('font-size', "50px")
+        .attr('font-size', Math.round(0.0195*document.body.clientWidth) + "px")
+        .attr('fill', '#585858')
         .text("2019")
 
     // Create maps
@@ -91,38 +106,55 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
                     return CartoLineFunction(array);
                 }
             )
-        .attr('class', 'india-margin-const')
+        .attr("class", function(d){
+            return d.id
+        })
         .style('fill', function(d) {
             if(india_mode == "map"){
-                    if(data2014[d.properties.ST_CODE]){
-                        if(partyColors[data2014[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]]){
-                            return partyColors[data2014[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]];
-                    }
-                }
-                return unknownColor;
+                var ST_CODE = d.properties.ST_CODE;
+                var PC_CODE = d.properties.PC_CODE;
+
+            } else{
+                var ST_CODE = d.id.split('-')[0];
+                var PC_CODE = parseInt(d.id.split('-')[1]);
             }
 
-            if(data2014[constName(d)]){
-                return getPartyColor(data2014[constName(d)].Party)
+            if(data2014[ST_CODE]){
+                if(frontColors[data2014[ST_CODE][PC_CODE]["Front"]]){
+                    legend_data2014[data2014[ST_CODE][PC_CODE]["Front"]] += 1;
+                    return frontColors[data2014[ST_CODE][PC_CODE]["Front"]]
+                }
             }
+
             return unknownColor;
         })
         .attr('stroke-width', '0.3px')
         .style('stroke', 'black')
         .on('mouseover', function(d){
-            if(!rankOverlay){
-                d3.select(this).attr("stroke-width", "2px");
-                map_tooltip.style("visibility", "visible");
+            d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "2px");
+            if(india_mode == "map"){
+                var ST_CODE = d.properties.ST_CODE;
+                var PC_CODE = d.properties.PC_CODE;
+
+            } else{
+                var ST_CODE = d.id.split('-')[0];
+                var PC_CODE = parseInt(d.id.split('-')[1]);
+            }
+
+            if(data2014[ST_CODE]){
+                if(data2014[ST_CODE][PC_CODE]["Front"]){
+                    createSimpleTooltip(data2014[ST_CODE][PC_CODE]);
+                    india_tooltip.style("visibility", "visible");
+                }
             }
         })
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);
-            return map_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
+            return india_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
         })
         .on('mouseout', function(d){
-            d3.select(this).attr("stroke-width", "0.3px");
-            rankOverlay = false;
-            map_tooltip.style("visibility", "hidden");
+            d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "0.3px");
+            india_tooltip.style("visibility", "hidden");
         });
 
     var map2 = india2.selectAll("path")
@@ -140,38 +172,54 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
                     return CartoLineFunction(array);
                 }
             )
-        .attr('class', 'india-margin-const')
+        .attr("class", function(d){
+            return d.id
+        })
         .style('fill', function(d) {
             if(india_mode == "map"){
-                    if(data2019[d.properties.ST_CODE]){
-                        if(partyColors[data2019[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]]){
-                            return partyColors[data2019[d.properties.ST_CODE][d.properties.PC_CODE]["Front"]];
-                    }
-                }
-                return unknownColor;
+                var ST_CODE = d.properties.ST_CODE;
+                var PC_CODE = d.properties.PC_CODE;
+            } else{
+                var ST_CODE = d.id.split('-')[0];
+                var PC_CODE = parseInt(d.id.split('-')[1]);
             }
 
-            if(data2019[constName(d)]){
-                return getPartyColor(data2019[constName(d)].Party)
+            if(data2019[ST_CODE]){
+                if(frontColors[data2019[ST_CODE][PC_CODE]["Front"]]){
+                    legend_data2019[data2019[ST_CODE][PC_CODE]["Front"]] += 1;
+                    return frontColors[data2019[ST_CODE][PC_CODE]["Front"]]
+                }
             }
+
             return unknownColor;
         })
         .attr('stroke-width', '0.3px')
         .style('stroke', 'black')
         .on('mouseover', function(d){
-            if(!rankOverlay){
-                d3.select(this).attr("stroke-width", "2px");
-                map_tooltip.style("visibility", "visible");
+            d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "2px");
+            if(india_mode == "map"){
+                var ST_CODE = d.properties.ST_CODE;
+                var PC_CODE = d.properties.PC_CODE;
+
+            } else{
+                var ST_CODE = d.id.split('-')[0];
+                var PC_CODE = parseInt(d.id.split('-')[1]);
+            }
+
+            if(data2019[ST_CODE]){
+                if(data2019[ST_CODE][PC_CODE]["Front"]){
+                    createSimpleTooltip(data2019[ST_CODE][PC_CODE]);
+                    india_tooltip.style("visibility", "visible");
+                }
             }
         })
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);
-            return map_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
+            return india_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30 + 0.5*document.body.clientWidth) + "px");
         })
         .on('mouseout', function(d){
-            d3.select(this).attr("stroke-width", "0.3px");
-            rankOverlay = false;
-            map_tooltip.style("visibility", "hidden");
+            d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "0.3px");
+            india_tooltip.style("visibility", "hidden");
         });
 
     var legend_width = 4/12*document.body.clientWidth;//$('#india-legend').width();
@@ -188,14 +236,200 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
     india_legend = india_legend_svg.append('g')
         .attr("transform", "translate("+ legend_margin.left +", "+ legend_margin.top +")");
 
-    //createPartyLegend();
+    createPartyLegend();
 
+    function createPartyLegend(){
+        var fronts = Object.keys(legend_data2014)
+        
+        const h = 40;
+        let x = d3.scaleLinear([0, 100], []);
+        let font = 25
+
+        var legend2014 = india1.append('g');
+        for(i in fronts){
+            legend2014.append("rect")
+                .attr('x', screenScaleX(550 -  10))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(150))
+                .attr('fill', frontColors[fronts[i]])
+                .attr('height', screenScaleY(h))
+
+            legend2014.append("rect")
+                .attr('x', screenScaleX(550 -  10))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(150))
+                .attr('fill', frontColors[fronts[i]])
+                .attr('height', screenScaleY(h))
+
+            legend2014.append("text")
+                .attr('x', screenScaleX(550))
+                .attr('y', screenScaleY(50 + i*h + h*0.5))
+                .style('alignment-baseline', "middle")
+                .style('dominant-baseline', 'middle')
+                .style("fill", "white")
+                .style("font-size", screenScaleY(font) + "px")
+                .text(fronts[i])
+
+            legend2014.append("text")
+                .attr('x', screenScaleX(700))
+                .attr('y', screenScaleY(50 + i*h + h*0.5))
+                .style('alignment-baseline', "middle")
+                .style('dominant-baseline', 'middle')
+                .style("font-size", screenScaleY(font) + "px")
+                .text(legend_data2014[fronts[i]])
+
+            legend2014.append("rect")
+                .attr('x', screenScaleX(550 -  10))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(150))
+                .attr('fill', "transparent")
+                .attr('stroke', "#585858")
+                .attr('stroke-width', "2px")
+                .attr('height', screenScaleY(h))
+
+            legend2014.append("rect")
+                .attr('x', screenScaleX(550 -  10 + 150))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(60))
+                .attr('fill', "transparent")
+                .attr('stroke', "#585858")
+                .attr('stroke-width', "2px")
+                .attr('height', screenScaleY(h))
+        }
+        
+        var legend2019 = india2.append('g');
+        for(i in fronts){
+            legend2019.append("rect")
+                .attr('x', screenScaleX(550 -  10))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(150))
+                .attr('fill', frontColors[fronts[i]])
+                .attr('height', screenScaleY(h))
+
+            legend2019.append("rect")
+                .attr('x', screenScaleX(550 -  10))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(150))
+                .attr('fill', frontColors[fronts[i]])
+                .attr('height', screenScaleY(h))
+
+            legend2019.append("text")
+                .attr('x', screenScaleX(550))
+                .attr('y', screenScaleY(50 + i*h + h*0.5))
+                .style('alignment-baseline', "middle")
+                .style('dominant-baseline', 'middle')
+                .style("fill", "white")
+                .style("font-size", screenScaleY(font) + "px")
+                .text(fronts[i])
+
+            legend2019.append("text")
+                .attr('x', screenScaleX(700))
+                .attr('y', screenScaleY(50 + i*h + h*0.5))
+                .style('alignment-baseline', "middle")
+                .style('dominant-baseline', 'middle')
+                .style("font-size", screenScaleY(font) + "px")
+                .text(legend_data2019[fronts[i]])
+
+            legend2019.append("rect")
+                .attr('x', screenScaleX(550 -  10))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(150))
+                .attr('fill', "transparent")
+                .attr('stroke', "#585858")
+                .attr('stroke-width', "2px")
+                .attr('height', screenScaleY(h))
+
+            legend2019.append("rect")
+                .attr('x', screenScaleX(550 -  10 + 150))
+                .attr('y', screenScaleY(50 + i*h))
+                .attr('width', screenScaleX(60))
+                .attr('fill', "transparent")
+                .attr('stroke', "#585858")
+                .attr('stroke-width', "2px")
+                .attr('height', screenScaleY(h))
+        }
+    }
 
 	function arrayRemoveElement(array, e){
         var index = array.indexOf(e);
         if (index > -1) {
           array.splice(index, 1);
         }
+    }
+
+    function createSimpleTooltip(d){
+        if(india_tooltip_svg){
+            india_tooltip_svg.remove();
+            india_tooltip_svg = d3.select("#india-tooltip").append("svg")
+                .attr("width", 200)
+                .attr("height", 80);
+        } else{
+            india_tooltip_svg = d3.select("#india-tooltip").append("svg")
+                .attr("width", 200)
+                .attr("height", 80);
+        }
+
+        india_tooltip_svg.append("text")
+            .attr('x', 10)
+            .attr('y', 20)
+            .style("font-size", "10px")
+            .style("fill", "black")
+            .text('Front');
+
+        india_tooltip_svg.append("text")
+            .attr('x', 70)
+            .attr('y', 20)
+            .style("font-size", "20px")
+            .style("font-weight", "bold")
+            .attr('fill', function(){
+                if(frontColors[d["Front"]]){
+                    return frontColors[d["Front"]]
+                }
+                return "black"
+            })
+            .text(d["Front"]);
+
+        india_tooltip_svg.append("text")
+            .attr('x', 10)
+            .attr('y', 35)
+            .style("font-size", "10px")
+            .style("fill", "black")
+            .text('Party');
+
+        india_tooltip_svg.append("text")
+            .attr('x', 70)
+            .attr('y', 35)
+            .style("font-size", "15px")
+            .style("fill", "black")
+            .text(d["Party"]);
+
+        india_tooltip_svg.append("text")
+            .attr('x', 10)
+            .attr('y', 50)
+            .style("font-size", "10px")
+            .style("fill", "black")
+            .text('Constituency');
+
+        india_tooltip_svg.append("text")
+            .attr('x', 70)
+            .attr('y', 50)
+            .style("font-size", "15px")
+            .style("fill", "black")
+            .text(d["Constituency"]);
+
+        india_tooltip_svg.append("text")
+            .attr('x', 10)
+            .attr('y', 65)
+            .style("font-size", "10px")
+            .style("fill", "black")
+            .text('State');
+
+        india_tooltip_svg.append("text")
+            .attr('x', 70)
+            .attr('y', 65)
+            .style("font-size", "15px")
+            .style("fill", "black")
+            .text(d["State"]);
     }
 
     $('.india-switch').on('change', function(d){
@@ -245,8 +479,8 @@ function makeIndiaVis(error, data2014, data2019, partyColors, mapCarto, mapSatel
     }
 
     function getPartyColor(party){
-        if(partyColors[party]){
-            return partyColors[party];
+        if(frontColors[party]){
+            return frontColors[party];
         }
         return "#deebf7";
     }

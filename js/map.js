@@ -1,4 +1,4 @@
-var state = "MIZORAM";
+var state = "UTTAR PRADESH";
 var constituency = "RAMTEK";
 var unknownColor = "#e4e4e4";
 var yearList = [1999, 2004, 2009, 2014];
