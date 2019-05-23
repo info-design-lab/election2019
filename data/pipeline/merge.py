@@ -4,7 +4,7 @@ with open('original data/2014.csv') as f:
 	y2014 = [{k: v for k, v in row.items()}
 		for row in csv.DictReader(f, skipinitialspace=True)]
 
-with open('original data/2019.csv') as f:
+with open('2019/indian express.csv') as f:
 	y2019 = [{k: v for k, v in row.items()}
 		for row in csv.DictReader(f, skipinitialspace=True)]
 
@@ -63,7 +63,7 @@ for i in y2019:
 		"Constituency": i["Constituency"].upper(),
 		"Name": i["Name"].upper(),
 		"Party": i["Party"].upper(),
-		"Votes": i["Votes"].upper(),
+		"Votes": 0, #i["Votes"].upper(),
 		"State-code": i["State-code"],
 		"Constituency-code": i["Constituency-code"] ,
 		"Rank": i["Rank"]
