@@ -17,7 +17,7 @@ var margin_map_svg;
 var marginData; // margin map data
 
 queue()
-    .defer(d3.json, 'data/margin/margin.json')
+    .defer(d3.json, 'data/pipeline/margin.json')
     .defer(d3.json, 'data/partyColors.json')
     .await(getMarginData);
 

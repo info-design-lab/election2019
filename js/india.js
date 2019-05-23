@@ -16,15 +16,17 @@ function createIndiaVis(s){
 
     $('.india-switch').off('change');
     queue()
-        .defer(d3.json, 'data/india/india2014.json')
-        .defer(d3.json, 'data/india/india2019.json')
+        .defer(d3.json, 'data/pipeline/india/india2014.json')
+        .defer(d3.json, 'data/pipeline/india/india2019.json')
         .defer(d3.json, 'data/frontColors.json')
+        .defer(d3.json, 'data/fronts2014.json')
+        .defer(d3.json, 'data/fronts2019.json')
         .defer(d3.json, 'map/india/cartogram.json')
         .defer(d3.json, 'map/india/india.json')
         .await(makeIndiaVis);
 }
 
-function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatellite){
+function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front2019, mapCarto, mapSatellite){
   	if(error){
   		console.log(error);
   	}
@@ -239,29 +241,30 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
     createPartyLegend();
 
     function createPartyLegend(){
-        var fronts = Object.keys(legend_data2014)
+        var fronts = Object.keys(front2014);
         
         const h = 40;
-        let font = 25
+        let font = 25;
+        let left_margin = 700
 
         var legend2014 = india1.append('g');
         for(i in fronts){
             legend2014.append("rect")
-                .attr('x', screenScaleX(550 -  10))
+                .attr('x', screenScaleX(left_margin -  10))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(150))
                 .attr('fill', frontColors[fronts[i]])
                 .attr('height', screenScaleY(h))
 
             legend2014.append("rect")
-                .attr('x', screenScaleX(550 -  10))
+                .attr('x', screenScaleX(left_margin -  10))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(150))
                 .attr('fill', frontColors[fronts[i]])
                 .attr('height', screenScaleY(h))
 
             legend2014.append("text")
-                .attr('x', screenScaleX(550))
+                .attr('x', screenScaleX(left_margin))
                 .attr('y', screenScaleY(50 + i*h + h*0.5))
                 .style('alignment-baseline', "middle")
                 .style('dominant-baseline', 'middle')
@@ -270,15 +273,15 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
                 .text(fronts[i])
 
             legend2014.append("text")
-                .attr('x', screenScaleX(700))
+                .attr('x', screenScaleX(left_margin + 150))
                 .attr('y', screenScaleY(50 + i*h + h*0.5))
                 .style('alignment-baseline', "middle")
                 .style('dominant-baseline', 'middle')
                 .style("font-size", screenScaleY(font) + "px")
-                .text(legend_data2014[fronts[i]])
+                .text(front2014[fronts[i]])
 
             legend2014.append("rect")
-                .attr('x', screenScaleX(550 -  10))
+                .attr('x', screenScaleX(left_margin -  10))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(150))
                 .attr('fill', "transparent")
@@ -287,7 +290,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
                 .attr('height', screenScaleY(h))
 
             legend2014.append("rect")
-                .attr('x', screenScaleX(550 -  10 + 150))
+                .attr('x', screenScaleX(left_margin -  10 + 150))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(60))
                 .attr('fill', "transparent")
@@ -296,24 +299,25 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
                 .attr('height', screenScaleY(h))
         }
         
+        fronts = Object.keys(front2019);
         var legend2019 = india2.append('g');
         for(i in fronts){
             legend2019.append("rect")
-                .attr('x', screenScaleX(550 -  10))
+                .attr('x', screenScaleX(left_margin -  10))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(150))
                 .attr('fill', frontColors[fronts[i]])
                 .attr('height', screenScaleY(h))
 
             legend2019.append("rect")
-                .attr('x', screenScaleX(550 -  10))
+                .attr('x', screenScaleX(left_margin -  10))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(150))
                 .attr('fill', frontColors[fronts[i]])
                 .attr('height', screenScaleY(h))
 
             legend2019.append("text")
-                .attr('x', screenScaleX(550))
+                .attr('x', screenScaleX(left_margin))
                 .attr('y', screenScaleY(50 + i*h + h*0.5))
                 .style('alignment-baseline', "middle")
                 .style('dominant-baseline', 'middle')
@@ -322,15 +326,15 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
                 .text(fronts[i])
 
             legend2019.append("text")
-                .attr('x', screenScaleX(700))
+                .attr('x', screenScaleX(left_margin + 150))
                 .attr('y', screenScaleY(50 + i*h + h*0.5))
                 .style('alignment-baseline', "middle")
                 .style('dominant-baseline', 'middle')
                 .style("font-size", screenScaleY(font) + "px")
-                .text(legend_data2019[fronts[i]])
+                .text(front2019[fronts[i]])
 
             legend2019.append("rect")
-                .attr('x', screenScaleX(550 -  10))
+                .attr('x', screenScaleX(left_margin -  10))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(150))
                 .attr('fill', "transparent")
@@ -339,7 +343,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, mapCarto, mapSatel
                 .attr('height', screenScaleY(h))
 
             legend2019.append("rect")
-                .attr('x', screenScaleX(550 -  10 + 150))
+                .attr('x', screenScaleX(left_margin -  10 + 150))
                 .attr('y', screenScaleY(50 + i*h))
                 .attr('width', screenScaleX(60))
                 .attr('fill', "transparent")

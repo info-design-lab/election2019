@@ -24,7 +24,7 @@ function createMapVis(s){
     $('.map-switch').off('change');
 
     queue()
-        .defer(d3.json, 'data/election/' + s + '.json')
+        .defer(d3.json, 'data/pipeline/stateData/' + s + '.json')
         .defer(d3.json, 'data/partyColors.json')
         .defer(d3.json, 'map/cartogram/' + s + '.json')
         .defer(d3.json, 'map/map/' + s + '.json')
