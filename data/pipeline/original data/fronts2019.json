@@ -6,18 +6,5 @@
 	"INC": "UPA",
 	"DMK": "UPA",
 	"RJD": "UPA",
-	"NCP": "UPA",
-
-	"SP": "MGB",
-	"BSP": "MGB",
-	"RLD": "MGB",
-	"LSP": "MGB",
-	"PEP": "MGB",
-	"LIP": "MGB",
-	"Pb. F": "MGB",
-	"CPI": "MGB",
-	"RPMI": "MGB",
-	"JCC": "MGB",
-	"GGP": "MGB",
-	"JSP": "MGB"
+	"NCP": "UPA"
 }

@@ -104,10 +104,10 @@ function createMarginVis(s){
 
 function makeMargin(error, mapSatellite){
 	// Create the visualization
-	var map_width = 10/12*document.body.clientWidth;
-  var map_height = 400;
+	var map_width = 10/12*document.body.clientWidth - 50;
+  	var map_height = 400;
 	margin_svg = d3.select("#margin").append("svg")
-        .attr("width", map_width)
+        .attr("width", map_width + 50)
         .attr("height", map_height);
 
     for(var i in yearList){

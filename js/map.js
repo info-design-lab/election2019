@@ -69,7 +69,7 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
 
     map_svg = d3.select("#map").append("svg")
         .attr("width", map_width)
-        .attr("height", map_height);
+        .attr("height", map_height + 100);
 
     var map = map_svg.selectAll("path")
         .data(

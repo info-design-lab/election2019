@@ -72,7 +72,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
 
     india_svg = d3.select("#india").append("svg")
         .attr("width", document.body.clientWidth)
-        .attr("height", document.body.clientWidth*0.32);
+        .attr("height", document.body.clientWidth*0.32 + 100);
 
     var india1 = india_svg.append("g");
     var india2 = india_svg.append("g").attr("transform", "translate(" + (0.5*document.body.clientWidth) + ", 0)")
@@ -245,7 +245,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
         
         const h = 40;
         let font = 25;
-        let left_margin = 700
+        let left_margin = 600
 
         var legend2014 = india1.append('g');
         for(i in fronts){
