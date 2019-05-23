@@ -118,13 +118,6 @@ function makeMargin(error, mapSatellite){
     		.text(yearList[i]);
     }
 
-    margin_svg.append('text')
-		.attr('x', 10)
-		.attr('y', 350 - 75*4)
-		.attr('fill', "#D3D3D3")
-		.style("font-size", "20px")
-		.text(2019);
-
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()
         .fitSize([map_width*0.8, map_height], MapGeoObj);
