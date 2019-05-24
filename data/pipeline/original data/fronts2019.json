@@ -1,10 +1,25 @@
 {
 	"BJP": "NDA",
 	"SHS": "NDA",
-	"AIADMK": "NDA",
+	"JD(U)": "NDA",
+	"LJP": "NDA",
+	"ADS": "NDA",
+	"SAD": "NDA",
+	"AJSU": "NDA",
+	"NDPP": "NDA",
+	"RLP": "NDA",
+
 
 	"INC": "UPA",
 	"DMK": "UPA",
-	"RJD": "UPA",
-	"NCP": "UPA"
+	"NCP": "UPA",
+	"CPIM": "UPA",
+	"IUML": "UPA",
+	"JKNC": "UPA",
+	"CPI": "UPA",
+	"JD(S)": "UPA",
+	"JMM": "UPA",
+	"KC(M)": "UPA",
+	"RSP": "UPA",
+	"VCK": "UPA"
 }

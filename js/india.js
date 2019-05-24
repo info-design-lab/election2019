@@ -187,9 +187,11 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
             }
 
             if(data2019[ST_CODE]){
-                if(frontColors[data2019[ST_CODE][PC_CODE]["Front"]]){
-                    legend_data2019[data2019[ST_CODE][PC_CODE]["Front"]] += 1;
-                    return frontColors[data2019[ST_CODE][PC_CODE]["Front"]]
+                if(data2019[ST_CODE][PC_CODE]){
+                    if(frontColors[data2019[ST_CODE][PC_CODE]["Front"]]){
+                        legend_data2019[data2019[ST_CODE][PC_CODE]["Front"]] += 1;
+                        return frontColors[data2019[ST_CODE][PC_CODE]["Front"]]
+                    }
                 }
             }
 

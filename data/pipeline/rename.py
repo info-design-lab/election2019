@@ -12,7 +12,9 @@ renaming = {
 	},
 	"Party": {
 		"COMMUNIST PARTY OF INDIA  (MARXIST)": "CPM",
-		"ADMK": "AIADMK",
+		#"ADMK": "AIADMK",
+		"ADMK": "DMK",
+		"SS": "SHS",
 		"AITC": "AITMC",
 		"INDEPENDENT": "IND",
 		"KERALA CONGRESS  (M)": "KEC(M)"

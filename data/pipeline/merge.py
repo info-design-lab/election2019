@@ -4,7 +4,7 @@ with open('original data/2014.csv') as f:
 	y2014 = [{k: v for k, v in row.items()}
 		for row in csv.DictReader(f, skipinitialspace=True)]
 
-with open('2019/indian express.csv') as f:
+with open('2019/2019.csv') as f:
 	y2019 = [{k: v for k, v in row.items()}
 		for row in csv.DictReader(f, skipinitialspace=True)]
 

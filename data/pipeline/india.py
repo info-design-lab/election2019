@@ -6,10 +6,10 @@ with open('output.csv') as f:
 		for row in csv.DictReader(f, skipinitialspace=True)]
 
 year = [2014, 2019]
-output = {}
-
 
 for y in year:
+	output = {}
+
 	with open('original data/fronts' + str(y) + '.json') as f:
  		front = json.load(f)
 
@@ -18,6 +18,7 @@ for y in year:
 			if int(i["Rank"]) == 1:
 				if i["State-code"] not in output.keys():
 					output[i["State-code"]] = {}
+
 				output[i["State-code"]][i["Constituency-code"]] = {
 					"State": i["State"],
 					"Constituency": i["Constituency"],
