@@ -288,7 +288,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
                 .attr('width', screenScaleX(150))
                 .attr('fill', "transparent")
                 .attr('stroke', "#585858")
-                .attr('stroke-width', "2px")
+                .attr('stroke-width', "1px")
                 .attr('height', screenScaleY(h))
 
             legend2014.append("rect")
@@ -297,7 +297,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
                 .attr('width', screenScaleX(60))
                 .attr('fill', "transparent")
                 .attr('stroke', "#585858")
-                .attr('stroke-width', "2px")
+                .attr('stroke-width', "1px")
                 .attr('height', screenScaleY(h))
         }
         
@@ -341,7 +341,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
                 .attr('width', screenScaleX(150))
                 .attr('fill', "transparent")
                 .attr('stroke', "#585858")
-                .attr('stroke-width', "2px")
+                .attr('stroke-width', "1px")
                 .attr('height', screenScaleY(h))
 
             legend2019.append("rect")
@@ -350,7 +350,7 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
                 .attr('width', screenScaleX(60))
                 .attr('fill', "transparent")
                 .attr('stroke', "#585858")
-                .attr('stroke-width', "2px")
+                .attr('stroke-width', "1px")
                 .attr('height', screenScaleY(h))
         }
     }
