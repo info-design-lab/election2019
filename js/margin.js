@@ -110,6 +110,7 @@ function makeMargin(error, mapSatellite){
         .attr("width", map_width + 50)
         .attr("height", map_height);
 
+    var yearList = [1999, 2004, 2009, 2014];
     for(var i in yearList){
     	margin_svg.append('text')
     		.attr('x', 10)

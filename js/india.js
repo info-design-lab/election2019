@@ -1,10 +1,15 @@
-var india_svg, india_legend_svg, india_yearSliderSVG, india_tooltip_svg;
+var india_svg, india_legend_svg, india_yearSliderSVG, india_tooltip1_svg, india_tooltip2_svg;
 var india_mode = "cartogram";
 
-india_tooltip = d3.select("#india")
+india_tooltip1 = d3.select("#india")
     .append("div")
     .attr('class', 'd3-tip')
-    .attr("id", "india-tooltip");
+    .attr("id", "india-tooltip1");
+
+india_tooltip2 = d3.select("#india")
+    .append("div")
+    .attr('class', 'd3-tip')
+    .attr("id", "india-tooltip2");
 
 function createIndiaVis(s){
     if(india_svg){
@@ -112,14 +117,8 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
             return d.id
         })
         .style('fill', function(d) {
-            if(india_mode == "map"){
-                var ST_CODE = d.properties.ST_CODE;
-                var PC_CODE = d.properties.PC_CODE;
-
-            } else{
-                var ST_CODE = d.id.split('-')[0];
-                var PC_CODE = parseInt(d.id.split('-')[1]);
-            }
+            var ST_CODE = getST_CODE(d)[0];
+            var PC_CODE = getST_CODE(d)[1];
 
             if(data2014[ST_CODE]){
                 if(frontColors[data2014[ST_CODE][PC_CODE]["Front"]]){
@@ -134,29 +133,42 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
         .style('stroke', 'black')
         .on('mouseover', function(d){
             d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "2px");
-            if(india_mode == "map"){
-                var ST_CODE = d.properties.ST_CODE;
-                var PC_CODE = d.properties.PC_CODE;
-
-            } else{
-                var ST_CODE = d.id.split('-')[0];
-                var PC_CODE = parseInt(d.id.split('-')[1]);
-            }
+            var ST_CODE = getST_CODE(d)[0];
+            var PC_CODE = getST_CODE(d)[1];
 
             if(data2014[ST_CODE]){
                 if(data2014[ST_CODE][PC_CODE]["Front"]){
-                    createSimpleTooltip(data2014[ST_CODE][PC_CODE]);
-                    india_tooltip.style("visibility", "visible");
+                    createSimpleTooltip(ST_CODE, PC_CODE);
+                    india_tooltip1.style("visibility", "visible");
+                    india_tooltip2.style("visibility", "visible");
                 }
             }
+
+            map1.style('opacity', function(d){
+                    if(getST_CODE(d)[0] == ST_CODE){
+                        return 1;
+                    }
+                    return 0.4;
+                });
+            map2.style('opacity', function(d){
+                    if(getST_CODE(d)[0] == ST_CODE){
+                        return 1;
+                    }
+                    return 0.4;
+                });   
         })
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);
-            return india_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
+            india_tooltip1.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
+            india_tooltip2.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30  + 0.5*document.body.clientWidth) + "px");
         })
         .on('mouseout', function(d){
             d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "0.3px");
-            india_tooltip.style("visibility", "hidden");
+            india_tooltip1.style("visibility", "hidden");
+            india_tooltip2.style("visibility", "hidden");
+
+            map1.style('opacity', 1);
+            map2.style('opacity', 1);
         });
 
     var map2 = india2.selectAll("path")
@@ -178,13 +190,8 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
             return d.id
         })
         .style('fill', function(d) {
-            if(india_mode == "map"){
-                var ST_CODE = d.properties.ST_CODE;
-                var PC_CODE = d.properties.PC_CODE;
-            } else{
-                var ST_CODE = d.id.split('-')[0];
-                var PC_CODE = parseInt(d.id.split('-')[1]);
-            }
+            var ST_CODE = getST_CODE(d)[0];
+            var PC_CODE = getST_CODE(d)[1];
 
             if(data2019[ST_CODE]){
                 if(data2019[ST_CODE][PC_CODE]){
@@ -201,29 +208,42 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
         .style('stroke', 'black')
         .on('mouseover', function(d){
             d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "2px");
-            if(india_mode == "map"){
-                var ST_CODE = d.properties.ST_CODE;
-                var PC_CODE = d.properties.PC_CODE;
-
-            } else{
-                var ST_CODE = d.id.split('-')[0];
-                var PC_CODE = parseInt(d.id.split('-')[1]);
-            }
+            var ST_CODE = getST_CODE(d)[0];
+            var PC_CODE = getST_CODE(d)[1];
 
             if(data2019[ST_CODE]){
                 if(data2019[ST_CODE][PC_CODE]["Front"]){
-                    createSimpleTooltip(data2019[ST_CODE][PC_CODE]);
-                    india_tooltip.style("visibility", "visible");
+                    createSimpleTooltip(ST_CODE, PC_CODE);
+                    india_tooltip1.style("visibility", "visible");
+                    india_tooltip2.style("visibility", "visible");
                 }
             }
+
+            map1.style('opacity', function(d){
+                    if(getST_CODE(d)[0] == ST_CODE){
+                        return 1;
+                    }
+                    return 0.4;
+                });
+            map2.style('opacity', function(d){
+                    if(getST_CODE(d)[0] == ST_CODE){
+                        return 1;
+                    }
+                    return 0.4;
+                });   
         })
         .on("mousemove", function(d) {
             mouse = d3.mouse(this);
-            return india_tooltip.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30 + 0.5*document.body.clientWidth) + "px");
+            india_tooltip1.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30) + "px");
+            india_tooltip2.style("top", (mouse[1] + 0) + "px").style("left", (mouse[0] + 30 + 0.5*document.body.clientWidth) + "px");
         })
         .on('mouseout', function(d){
             d3.selectAll('.' + this.className.baseVal).attr("stroke-width", "0.3px");
-            india_tooltip.style("visibility", "hidden");
+            india_tooltip1.style("visibility", "hidden");
+            india_tooltip2.style("visibility", "hidden");
+
+            map1.style('opacity', 1);
+            map2.style('opacity', 1);
         });
 
     var legend_width = 4/12*document.body.clientWidth;//$('#india-legend').width();
@@ -362,79 +382,92 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
         }
     }
 
-    function createSimpleTooltip(d){
-        if(india_tooltip_svg){
-            india_tooltip_svg.remove();
-            india_tooltip_svg = d3.select("#india-tooltip").append("svg")
-                .attr("width", 200)
-                .attr("height", 80);
-        } else{
-            india_tooltip_svg = d3.select("#india-tooltip").append("svg")
-                .attr("width", 200)
-                .attr("height", 80);
+    function createSimpleTooltip(ST_CODE, PC_CODE){
+        if(india_tooltip1_svg){
+            india_tooltip1_svg.remove();
         }
+        india_tooltip1_svg = d3.select("#india-tooltip1").append("svg")
+            .attr("width", 300)
+            .attr("height", 80);
 
-        india_tooltip_svg.append("text")
-            .attr('x', 10)
-            .attr('y', 20)
-            .style("font-size", "10px")
-            .style("fill", "black")
-            .text('Front');
+        if(india_tooltip2_svg){
+            india_tooltip2_svg.remove();
 
-        india_tooltip_svg.append("text")
-            .attr('x', 70)
-            .attr('y', 20)
-            .style("font-size", "20px")
-            .style("font-weight", "bold")
-            .attr('fill', function(){
-                if(frontColors[d["Front"]]){
-                    return frontColors[d["Front"]]
-                }
-                return "black"
-            })
-            .text(d["Front"]);
+        }
+        india_tooltip2_svg = d3.select("#india-tooltip2").append("svg")
+            .attr("width", 300)
+            .attr("height", 80);    
 
-        india_tooltip_svg.append("text")
-            .attr('x', 10)
-            .attr('y', 35)
-            .style("font-size", "10px")
-            .style("fill", "black")
-            .text('Party');
+        var tipData = [
+            {svg: india_tooltip1_svg, data: data2014},
+            {svg: india_tooltip2_svg, data: data2019},
+        ]  
 
-        india_tooltip_svg.append("text")
-            .attr('x', 70)
-            .attr('y', 35)
-            .style("font-size", "15px")
-            .style("fill", "black")
-            .text(d["Party"]);
+        for(i in tipData){
+            d = tipData[i].data[ST_CODE][PC_CODE]
+            tipData[i].svg.append("text")
+                .attr('x', 10)
+                .attr('y', 20)
+                .style("font-size", "10px")
+                .style("fill", "black")
+                .text('Front');
 
-        india_tooltip_svg.append("text")
-            .attr('x', 10)
-            .attr('y', 50)
-            .style("font-size", "10px")
-            .style("fill", "black")
-            .text('Constituency');
+            tipData[i].svg.append("text")
+                .attr('x', 70)
+                .attr('y', 20)
+                .style("font-size", "20px")
+                .style("font-weight", "bold")
+                .attr('fill', function(){
+                    if(frontColors[d["Front"]]){
+                        return frontColors[d["Front"]]
+                    }
+                    return "black"
+                })
+                .text(d["Front"]);
 
-        india_tooltip_svg.append("text")
-            .attr('x', 70)
-            .attr('y', 50)
-            .style("font-size", "15px")
-            .style("fill", "black")
-            .text(d["Constituency"]);
+            tipData[i].svg.append("text")
+                .attr('x', 10)
+                .attr('y', 35)
+                .style("font-size", "10px")
+                .style("fill", "black")
+                .text('Party');
 
-        india_tooltip_svg.append("text")
-            .attr('x', 10)
-            .attr('y', 65)
-            .style("font-size", "10px")
-            .style("fill", "black")
-            .text('State');
+            tipData[i].svg.append("text")
+                .attr('x', 70)
+                .attr('y', 35)
+                .style("font-size", "15px")
+                .style("fill", "black")
+                .text(d["Party"]);
 
-        india_tooltip_svg.append("text")
-            .attr('x', 70)
-            .attr('y', 65)
-            .style("font-size", "15px")
-            .style("fill", "black")
-            .text(d["State"]);
+            tipData[i].svg.append("text")
+                .attr('x', 10)
+                .attr('y', 50)
+                .style("font-size", "10px")
+                .style("fill", "black")
+                .text('Constituency');
+
+            tipData[i].svg.append("text")
+                .attr('x', 70)
+                .attr('y', 50)
+                .style("font-size", "15px")
+                .style("fill", "black")
+                .text(d["Constituency"]);
+
+            tipData[i].svg.append("text")
+                .attr('x', 10)
+                .attr('y', 65)
+                .style("font-size", "10px")
+                .style("fill", "black")
+                .text('State');
+
+            tipData[i].svg.append("text")
+                .attr('x', 70)
+                .attr('y', 65)
+                .style("font-size", "15px")
+                .style("fill", "black")
+                .text(d["State"]);
+        }
+        
     }
 
     $('.india-switch').on('change', function(d){
@@ -504,6 +537,19 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
             .attr('y', 20)
             .attr('font-size', '16px')
             .text('Data Unavailable')
+    }
+
+    function getST_CODE(d){
+        if(india_mode == "map"){
+            var ST_CODE = d.properties.ST_CODE;
+            var PC_CODE = d.properties.PC_CODE;
+
+        } else{
+            var ST_CODE = d.id.split('-')[0];
+            var PC_CODE = parseInt(d.id.split('-')[1]);
+        }
+
+        return [ST_CODE, PC_CODE];
     }
 
     function updateCartoMargin(data, scale){
