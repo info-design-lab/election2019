@@ -42,7 +42,7 @@ for i in y2019:
 			})
 
 keys = data[0].keys()
-with open('2019.csv', 'w') as output_file:
+with open('output.csv', 'w') as output_file:
     dict_writer = csv.DictWriter(output_file, keys)
     dict_writer.writeheader()
     dict_writer.writerows(data)

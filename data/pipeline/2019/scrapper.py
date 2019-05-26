@@ -2,7 +2,7 @@ import urllib.request as urllib2
 from bs4 import BeautifulSoup
 import csv
 
-with open('constituency.csv') as f:
+with open('constituency2019.csv') as f:
 	constituency = [{k: v for k, v in row.items()}
 		for row in csv.DictReader(f, skipinitialspace=True)]
 

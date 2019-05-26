@@ -211,6 +211,8 @@ function makeIndiaVis(error, data2014, data2019, frontColors, front2014, front20
             var ST_CODE = getST_CODE(d)[0];
             var PC_CODE = getST_CODE(d)[1];
 
+            console.log(ST_CODE);
+
             if(data2019[ST_CODE]){
                 if(data2019[ST_CODE][PC_CODE]["Front"]){
                     createSimpleTooltip(ST_CODE, PC_CODE);
