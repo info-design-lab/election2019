@@ -23,29 +23,33 @@ for c in constituency:
 	c_data = []
 	# Take out the <div> of name and get its value
 	for tr in soup.find_all('tr')[2:]:
-	    tds = tr.find_all('td')
-	    
-	    if len(tds) == 7:
+		tds = tr.find_all('td')
+		
+		if (c['State'] != "Jammu & Kashmir" and len(tds) == 7) or (c['State'] == "Jammu & Kashmir" and len(tds) == 8):
+			if tds[1].text == "Total":
+				continue
+			else:
+				d = {}
+				d['Year'] = 2019
+				d['Name'] = tds[1].text
+				d['Party'] = tds[2].text
 
-	    	if tds[1].text == "Total":
-	    		continue
-	    	else:
-		    	d = {}
-		    	d['Year'] = 2019
-		    	d['Name'] = tds[1].text
-		    	d['Party'] = tds[2].text
-		    	d['Votes'] = int(tds[5].text)
-		    	d['State'] = c['State']
-		    	d['State-code'] = c['State-code']
-		    	d['Constituency'] = c['Constituency']
-		    	d['Constituency-code'] = c['Constituency-code']
+				if c['State'] == "Jammu & Kashmir":
+					d['Votes'] = int(tds[6].text)
+				else:
+					d['Votes'] = int(tds[5].text)
 
-		    	if tds[1].text == "NOTA":
-		    		d['Rank'] = -1
-		    		nota = d
-		    	else:
-		    		d['Rank'] = int(tds[0].text)
-		    		c_data.append(d)
+				d['State'] = c['State']
+				d['State-code'] = c['State-code']
+				d['Constituency'] = c['Constituency']
+				d['Constituency-code'] = c['Constituency-code']
+
+				if tds[1].text == "NOTA":
+					d['Rank'] = -1
+					nota = d
+				else:
+					d['Rank'] = int(tds[0].text)
+					c_data.append(d)
 
 	c_data.sort(key=lambda x: x['Votes'], reverse=True)
 	c_data.append(nota)
@@ -57,6 +61,6 @@ for c in constituency:
 
 keys = data[0].keys()
 with open('output.csv', 'w') as output_file:
-    dict_writer = csv.DictWriter(output_file, keys)
-    dict_writer.writeheader()
-    dict_writer.writerows(data)
+	dict_writer = csv.DictWriter(output_file, keys)
+	dict_writer.writeheader()
+	dict_writer.writerows(data)
