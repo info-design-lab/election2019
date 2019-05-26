@@ -1,6 +1,6 @@
 var margin_mode = "votes";
 var constList = [];
-var latestYear = 2014;
+var latestYear = 2019;
 var marginLegendList = [];
 var marginLegendNumber = 8;
 var margin_legend;
@@ -110,7 +110,6 @@ function makeMargin(error, mapSatellite){
         .attr("width", map_width + 50)
         .attr("height", map_height);
 
-    var yearList = [1999, 2004, 2009, 2014];
     for(var i in yearList){
     	margin_svg.append('text')
     		.attr('x', 10)
@@ -118,13 +117,6 @@ function makeMargin(error, mapSatellite){
     		.style("font-size", "20px")
     		.text(yearList[i]);
     }
-
-    margin_svg.append('text')
-		.attr('x', 10)
-		.attr('y', 350 - 75*4)
-		.attr('fill', "#D3D3D3")
-		.style("font-size", "20px")
-		.text(2019);
 
     var MapGeoObj = topojson.feature(mapSatellite, mapSatellite.objects.state);
     var projectionMap = d3.geoMercator()

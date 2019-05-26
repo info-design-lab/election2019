@@ -387,9 +387,6 @@ function makeMap(error, data, partyColors, mapCarto, mapSatellite){
                         .style("font-size", "20px")
                         .attr('class', 'party-table')
                         .text(function(){
-                            if(yearList[i] == 2019){
-                                return ''
-                            }
                             return Math.round(data[yearList[i]][constName(d)].Margin/data[yearList[i]][constName(d)]["Total Votes"]*10000)/100
                         })
                     map_tooltip_svg.append("text")

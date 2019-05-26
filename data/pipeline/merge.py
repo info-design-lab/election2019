@@ -63,7 +63,7 @@ for i in y2019:
 		"Constituency": i["Constituency"].upper(),
 		"Name": i["Name"].upper(),
 		"Party": i["Party"].upper(),
-		"Votes": 0, #i["Votes"].upper(),
+		"Votes": i["Votes"].upper(),
 		"State-code": i["State-code"],
 		"Constituency-code": i["Constituency-code"] ,
 		"Rank": i["Rank"]

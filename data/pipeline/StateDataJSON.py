@@ -20,33 +20,23 @@ for s in stateNames:
 		if i["Year"] not in data1.keys():
 			data1[i["Year"]] = {}
 
-		if i['Year'] != 2019:
-			if i["Rank"] == "1":
-				data1[i["Year"]][i["Constituency"]] = {
-					"Constituency-code": i["Constituency-code"],
-					"Name": i["Name"],
-					"Party": i["Party"],
-					"Margin": int(i["Votes"]),
-					"Total Votes": int(i["Votes"]),
-					"Ranks": [i["Party"]]
-				}
-			elif i["Rank"] == "2":
-				data1[i["Year"]][i["Constituency"]]["Runner"] = i["Party"]
-				data1[i["Year"]][i["Constituency"]]["Ranks"].append(i["Party"])
-				data1[i["Year"]][i["Constituency"]]["Margin"] -= int(i["Votes"])
-				data1[i["Year"]][i["Constituency"]]["Total Votes"] += int(i["Votes"])
-			else:
-				data1[i["Year"]][i["Constituency"]]["Total Votes"] += int(i["Votes"])
-				data1[i["Year"]][i["Constituency"]]["Ranks"].append(i["Party"])
-		else:
+		if i["Rank"] == "1":
 			data1[i["Year"]][i["Constituency"]] = {
-					"Constituency-code": i["Constituency-code"],
-					"Name": i["Name"],
-					"Party": i["Party"],
-					"Margin": 0,
-					"Total Votes": 1,
-					"Ranks": [i["Party"]]
-				}
+				"Constituency-code": i["Constituency-code"],
+				"Name": i["Name"],
+				"Party": i["Party"],
+				"Margin": int(i["Votes"]),
+				"Total Votes": int(i["Votes"]),
+				"Ranks": [i["Party"]]
+			}
+		elif i["Rank"] == "2":
+			data1[i["Year"]][i["Constituency"]]["Runner"] = i["Party"]
+			data1[i["Year"]][i["Constituency"]]["Ranks"].append(i["Party"])
+			data1[i["Year"]][i["Constituency"]]["Margin"] -= int(i["Votes"])
+			data1[i["Year"]][i["Constituency"]]["Total Votes"] += int(i["Votes"])
+		else:
+			data1[i["Year"]][i["Constituency"]]["Total Votes"] += int(i["Votes"])
+			data1[i["Year"]][i["Constituency"]]["Ranks"].append(i["Party"])
 
 	with open("stateData/" + s + '.json', 'w') as outfile:
 	    json.dump(data1, outfile)
