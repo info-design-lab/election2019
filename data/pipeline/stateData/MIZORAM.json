@@ -1,0 +1,84 @@
+{
+  "1999": {
+    "MIZORAM": {
+      "Constituency-code": "1",
+      "Name": "VANLALZAWMA",
+      "Party": "IND",
+      "Margin": 68659,
+      "Total Votes": 291786,
+      "Ranks": ["IND", "IND", "MDF", "IND", "RJD", "EU", "LS"],
+      "Runner": "IND"
+    }
+  },
+  "2004": {
+    "MIZORAM": {
+      "Constituency-code": "1",
+      "Name": "VANLALZAWMA",
+      "Party": "MNF(D)C",
+      "Margin": 23694,
+      "Total Votes": 348546,
+      "Ranks": ["MNF(D)C", "IND", "EU"],
+      "Runner": "IND"
+    }
+  },
+  "2009": {
+    "MIZORAM": {
+      "Constituency-code": "1",
+      "Name": "C.L.RUALA",
+      "Party": "INC",
+      "Margin": 108955,
+      "Total Votes": 325991,
+      "Ranks": ["INC", "IND", "IND", "NCP"],
+      "Runner": "IND"
+    }
+  },
+  "2014": {
+    "MIZORAM": {
+      "Constituency-code": "1",
+      "Name": "C. L. RUALA",
+      "Party": "INC",
+      "Margin": 6154,
+      "Total Votes": 433201,
+      "Ranks": ["INC", "IND", "AAP", "NOTA"],
+      "Runner": "IND"
+    }
+  },
+  "2019": {
+    "MIZORAM": {
+      "Constituency-code": "1",
+      "Name": "C LALROSANGA",
+      "Party": "MNF(D)C",
+      "Margin": 8140,
+      "Total Votes": 499621,
+      "Ranks": [
+        "MNF(D)C",
+        "IND",
+        "BJP",
+        "PEOPLES REPRESENTATION FOR IDENTITY AND STATUS OF MIZORAM (PRISM) PARTY",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "IND"
+    }
+  },
+  "2024": {
+    "MIZORAM": {
+      "Constituency-code": "1",
+      "Name": "RICHARD VANLALHMANGAIHA",
+      "Party": "ZPM",
+      "Margin": 66845,
+      "Total Votes": 486889,
+      "Ranks": [
+        "ZPM",
+        "MNF(D)C",
+        "INC",
+        "BJP",
+        "IND",
+        "MIZORAM PEOPLE'S CONFERENCE",
+        "NOTA"
+      ],
+      "Runner": "MNF(D)C"
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "1999": {
+    "INNER MANIPUR": {
+      "Constituency-code": "1",
+      "Name": "TH. CHAOBA",
+      "Party": "MSCP",
+      "Margin": 8195,
+      "Total Votes": 442686,
+      "Ranks": ["MSCP", "MPP", "INC", "FPM", "IND", "AJBP", "IND"],
+      "Runner": "MPP"
+    },
+    "OUTER MANIPUR": {
+      "Constituency-code": "2",
+      "Name": "HOLKHOMANG",
+      "Party": "NCP",
+      "Margin": 28809,
+      "Total Votes": 450962,
+      "Ranks": [
+        "NCP",
+        "INC",
+        "MSCP",
+        "IND",
+        "CPI",
+        "JD(U)",
+        "FPM",
+        "RJD",
+        "BJP",
+        "AJBP",
+        "IND"
+      ],
+      "Runner": "INC"
+    }
+  },
+  "2004": {
+    "INNER MANIPUR": {
+      "Constituency-code": "1",
+      "Name": "DR. THOKCHOM MEINYA",
+      "Party": "INC",
+      "Margin": 49333,
+      "Total Votes": 416406,
+      "Ranks": ["INC", "CPI", "FPM", "BJP", "IND", "IND"],
+      "Runner": "CPI"
+    },
+    "OUTER MANIPUR": {
+      "Constituency-code": "2",
+      "Name": "MANI CHARENAMEI",
+      "Party": "IND",
+      "Margin": 82193,
+      "Total Votes": 619151,
+      "Ranks": ["IND", "BJP", "NCP", "MPP", "JD(U)", "AITMC"],
+      "Runner": "BJP"
+    }
+  },
+  "2009": {
+    "INNER MANIPUR": {
+      "Constituency-code": "1",
+      "Name": "DR. THOKCHOM MEINYA",
+      "Party": "INC",
+      "Margin": 30960,
+      "Total Votes": 583218,
+      "Ranks": ["INC", "CPI", "MPP", "BJP", "IND", "IND", "RBCP"],
+      "Runner": "CPI"
+    },
+    "OUTER MANIPUR": {
+      "Constituency-code": "2",
+      "Name": "THANGSO BAITE",
+      "Party": "INC",
+      "Margin": 119798,
+      "Total Votes": 756181,
+      "Ranks": ["INC", "PDA", "BJP", "NCP", "RJD", "IND", "IND", "LJP", "IND"],
+      "Runner": "PDA"
+    }
+  },
+  "2014": {
+    "INNER MANIPUR": {
+      "Constituency-code": "1",
+      "Name": "DR. THOKCHOM MEINYA",
+      "Party": "INC",
+      "Margin": 94674,
+      "Total Votes": 640871,
+      "Ranks": [
+        "INC",
+        "CPI",
+        "BJP",
+        "AITMC",
+        "IND",
+        "AAP",
+        "MANIPUR DEMOCRATIC PEOPLES'S FRONT",
+        "JAI MAHA BHARATH PARTY",
+        "NOTA"
+      ],
+      "Runner": "CPI"
+    },
+    "OUTER MANIPUR": {
+      "Constituency-code": "2",
+      "Name": "THANGSO BAITE",
+      "Party": "INC",
+      "Margin": 15637,
+      "Total Votes": 771766,
+      "Ranks": [
+        "INC",
+        "NPF",
+        "BJP",
+        "NCP",
+        "IND",
+        "AITMC",
+        "AAP",
+        "JANATA DAL  (UNITED)",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "NPF"
+    }
+  },
+  "2019": {
+    "INNER MANIPUR": {
+      "Constituency-code": "1",
+      "Name": "DR RAJKUMAR RANJAN SINGH",
+      "Party": "BJP",
+      "Margin": 17755,
+      "Total Votes": 759301,
+      "Ranks": [
+        "BJP",
+        "INC",
+        "CPI",
+        "IND",
+        "NORTH EAST INDIA DEVELOPMENT PARTY",
+        "MANIPUR PEOPLE\u2019S PARTY",
+        "IND",
+        "MANIPUR DEMOCRATIC PEOPLES'S FRONT",
+        "IND",
+        "RASHTRIYA JANHIT SANGHARSH PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "OUTER MANIPUR": {
+      "Constituency-code": "2",
+      "Name": "LORHO S. PFOZE",
+      "Party": "NPF",
+      "Margin": 73782,
+      "Total Votes": 858029,
+      "Ranks": [
+        "NPF",
+        "BJP",
+        "INC",
+        "NPP",
+        "NORTH EAST INDIA DEVELOPMENT PARTY",
+        "JANATA DAL  (UNITED)",
+        "NCP",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    }
+  },
+  "2024": {
+    "INNER MANIPUR": {
+      "Constituency-code": "1",
+      "Name": "ANGOMCHA BIMOL AKOIJAM",
+      "Party": "INC",
+      "Margin": 108461,
+      "Total Votes": 789912,
+      "Ranks": [
+        "INC",
+        "BJP",
+        "RPI (ATHAWALE)",
+        "IND",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "OUTER MANIPUR": {
+      "Constituency-code": "2",
+      "Name": "ALFRED KANNGAM S ARTHUR",
+      "Party": "INC",
+      "Margin": 83455,
+      "Total Votes": 791243,
+      "Ranks": [
+        "INC",
+        "NPF",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "NPF"
+    }
+  }
+}

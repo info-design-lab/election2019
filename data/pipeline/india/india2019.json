@@ -1,0 +1,3324 @@
+{
+  "S01": {
+    "1": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ADILABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ARUKU",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "19": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "SRIKAKULAM",
+      "Party": "TDP",
+      "Front": "Others"
+    },
+    "20": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "VIZIANAGARAM",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "21": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "VISAKHAPATNAM",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "22": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ANAKAPALLI",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "23": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "KAKINADA",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "24": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "AMALAPURAM",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "25": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "RAJAHMUNDRY",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "26": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NARSAPURAM",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "27": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ELURU",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "28": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "MACHILIPATNAM",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "29": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "VIJAYAWADA",
+      "Party": "TDP",
+      "Front": "Others"
+    },
+    "30": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "GUNTUR",
+      "Party": "TDP",
+      "Front": "Others"
+    },
+    "31": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NARASARAOPET",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "32": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "BAPATLA",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "33": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ONGOLE",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "34": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NANDYAL",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "35": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "KURNOOL",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "36": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ANANTAPUR",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "37": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "HINDUPUR",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "38": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "KADAPA",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "39": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NELLORE",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "40": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "TIRUPATI",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "41": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "RAJAMPET",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "42": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "CHITTOOR",
+      "Party": "YSRCP",
+      "Front": "Others"
+    },
+    "2": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "PEDDAPALLE",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "3": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "KARIMNAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NIZAMABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "ZAHIRABAD",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "6": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "MEDAK",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "7": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "MALKAJGIRI",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "8": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "SECUNDRABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "HYDERABAD",
+      "Party": "AIMIM",
+      "Front": "Others"
+    },
+    "10": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "CHELVELLA",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "11": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "MAHBUBNAGAR",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "12": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NAGARKURNOOL",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "13": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "NALGONDA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "14": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "BHONGIR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "15": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "WARANGAL",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "16": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "MAHABUBABAD",
+      "Party": "TRS",
+      "Front": "Others"
+    },
+    "17": {
+      "State": "ANDHRA PRADESH - TELANGANA",
+      "Constituency": "KHAMMAM",
+      "Party": "TRS",
+      "Front": "Others"
+    }
+  },
+  "U01": {
+    "1": {
+      "State": "A&N ISLANDS",
+      "Constituency": "ANDAMAN & NICOBAR ISLANDS",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "S02": {
+    "1": {
+      "State": "ARUNACHAL PRADESH",
+      "Constituency": "ARUNACHAL WEST",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "ARUNACHAL PRADESH",
+      "Constituency": "ARUNACHAL EAST",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S03": {
+    "1": {
+      "State": "ASSAM",
+      "Constituency": "KARIMGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "ASSAM",
+      "Constituency": "SILCHAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "ASSAM",
+      "Constituency": "AUTONOMOUS DISTRICT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "ASSAM",
+      "Constituency": "DHUBRI",
+      "Party": "ALL INDIA UNITED DEMOCRATIC FRONT",
+      "Front": "Others"
+    },
+    "5": {
+      "State": "ASSAM",
+      "Constituency": "KOKRAJHAR",
+      "Party": "IND",
+      "Front": "Others"
+    },
+    "6": {
+      "State": "ASSAM",
+      "Constituency": "BARPETA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "7": {
+      "State": "ASSAM",
+      "Constituency": "GAUHATI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "ASSAM",
+      "Constituency": "MANGALDOI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "ASSAM",
+      "Constituency": "TEZPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "ASSAM",
+      "Constituency": "NOWGONG",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "ASSAM",
+      "Constituency": "KALIABOR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "12": {
+      "State": "ASSAM",
+      "Constituency": "JORHAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "ASSAM",
+      "Constituency": "DIBRUGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "ASSAM",
+      "Constituency": "LAKHIMPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S04": {
+    "1": {
+      "State": "BIHAR",
+      "Constituency": "VALMIKI NAGAR",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "2": {
+      "State": "BIHAR",
+      "Constituency": "PASCHIM CHAMPARAN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "BIHAR",
+      "Constituency": "PURVI CHAMPARAN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "BIHAR",
+      "Constituency": "SHEOHAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "BIHAR",
+      "Constituency": "SITAMARHI",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "6": {
+      "State": "BIHAR",
+      "Constituency": "MADHUBANI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "BIHAR",
+      "Constituency": "JHANJHARPUR",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "8": {
+      "State": "BIHAR",
+      "Constituency": "SUPAUL",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "9": {
+      "State": "BIHAR",
+      "Constituency": "ARARIA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "BIHAR",
+      "Constituency": "KISHANGANJ",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "BIHAR",
+      "Constituency": "KATIHAR",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "12": {
+      "State": "BIHAR",
+      "Constituency": "PURNIA",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "13": {
+      "State": "BIHAR",
+      "Constituency": "MADHEPURA",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "14": {
+      "State": "BIHAR",
+      "Constituency": "DARBHANGA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "BIHAR",
+      "Constituency": "MUZAFFARPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "BIHAR",
+      "Constituency": "VAISHALI",
+      "Party": "LJP",
+      "Front": "NDA"
+    },
+    "17": {
+      "State": "BIHAR",
+      "Constituency": "GOPALGANJ (SC)",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "18": {
+      "State": "BIHAR",
+      "Constituency": "SIWAN",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "19": {
+      "State": "BIHAR",
+      "Constituency": "MAHARAJGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "20": {
+      "State": "BIHAR",
+      "Constituency": "SARAN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "21": {
+      "State": "BIHAR",
+      "Constituency": "HAJIPUR (SC)",
+      "Party": "LJP",
+      "Front": "NDA"
+    },
+    "22": {
+      "State": "BIHAR",
+      "Constituency": "UJIARPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "BIHAR",
+      "Constituency": "SAMASTIPUR (SC)",
+      "Party": "LJP",
+      "Front": "NDA"
+    },
+    "24": {
+      "State": "BIHAR",
+      "Constituency": "BEGUSARAI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "BIHAR",
+      "Constituency": "KHAGARIA",
+      "Party": "LJP",
+      "Front": "NDA"
+    },
+    "26": {
+      "State": "BIHAR",
+      "Constituency": "BHAGALPUR",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "27": {
+      "State": "BIHAR",
+      "Constituency": "BANKA",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "28": {
+      "State": "BIHAR",
+      "Constituency": "MUNGER",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "29": {
+      "State": "BIHAR",
+      "Constituency": "NALANDA",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "30": {
+      "State": "BIHAR",
+      "Constituency": "PATNA SAHIB",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "31": {
+      "State": "BIHAR",
+      "Constituency": "PATALIPUTRA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "32": {
+      "State": "BIHAR",
+      "Constituency": "ARRAH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "33": {
+      "State": "BIHAR",
+      "Constituency": "BUXAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "34": {
+      "State": "BIHAR",
+      "Constituency": "SASARAM (SC)",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "35": {
+      "State": "BIHAR",
+      "Constituency": "KARAKAT",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "36": {
+      "State": "BIHAR",
+      "Constituency": "JAHANABAD",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "37": {
+      "State": "BIHAR",
+      "Constituency": "AURANGABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "38": {
+      "State": "BIHAR",
+      "Constituency": "GAYA (SC)",
+      "Party": "JD(U)",
+      "Front": "Others"
+    },
+    "39": {
+      "State": "BIHAR",
+      "Constituency": "NAWADA",
+      "Party": "LJP",
+      "Front": "NDA"
+    },
+    "40": {
+      "State": "BIHAR",
+      "Constituency": "JAMUI (SC)",
+      "Party": "LJP",
+      "Front": "NDA"
+    }
+  },
+  "U02": {
+    "1": {
+      "State": "CHANDIGARH",
+      "Constituency": "CHANDIGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S26": {
+    "1": {
+      "State": "CHHATTISGARH",
+      "Constituency": "SARGUJA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "CHHATTISGARH",
+      "Constituency": "RAIGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "CHHATTISGARH",
+      "Constituency": "JANJGIR-CHAMPA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "CHHATTISGARH",
+      "Constituency": "KORBA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "5": {
+      "State": "CHHATTISGARH",
+      "Constituency": "BILASPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "CHHATTISGARH",
+      "Constituency": "RAJNANDGAON",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "CHHATTISGARH",
+      "Constituency": "DURG",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "CHHATTISGARH",
+      "Constituency": "RAIPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "CHHATTISGARH",
+      "Constituency": "MAHASAMUND",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "CHHATTISGARH",
+      "Constituency": "BASTAR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "CHHATTISGARH",
+      "Constituency": "KANKER",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "U03": {
+    "1": {
+      "State": "D&N HAVELI",
+      "Constituency": "DADAR & NAGAR HAVELI",
+      "Party": "IND",
+      "Front": "Others"
+    }
+  },
+  "U04": {
+    "1": {
+      "State": "DAMAN & DIU",
+      "Constituency": "DAMAN & DIU",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "U05": {
+    "1": {
+      "State": "NCT OF DELHI",
+      "Constituency": "CHANDNI CHOWK",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "NCT OF DELHI",
+      "Constituency": "NORTH EAST DELHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "NCT OF DELHI",
+      "Constituency": "EAST DELHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "NCT OF DELHI",
+      "Constituency": "NEW DELHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "NCT OF DELHI",
+      "Constituency": "NORTH WEST DELHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "NCT OF DELHI",
+      "Constituency": "WEST DELHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "NCT OF DELHI",
+      "Constituency": "SOUTH DELHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S05": {
+    "1": {
+      "State": "GOA",
+      "Constituency": "NORTH GOA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "GOA",
+      "Constituency": "SOUTH GOA",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "S06": {
+    "1": {
+      "State": "GUJARAT",
+      "Constituency": "KACHCHH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "GUJARAT",
+      "Constituency": "BANASKANTHA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "GUJARAT",
+      "Constituency": "PATAN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "GUJARAT",
+      "Constituency": "MAHESANA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "GUJARAT",
+      "Constituency": "SABARKANTHA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "GUJARAT",
+      "Constituency": "GANDHINAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "GUJARAT",
+      "Constituency": "AHMEDABAD EAST",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "GUJARAT",
+      "Constituency": "AHMEDABAD WEST",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "GUJARAT",
+      "Constituency": "SURENDRANAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "GUJARAT",
+      "Constituency": "RAJKOT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "GUJARAT",
+      "Constituency": "PORBANDAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "GUJARAT",
+      "Constituency": "JAMNAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "GUJARAT",
+      "Constituency": "JUNAGADH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "GUJARAT",
+      "Constituency": "AMRELI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "GUJARAT",
+      "Constituency": "BHAVNAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "GUJARAT",
+      "Constituency": "ANAND",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "17": {
+      "State": "GUJARAT",
+      "Constituency": "KHEDA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "GUJARAT",
+      "Constituency": "PANCHMAHAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "GUJARAT",
+      "Constituency": "DAHOD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "20": {
+      "State": "GUJARAT",
+      "Constituency": "VADODARA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "21": {
+      "State": "GUJARAT",
+      "Constituency": "CHHOTA UDAIPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "22": {
+      "State": "GUJARAT",
+      "Constituency": "BHARUCH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "GUJARAT",
+      "Constituency": "BARDOLI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "24": {
+      "State": "GUJARAT",
+      "Constituency": "SURAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "GUJARAT",
+      "Constituency": "NAVSARI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "26": {
+      "State": "GUJARAT",
+      "Constituency": "VALSAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S07": {
+    "1": {
+      "State": "HARYANA",
+      "Constituency": "AMBALA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "HARYANA",
+      "Constituency": "KURUKSHETRA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "HARYANA",
+      "Constituency": "SIRSA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "HARYANA",
+      "Constituency": "HISAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "HARYANA",
+      "Constituency": "KARNAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "HARYANA",
+      "Constituency": "SONIPAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "HARYANA",
+      "Constituency": "ROHTAK",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "HARYANA",
+      "Constituency": "BHIWANI-MAHENDRAGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "HARYANA",
+      "Constituency": "GURGAON",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "HARYANA",
+      "Constituency": "FARIDABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S08": {
+    "1": {
+      "State": "HIMACHAL PRADESH",
+      "Constituency": "KANGRA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "HIMACHAL PRADESH",
+      "Constituency": "MANDI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "HIMACHAL PRADESH",
+      "Constituency": "HAMIRPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "HIMACHAL PRADESH",
+      "Constituency": "SHIMLA",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S09": {
+    "1": {
+      "State": "JAMMU & KASHMIR",
+      "Constituency": "BARAMULLA",
+      "Party": "JKNC",
+      "Front": "UPA"
+    },
+    "2": {
+      "State": "JAMMU & KASHMIR",
+      "Constituency": "SRINAGAR",
+      "Party": "JKNC",
+      "Front": "UPA"
+    },
+    "3": {
+      "State": "JAMMU & KASHMIR",
+      "Constituency": "ANANTNAG",
+      "Party": "JKNC",
+      "Front": "UPA"
+    },
+    "4": {
+      "State": "JAMMU & KASHMIR",
+      "Constituency": "LADAKH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "JAMMU & KASHMIR",
+      "Constituency": "UDHAMPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "JAMMU & KASHMIR",
+      "Constituency": "JAMMU",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S27": {
+    "1": {
+      "State": "JHARKHAND",
+      "Constituency": "RAJMAHAL",
+      "Party": "JMM",
+      "Front": "UPA"
+    },
+    "2": {
+      "State": "JHARKHAND",
+      "Constituency": "DUMKA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "JHARKHAND",
+      "Constituency": "GODDA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "JHARKHAND",
+      "Constituency": "CHATRA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "JHARKHAND",
+      "Constituency": "KODARMA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "JHARKHAND",
+      "Constituency": "GIRIDIH",
+      "Party": "AJSU PARTY",
+      "Front": "Others"
+    },
+    "7": {
+      "State": "JHARKHAND",
+      "Constituency": "DHANBAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "JHARKHAND",
+      "Constituency": "RANCHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "JHARKHAND",
+      "Constituency": "JAMSHEDPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "JHARKHAND",
+      "Constituency": "SINGHBHUM",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "JHARKHAND",
+      "Constituency": "KHUNTI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "JHARKHAND",
+      "Constituency": "LOHARDAGA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "JHARKHAND",
+      "Constituency": "PALAMAU",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "JHARKHAND",
+      "Constituency": "HAZARIBAGH",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S10": {
+    "1": {
+      "State": "KARNATAKA",
+      "Constituency": "CHIKKODI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "KARNATAKA",
+      "Constituency": "BELGAUM",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "KARNATAKA",
+      "Constituency": "BAGALKOT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "KARNATAKA",
+      "Constituency": "BIJAPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "KARNATAKA",
+      "Constituency": "GULBARGA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "KARNATAKA",
+      "Constituency": "RAICHUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "KARNATAKA",
+      "Constituency": "BIDAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "KARNATAKA",
+      "Constituency": "KOPPAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "KARNATAKA",
+      "Constituency": "BELLARY",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "KARNATAKA",
+      "Constituency": "HAVERI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "KARNATAKA",
+      "Constituency": "DHARWAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "KARNATAKA",
+      "Constituency": "UTTARA KANNADA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "KARNATAKA",
+      "Constituency": "DAVANAGERE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "KARNATAKA",
+      "Constituency": "SHIMOGA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "KARNATAKA",
+      "Constituency": "UDUPI CHIKMAGALUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "KARNATAKA",
+      "Constituency": "HASSAN",
+      "Party": "JANATA DAL  (SECULAR)",
+      "Front": "Others"
+    },
+    "17": {
+      "State": "KARNATAKA",
+      "Constituency": "DAKSHINA KANNADA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "KARNATAKA",
+      "Constituency": "CHITRADURGA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "KARNATAKA",
+      "Constituency": "TUMKUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "20": {
+      "State": "KARNATAKA",
+      "Constituency": "MANDYA",
+      "Party": "IND",
+      "Front": "Others"
+    },
+    "21": {
+      "State": "KARNATAKA",
+      "Constituency": "MYSORE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "22": {
+      "State": "KARNATAKA",
+      "Constituency": "CHAMARAJANAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "KARNATAKA",
+      "Constituency": "BANGALORE RURAL",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "24": {
+      "State": "KARNATAKA",
+      "Constituency": "BANGALORE NORTH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "KARNATAKA",
+      "Constituency": "BANGALORE CENTRAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "26": {
+      "State": "KARNATAKA",
+      "Constituency": "BANGALORE SOUTH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "27": {
+      "State": "KARNATAKA",
+      "Constituency": "CHIKKBALLAPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "28": {
+      "State": "KARNATAKA",
+      "Constituency": "KOLAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S11": {
+    "1": {
+      "State": "KERALA",
+      "Constituency": "KASARAGOD",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "2": {
+      "State": "KERALA",
+      "Constituency": "KANNUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "3": {
+      "State": "KERALA",
+      "Constituency": "VADAKARA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "4": {
+      "State": "KERALA",
+      "Constituency": "WAYANAD",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "5": {
+      "State": "KERALA",
+      "Constituency": "KOZHIKODE",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "6": {
+      "State": "KERALA",
+      "Constituency": "MALAPPURAM",
+      "Party": "IUML",
+      "Front": "UPA"
+    },
+    "7": {
+      "State": "KERALA",
+      "Constituency": "PONNANI",
+      "Party": "IUML",
+      "Front": "UPA"
+    },
+    "8": {
+      "State": "KERALA",
+      "Constituency": "PALAKKAD",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "9": {
+      "State": "KERALA",
+      "Constituency": "ALATHUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "10": {
+      "State": "KERALA",
+      "Constituency": "THRISSUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "KERALA",
+      "Constituency": "CHALAKUDY",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "12": {
+      "State": "KERALA",
+      "Constituency": "ERNAKULAM",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "13": {
+      "State": "KERALA",
+      "Constituency": "IDUKKI",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "14": {
+      "State": "KERALA",
+      "Constituency": "KOTTAYAM",
+      "Party": "KEC(M)",
+      "Front": "Others"
+    },
+    "15": {
+      "State": "KERALA",
+      "Constituency": "ALAPPUZHA",
+      "Party": "CPM",
+      "Front": "Others"
+    },
+    "16": {
+      "State": "KERALA",
+      "Constituency": "MAVELIKKARA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "17": {
+      "State": "KERALA",
+      "Constituency": "PATHANAMTHITTA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "18": {
+      "State": "KERALA",
+      "Constituency": "KOLLAM",
+      "Party": "RSP",
+      "Front": "UPA"
+    },
+    "19": {
+      "State": "KERALA",
+      "Constituency": "ATTINGAL",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "20": {
+      "State": "KERALA",
+      "Constituency": "THIRUVANANTHAPURAM",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "U06": {
+    "1": {
+      "State": "LAKSHADWEEP",
+      "Constituency": "LAKSHADWEEP",
+      "Party": "NCP",
+      "Front": "UPA"
+    }
+  },
+  "S12": {
+    "1": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "MORENA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "BHIND",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "GWALIOR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "GUNA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "SAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "TIKAMGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "DAMOH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "KHAJURAHO",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "SATNA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "REWA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "SIDHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "SHAHDOL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "JABALPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "MANDLA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "BALAGHAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "CHHINDWARA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "17": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "HOSHANGABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "VIDISHA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "BHOPAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "20": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "RAJGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "21": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "DEWAS",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "22": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "UJJAIN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "MANDSOUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "24": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "RATLAM",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "DHAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "26": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "INDORE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "27": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "KHARGONE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "28": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "KHANDWA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "29": {
+      "State": "MADHYA PRADESH",
+      "Constituency": "BETUL",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S13": {
+    "1": {
+      "State": "MAHARASHTRA",
+      "Constituency": "NANDURBAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "MAHARASHTRA",
+      "Constituency": "DHULE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "MAHARASHTRA",
+      "Constituency": "JALGAON",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "MAHARASHTRA",
+      "Constituency": "RAVER",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "MAHARASHTRA",
+      "Constituency": "BULDHANA",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "MAHARASHTRA",
+      "Constituency": "AKOLA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "MAHARASHTRA",
+      "Constituency": "AMRAVATI",
+      "Party": "IND",
+      "Front": "Others"
+    },
+    "8": {
+      "State": "MAHARASHTRA",
+      "Constituency": "WARDHA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "MAHARASHTRA",
+      "Constituency": "RAMTEK",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "MAHARASHTRA",
+      "Constituency": "NAGPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "MAHARASHTRA",
+      "Constituency": "BHANDARA - GONDIYA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "MAHARASHTRA",
+      "Constituency": "GADCHIROLI-CHIMUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "MAHARASHTRA",
+      "Constituency": "CHANDRAPUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "14": {
+      "State": "MAHARASHTRA",
+      "Constituency": "YAVATMAL-WASHIM",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "MAHARASHTRA",
+      "Constituency": "HINGOLI",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "MAHARASHTRA",
+      "Constituency": "NANDED",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "17": {
+      "State": "MAHARASHTRA",
+      "Constituency": "PARBHANI",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "MAHARASHTRA",
+      "Constituency": "JALNA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "MAHARASHTRA",
+      "Constituency": "AURANGABAD",
+      "Party": "AIMIM",
+      "Front": "Others"
+    },
+    "20": {
+      "State": "MAHARASHTRA",
+      "Constituency": "DINDORI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "21": {
+      "State": "MAHARASHTRA",
+      "Constituency": "NASHIK",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "22": {
+      "State": "MAHARASHTRA",
+      "Constituency": "PALGHAR",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "MAHARASHTRA",
+      "Constituency": "BHIWANDI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "24": {
+      "State": "MAHARASHTRA",
+      "Constituency": "KALYAN",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "MAHARASHTRA",
+      "Constituency": "THANE",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "26": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MUMBAI NORTH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "27": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MUMBAI NORTH WEST",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "28": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MUMBAI NORTH EAST",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "29": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MUMBAI NORTH CENTRAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "30": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MUMBAI SOUTH CENTRAL",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "31": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MUMBAI SOUTH",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "32": {
+      "State": "MAHARASHTRA",
+      "Constituency": "RAIGAD",
+      "Party": "NCP",
+      "Front": "UPA"
+    },
+    "33": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MAVAL",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "34": {
+      "State": "MAHARASHTRA",
+      "Constituency": "PUNE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "35": {
+      "State": "MAHARASHTRA",
+      "Constituency": "BARAMATI",
+      "Party": "NCP",
+      "Front": "UPA"
+    },
+    "36": {
+      "State": "MAHARASHTRA",
+      "Constituency": "SHIRUR",
+      "Party": "NCP",
+      "Front": "UPA"
+    },
+    "37": {
+      "State": "MAHARASHTRA",
+      "Constituency": "AHMADNAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "38": {
+      "State": "MAHARASHTRA",
+      "Constituency": "SHIRDI",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "39": {
+      "State": "MAHARASHTRA",
+      "Constituency": "BEED",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "40": {
+      "State": "MAHARASHTRA",
+      "Constituency": "OSMANABAD",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "41": {
+      "State": "MAHARASHTRA",
+      "Constituency": "LATUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "42": {
+      "State": "MAHARASHTRA",
+      "Constituency": "SOLAPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "43": {
+      "State": "MAHARASHTRA",
+      "Constituency": "MADHA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "44": {
+      "State": "MAHARASHTRA",
+      "Constituency": "SANGLI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "45": {
+      "State": "MAHARASHTRA",
+      "Constituency": "SATARA",
+      "Party": "NCP",
+      "Front": "UPA"
+    },
+    "46": {
+      "State": "MAHARASHTRA",
+      "Constituency": "RATNAGIRI - SINDHUDURG",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "47": {
+      "State": "MAHARASHTRA",
+      "Constituency": "KOLHAPUR",
+      "Party": "SHS",
+      "Front": "NDA"
+    },
+    "48": {
+      "State": "MAHARASHTRA",
+      "Constituency": "HATKANANGLE",
+      "Party": "SHS",
+      "Front": "NDA"
+    }
+  },
+  "S14": {
+    "1": {
+      "State": "MANIPUR",
+      "Constituency": "INNER MANIPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "MANIPUR",
+      "Constituency": "OUTER MANIPUR",
+      "Party": "NAGA PEOPLES FRONT",
+      "Front": "Others"
+    }
+  },
+  "S15": {
+    "1": {
+      "State": "MEGHALAYA",
+      "Constituency": "SHILLONG",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "2": {
+      "State": "MEGHALAYA",
+      "Constituency": "TURA",
+      "Party": "NPP",
+      "Front": "Others"
+    }
+  },
+  "S16": {
+    "1": {
+      "State": "MIZORAM",
+      "Constituency": "MIZORAM",
+      "Party": "MIZO NATIONAL FRONT",
+      "Front": "Others"
+    }
+  },
+  "S17": {
+    "1": {
+      "State": "NAGALAND",
+      "Constituency": "NAGALAND",
+      "Party": "NATIONALIST DEMOCRATIC PROGRESSIVE PARTY",
+      "Front": "Others"
+    }
+  },
+  "S18": {
+    "1": {
+      "State": "ODISHA",
+      "Constituency": "BARGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "ODISHA",
+      "Constituency": "SUNDARGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "ODISHA",
+      "Constituency": "SAMBALPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "ODISHA",
+      "Constituency": "KEONJHAR",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "5": {
+      "State": "ODISHA",
+      "Constituency": "MAYURBHANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "ODISHA",
+      "Constituency": "BALASORE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "ODISHA",
+      "Constituency": "BHADRAK",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "8": {
+      "State": "ODISHA",
+      "Constituency": "JAJPUR",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "9": {
+      "State": "ODISHA",
+      "Constituency": "DHENKANAL",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "10": {
+      "State": "ODISHA",
+      "Constituency": "BOLANGIR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "ODISHA",
+      "Constituency": "KALAHANDI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "ODISHA",
+      "Constituency": "NABARANGPUR",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "13": {
+      "State": "ODISHA",
+      "Constituency": "KANDHAMAL",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "14": {
+      "State": "ODISHA",
+      "Constituency": "CUTTACK",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "15": {
+      "State": "ODISHA",
+      "Constituency": "KENDRAPARA",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "16": {
+      "State": "ODISHA",
+      "Constituency": "JAGATSINGHPUR",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "17": {
+      "State": "ODISHA",
+      "Constituency": "PURI",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "18": {
+      "State": "ODISHA",
+      "Constituency": "BHUBANESWAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "ODISHA",
+      "Constituency": "ASKA",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "20": {
+      "State": "ODISHA",
+      "Constituency": "BERHAMPUR",
+      "Party": "BJD",
+      "Front": "Others"
+    },
+    "21": {
+      "State": "ODISHA",
+      "Constituency": "KORAPUT",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "U07": {
+    "1": {
+      "State": "PUDUCHERRY",
+      "Constituency": "PUDUCHERRY",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "S19": {
+    "1": {
+      "State": "PUNJAB",
+      "Constituency": "GURDASPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "PUNJAB",
+      "Constituency": "AMRITSAR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "3": {
+      "State": "PUNJAB",
+      "Constituency": "KHADOOR SAHIB",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "4": {
+      "State": "PUNJAB",
+      "Constituency": "JALANDHAR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "5": {
+      "State": "PUNJAB",
+      "Constituency": "HOSHIARPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "PUNJAB",
+      "Constituency": "ANANDPUR SAHIB",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "7": {
+      "State": "PUNJAB",
+      "Constituency": "LUDHIANA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "8": {
+      "State": "PUNJAB",
+      "Constituency": "FATEHGARH SAHIB",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "9": {
+      "State": "PUNJAB",
+      "Constituency": "FARIDKOT",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "10": {
+      "State": "PUNJAB",
+      "Constituency": "FIROZPUR",
+      "Party": "SAD",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "PUNJAB",
+      "Constituency": "BATHINDA",
+      "Party": "SAD",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "PUNJAB",
+      "Constituency": "SANGRUR",
+      "Party": "AAP",
+      "Front": "Others"
+    },
+    "13": {
+      "State": "PUNJAB",
+      "Constituency": "PATIALA",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "S20": {
+    "1": {
+      "State": "RAJASTHAN",
+      "Constituency": "GANGANAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "RAJASTHAN",
+      "Constituency": "BIKANER",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "RAJASTHAN",
+      "Constituency": "CHURU",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "RAJASTHAN",
+      "Constituency": "JHUNJHUNU",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "RAJASTHAN",
+      "Constituency": "SIKAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "RAJASTHAN",
+      "Constituency": "JAIPUR RURAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "RAJASTHAN",
+      "Constituency": "JAIPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "RAJASTHAN",
+      "Constituency": "ALWAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "9": {
+      "State": "RAJASTHAN",
+      "Constituency": "BHARATPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "10": {
+      "State": "RAJASTHAN",
+      "Constituency": "KARAULI-DHOLPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "RAJASTHAN",
+      "Constituency": "DAUSA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "RAJASTHAN",
+      "Constituency": "TONK-SAWAI MADHOPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "RAJASTHAN",
+      "Constituency": "AJMER",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "RAJASTHAN",
+      "Constituency": "NAGAUR",
+      "Party": "RASHTRIYA LOKTANTRIK PARTY",
+      "Front": "Others"
+    },
+    "15": {
+      "State": "RAJASTHAN",
+      "Constituency": "PALI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "RAJASTHAN",
+      "Constituency": "JODHPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "17": {
+      "State": "RAJASTHAN",
+      "Constituency": "BARMER",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "RAJASTHAN",
+      "Constituency": "JALORE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "RAJASTHAN",
+      "Constituency": "UDAIPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "20": {
+      "State": "RAJASTHAN",
+      "Constituency": "BANSWARA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "21": {
+      "State": "RAJASTHAN",
+      "Constituency": "CHITTORGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "22": {
+      "State": "RAJASTHAN",
+      "Constituency": "RAJSAMAND",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "RAJASTHAN",
+      "Constituency": "BHILWARA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "24": {
+      "State": "RAJASTHAN",
+      "Constituency": "KOTA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "RAJASTHAN",
+      "Constituency": "JHALAWAR-BARAN",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S21": {
+    "1": {
+      "State": "SIKKIM",
+      "Constituency": "SIKKIM",
+      "Party": "SKM",
+      "Front": "Others"
+    }
+  },
+  "S22": {
+    "1": {
+      "State": "TAMIL NADU",
+      "Constituency": "THIRUVALLUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "2": {
+      "State": "TAMIL NADU",
+      "Constituency": "CHENNAI NORTH",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "3": {
+      "State": "TAMIL NADU",
+      "Constituency": "CHENNAI SOUTH",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "4": {
+      "State": "TAMIL NADU",
+      "Constituency": "CHENNAI CENTRAL",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "5": {
+      "State": "TAMIL NADU",
+      "Constituency": "SRIPERUMBUDUR",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "6": {
+      "State": "TAMIL NADU",
+      "Constituency": "KANCHEEPURAM",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "7": {
+      "State": "TAMIL NADU",
+      "Constituency": "ARAKKONAM",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "9": {
+      "State": "TAMIL NADU",
+      "Constituency": "KRISHNAGIRI",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "10": {
+      "State": "TAMIL NADU",
+      "Constituency": "DHARMAPURI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "TAMIL NADU",
+      "Constituency": "TIRUVANNAMALAI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "12": {
+      "State": "TAMIL NADU",
+      "Constituency": "ARANI",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "13": {
+      "State": "TAMIL NADU",
+      "Constituency": "VILUPPURAM",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "14": {
+      "State": "TAMIL NADU",
+      "Constituency": "KALLAKURICHI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "15": {
+      "State": "TAMIL NADU",
+      "Constituency": "SALEM",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "16": {
+      "State": "TAMIL NADU",
+      "Constituency": "NAMAKKAL",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "17": {
+      "State": "TAMIL NADU",
+      "Constituency": "ERODE",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "18": {
+      "State": "TAMIL NADU",
+      "Constituency": "TIRUPPUR",
+      "Party": "CPI",
+      "Front": "UPA"
+    },
+    "19": {
+      "State": "TAMIL NADU",
+      "Constituency": "NILGIRIS",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "20": {
+      "State": "TAMIL NADU",
+      "Constituency": "COIMBATORE",
+      "Party": "CPM",
+      "Front": "Others"
+    },
+    "21": {
+      "State": "TAMIL NADU",
+      "Constituency": "POLLACHI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "22": {
+      "State": "TAMIL NADU",
+      "Constituency": "DINDIGUL",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "23": {
+      "State": "TAMIL NADU",
+      "Constituency": "KARUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "24": {
+      "State": "TAMIL NADU",
+      "Constituency": "TIRUCHIRAPPALLI",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "25": {
+      "State": "TAMIL NADU",
+      "Constituency": "PERAMBALUR",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "26": {
+      "State": "TAMIL NADU",
+      "Constituency": "CUDDALORE",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "27": {
+      "State": "TAMIL NADU",
+      "Constituency": "CHIDAMBARAM",
+      "Party": "VCK",
+      "Front": "UPA"
+    },
+    "28": {
+      "State": "TAMIL NADU",
+      "Constituency": "MAYILADUTHURAI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "29": {
+      "State": "TAMIL NADU",
+      "Constituency": "NAGAPATTINAM",
+      "Party": "CPI",
+      "Front": "UPA"
+    },
+    "30": {
+      "State": "TAMIL NADU",
+      "Constituency": "THANJAVUR",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "31": {
+      "State": "TAMIL NADU",
+      "Constituency": "SIVAGANGA",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "32": {
+      "State": "TAMIL NADU",
+      "Constituency": "MADURAI",
+      "Party": "CPM",
+      "Front": "Others"
+    },
+    "33": {
+      "State": "TAMIL NADU",
+      "Constituency": "THENI",
+      "Party": "AIADMK",
+      "Front": "Others"
+    },
+    "34": {
+      "State": "TAMIL NADU",
+      "Constituency": "VIRUDHUNAGAR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "35": {
+      "State": "TAMIL NADU",
+      "Constituency": "RAMANATHAPURAM",
+      "Party": "IUML",
+      "Front": "UPA"
+    },
+    "36": {
+      "State": "TAMIL NADU",
+      "Constituency": "THOOTHUKKUDI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "37": {
+      "State": "TAMIL NADU",
+      "Constituency": "TENKASI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "38": {
+      "State": "TAMIL NADU",
+      "Constituency": "TIRUNELVELI",
+      "Party": "DMK",
+      "Front": "UPA"
+    },
+    "39": {
+      "State": "TAMIL NADU",
+      "Constituency": "KANNIYAKUMARI",
+      "Party": "INC",
+      "Front": "UPA"
+    }
+  },
+  "S23": {
+    "1": {
+      "State": "TRIPURA",
+      "Constituency": "TRIPURA WEST",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "TRIPURA",
+      "Constituency": "TRIPURA EAST",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S24": {
+    "1": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SAHARANPUR",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "2": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KAIRANA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MUZAFFARNAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BIJNOR",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "5": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "NAGINA",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "6": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MORADABAD",
+      "Party": "SP",
+      "Front": "Others"
+    },
+    "7": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "RAMPUR",
+      "Party": "SP",
+      "Front": "Others"
+    },
+    "8": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SAMBHAL",
+      "Party": "SP",
+      "Front": "Others"
+    },
+    "9": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AMROHA",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "10": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MEERUT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "11": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BAGHPAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "12": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "GHAZIABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "13": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "GAUTAM BUDDHA NAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BULANDSHAHR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "ALIGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "HATHRAS",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "17": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MATHURA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "18": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AGRA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "19": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "FATEHPUR SIKRI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "20": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "FIROZABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "21": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MAINPURI",
+      "Party": "SP",
+      "Front": "Others"
+    },
+    "22": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "ETAH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "23": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BADAUN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "24": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AONLA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "25": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BAREILLY",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "26": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "PILIBHIT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "27": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SHAHJAHANPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "28": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KHERI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "29": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "DHAURAHRA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "30": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SITAPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "31": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "HARDOI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "32": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MISRIKH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "33": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "UNNAO",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "34": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MOHANLALGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "35": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "LUCKNOW",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "36": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "RAE BARELI",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "37": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AMETHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "38": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SULTANPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "39": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "PRATAPGARH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "40": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "FARRUKHABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "41": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "ETAWAH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "42": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KANNAUJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "43": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KANPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "44": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AKBARPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "45": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "JALAUN",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "46": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "JHANSI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "47": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "HAMIRPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "48": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BANDA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "49": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "FATEHPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "50": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KAUSHAMBI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "51": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "PHULPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "52": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "ALLAHABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "53": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BARABANKI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "54": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "FAIZABAD",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "55": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AMBEDKAR NAGAR",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "56": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BAHRAICH",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "57": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KAISERGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "58": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SHRAWASTI",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "59": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "GONDA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "60": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "DOMARIYAGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "61": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BASTI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "62": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SANT KABIR NAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "63": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MAHARAJGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "64": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "GORAKHPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "65": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "KUSHI NAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "66": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "DEORIA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "67": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BANSGAON",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "68": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "LALGANJ",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "69": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "AZAMGARH",
+      "Party": "SP",
+      "Front": "Others"
+    },
+    "70": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "GHOSI",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "71": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "SALEMPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "72": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BALLIA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "73": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "JAUNPUR",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "74": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MACHHLISHAHR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "75": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "GHAZIPUR",
+      "Party": "BSP",
+      "Front": "Others"
+    },
+    "76": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "CHANDAULI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "77": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "VARANASI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "78": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "BHADOHI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "79": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "MIRZAPUR",
+      "Party": "APNA DAL (SONEYLAL)",
+      "Front": "Others"
+    },
+    "80": {
+      "State": "UTTAR PRADESH",
+      "Constituency": "ROBERTSGANJ",
+      "Party": "APNA DAL (SONEYLAL)",
+      "Front": "Others"
+    }
+  },
+  "S28": {
+    "1": {
+      "State": "UTTARAKHAND",
+      "Constituency": "TEHRI GARHWAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "UTTARAKHAND",
+      "Constituency": "GARHWAL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "UTTARAKHAND",
+      "Constituency": "ALMORA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "UTTARAKHAND",
+      "Constituency": "NAINITAL-UDHAMSINGH NAGAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "UTTARAKHAND",
+      "Constituency": "HARDWAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    }
+  },
+  "S25": {
+    "1": {
+      "State": "WEST BENGAL",
+      "Constituency": "COOCH BEHAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "2": {
+      "State": "WEST BENGAL",
+      "Constituency": "ALIPURDUARS",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "3": {
+      "State": "WEST BENGAL",
+      "Constituency": "JALPAIGURI",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "4": {
+      "State": "WEST BENGAL",
+      "Constituency": "DARJEELING",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "5": {
+      "State": "WEST BENGAL",
+      "Constituency": "RAIGANJ",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "6": {
+      "State": "WEST BENGAL",
+      "Constituency": "BALURGHAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "7": {
+      "State": "WEST BENGAL",
+      "Constituency": "MALDAHA UTTAR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "8": {
+      "State": "WEST BENGAL",
+      "Constituency": "MALDAHA DAKSHIN",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "9": {
+      "State": "WEST BENGAL",
+      "Constituency": "JANGIPUR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "10": {
+      "State": "WEST BENGAL",
+      "Constituency": "BAHARAMPUR",
+      "Party": "INC",
+      "Front": "UPA"
+    },
+    "11": {
+      "State": "WEST BENGAL",
+      "Constituency": "MURSHIDABAD",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "12": {
+      "State": "WEST BENGAL",
+      "Constituency": "KRISHNANAGAR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "13": {
+      "State": "WEST BENGAL",
+      "Constituency": "RANAGHAT",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "14": {
+      "State": "WEST BENGAL",
+      "Constituency": "BANGAON",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "15": {
+      "State": "WEST BENGAL",
+      "Constituency": "BARRACKPORE",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "16": {
+      "State": "WEST BENGAL",
+      "Constituency": "DUM DUM",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "17": {
+      "State": "WEST BENGAL",
+      "Constituency": "BARASAT",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "18": {
+      "State": "WEST BENGAL",
+      "Constituency": "BASIRHAT",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "19": {
+      "State": "WEST BENGAL",
+      "Constituency": "JOYNAGAR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "20": {
+      "State": "WEST BENGAL",
+      "Constituency": "MATHURAPUR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "21": {
+      "State": "WEST BENGAL",
+      "Constituency": "DIAMOND HARBOUR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "22": {
+      "State": "WEST BENGAL",
+      "Constituency": "JADAVPUR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "23": {
+      "State": "WEST BENGAL",
+      "Constituency": "KOLKATA DAKSHIN",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "24": {
+      "State": "WEST BENGAL",
+      "Constituency": "KOLKATA UTTAR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "25": {
+      "State": "WEST BENGAL",
+      "Constituency": "HOWRAH",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "26": {
+      "State": "WEST BENGAL",
+      "Constituency": "ULUBERIA",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "27": {
+      "State": "WEST BENGAL",
+      "Constituency": "SRERAMPUR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "28": {
+      "State": "WEST BENGAL",
+      "Constituency": "HOOGHLY",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "29": {
+      "State": "WEST BENGAL",
+      "Constituency": "ARAMBAGH",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "30": {
+      "State": "WEST BENGAL",
+      "Constituency": "TAMLUK",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "31": {
+      "State": "WEST BENGAL",
+      "Constituency": "KANTHI",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "32": {
+      "State": "WEST BENGAL",
+      "Constituency": "GHATAL",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "33": {
+      "State": "WEST BENGAL",
+      "Constituency": "JHARGRAM",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "34": {
+      "State": "WEST BENGAL",
+      "Constituency": "MEDINIPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "35": {
+      "State": "WEST BENGAL",
+      "Constituency": "PURULIA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "36": {
+      "State": "WEST BENGAL",
+      "Constituency": "BANKURA",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "37": {
+      "State": "WEST BENGAL",
+      "Constituency": "BISHNUPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "38": {
+      "State": "WEST BENGAL",
+      "Constituency": "BARDHAMAN PURBA",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "39": {
+      "State": "WEST BENGAL",
+      "Constituency": "BURDWAN - DURGAPUR",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "40": {
+      "State": "WEST BENGAL",
+      "Constituency": "ASANSOL",
+      "Party": "BJP",
+      "Front": "NDA"
+    },
+    "41": {
+      "State": "WEST BENGAL",
+      "Constituency": "BOLPUR",
+      "Party": "AITMC",
+      "Front": "Others"
+    },
+    "42": {
+      "State": "WEST BENGAL",
+      "Constituency": "BIRBHUM",
+      "Party": "AITMC",
+      "Front": "Others"
+    }
+  }
+}
