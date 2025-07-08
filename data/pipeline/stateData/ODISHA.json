@@ -1,0 +1,1852 @@
+{
+  "1999": {
+    "ASKA": {
+      "Constituency-code": "",
+      "Name": "NAVEEN PATNAIK",
+      "Party": "BJD",
+      "Margin": 256736,
+      "Total Votes": 479497,
+      "Ranks": ["BJD", "CPI", "NCP", "IND"],
+      "Runner": "CPI"
+    },
+    "BALASORE": {
+      "Constituency-code": "",
+      "Name": "MAHAMEGHABAHAN AIRA KHARABELA SWAIN",
+      "Party": "BJP",
+      "Margin": 136372,
+      "Total Votes": 768769,
+      "Ranks": ["BJP", "INC", "CPI", "JMM", "JP", "NCP", "IND", "BRPP"],
+      "Runner": "INC"
+    },
+    "BERHAMPORE": {
+      "Constituency-code": "",
+      "Name": "ANADICHARAN SAHU",
+      "Party": "BJP",
+      "Margin": 54123,
+      "Total Votes": 570556,
+      "Ranks": ["BJP", "INC", "IND"],
+      "Runner": "INC"
+    },
+    "BHADRAK": {
+      "Constituency-code": "",
+      "Name": "ARJUN CHARAN SETHI",
+      "Party": "BJD",
+      "Margin": 122433,
+      "Total Votes": 679138,
+      "Ranks": ["BJD", "INC", "BSP", "AJBP", "IND"],
+      "Runner": "INC"
+    },
+    "BHUBANESWAR": {
+      "Constituency-code": "",
+      "Name": "PRASANNA KUMAR PATASANI",
+      "Party": "BJD",
+      "Margin": 233961,
+      "Total Votes": 625342,
+      "Ranks": ["BJD", "INC", "BSP", "IND", "SHS", "BRPP", "JMM"],
+      "Runner": "INC"
+    },
+    "BOLANGIR": {
+      "Constituency-code": "",
+      "Name": "SANGEETA KUMARI SINGH DEO",
+      "Party": "BJP",
+      "Margin": 180979,
+      "Total Votes": 632212,
+      "Ranks": ["BJP", "INC", "AJBP"],
+      "Runner": "INC"
+    },
+    "CUTTACK": {
+      "Constituency-code": "",
+      "Name": "BHARTRUHARI MAHTAB",
+      "Party": "BJD",
+      "Margin": 205317,
+      "Total Votes": 619806,
+      "Ranks": ["BJD", "INC", "BOP", "AJBP", "JMM", "BRPP", "IND"],
+      "Runner": "INC"
+    },
+    "DEOGARH": {
+      "Constituency-code": "",
+      "Name": "DEBENDRA PRADHAN",
+      "Party": "BJP",
+      "Margin": 86869,
+      "Total Votes": 680720,
+      "Ranks": ["BJP", "INC", "JMM", "AJBP", "IND", "IND"],
+      "Runner": "INC"
+    },
+    "DHENKANAL": {
+      "Constituency-code": "",
+      "Name": "KAMAKHYA PRASAD SINGH DEO",
+      "Party": "INC",
+      "Margin": 3674,
+      "Total Votes": 604130,
+      "Ranks": ["INC", "BJD", "IND", "IND", "IND", "IND", "JD(U)"],
+      "Runner": "BJD"
+    },
+    "JAGATSINGHPUR": {
+      "Constituency-code": "",
+      "Name": "TRILOCHAN KANUNGO",
+      "Party": "BJD",
+      "Margin": 149282,
+      "Total Votes": 758422,
+      "Ranks": ["BJD", "INC", "CPI", "IND"],
+      "Runner": "INC"
+    },
+    "JAJPUR": {
+      "Constituency-code": "",
+      "Name": "JAGANNATH MALLIK",
+      "Party": "BJD",
+      "Margin": 113984,
+      "Total Votes": 593767,
+      "Ranks": ["BJD", "INC", "JD(U)", "AJBP"],
+      "Runner": "INC"
+    },
+    "KALAHANDI": {
+      "Constituency-code": "",
+      "Name": "BIKRAM KESHARI DEO",
+      "Party": "BJP",
+      "Margin": 116519,
+      "Total Votes": 642488,
+      "Ranks": ["BJP", "INC", "SHS", "AJBP", "IND"],
+      "Runner": "INC"
+    },
+    "KENDRAPARA": {
+      "Constituency-code": "",
+      "Name": "PRABHAT KUMAR SAMANTRAY",
+      "Party": "BJD",
+      "Margin": 102139,
+      "Total Votes": 620436,
+      "Ranks": ["BJD", "INC", "IND"],
+      "Runner": "INC"
+    },
+    "KEONJHAR": {
+      "Constituency-code": "",
+      "Name": "ANANTA NAYAK",
+      "Party": "BJP",
+      "Margin": 222553,
+      "Total Votes": 617995,
+      "Ranks": ["BJP", "INC", "JMM"],
+      "Runner": "INC"
+    },
+    "KORAPUT": {
+      "Constituency-code": "",
+      "Name": "HEMA GAMANG",
+      "Party": "INC",
+      "Margin": 12154,
+      "Total Votes": 551432,
+      "Ranks": ["INC", "BJD", "CPI(ML)(L)"],
+      "Runner": "BJD"
+    },
+    "MAYURBHANJ": {
+      "Constituency-code": "",
+      "Name": "SALKHAN MURMU",
+      "Party": "BJP",
+      "Margin": 148082,
+      "Total Votes": 568018,
+      "Ranks": ["BJP", "INC", "JMM", "IND", "IND", "NCP"],
+      "Runner": "INC"
+    },
+    "NOWRANGPUR": {
+      "Constituency-code": "",
+      "Name": "PARSURAM MAJHI",
+      "Party": "BJP",
+      "Margin": 16151,
+      "Total Votes": 653503,
+      "Ranks": ["BJP", "INC", "IND"],
+      "Runner": "INC"
+    },
+    "PHULBANI": {
+      "Constituency-code": "",
+      "Name": "PADMANAVA BEHERA",
+      "Party": "BJD",
+      "Margin": 102215,
+      "Total Votes": 630796,
+      "Ranks": ["BJD", "INC", "BSP", "SHS"],
+      "Runner": "INC"
+    },
+    "PURI": {
+      "Constituency-code": "",
+      "Name": "BRAJA KISHORE TRIPATHY",
+      "Party": "BJD",
+      "Margin": 131745,
+      "Total Votes": 660679,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "CPM",
+        "CPI(ML)(L)",
+        "AJBP",
+        "BRPP",
+        "IND",
+        "IND",
+        "IND"
+      ],
+      "Runner": "INC"
+    },
+    "SAMBALPUR": {
+      "Constituency-code": "",
+      "Name": "PRASANNA ACHARYA",
+      "Party": "BJD",
+      "Margin": 126963,
+      "Total Votes": 692437,
+      "Ranks": ["BJD", "INC", "BSP", "AJBP", "IND"],
+      "Runner": "INC"
+    },
+    "SUNDARGARH": {
+      "Constituency-code": "",
+      "Name": "JUAL ORAM",
+      "Party": "BJP",
+      "Margin": 152514,
+      "Total Votes": 617578,
+      "Ranks": ["BJP", "INC", "JMM", "CPM", "IND", "JKP"],
+      "Runner": "INC"
+    }
+  },
+  "2004": {
+    "ASKA": {
+      "Constituency-code": "",
+      "Name": "HARI HAR SWAIN",
+      "Party": "BJD",
+      "Margin": 132602,
+      "Total Votes": 680381,
+      "Ranks": ["BJD", "INC", "RSP", "IND", "IND"],
+      "Runner": "INC"
+    },
+    "BALASORE": {
+      "Constituency-code": "",
+      "Name": "MAHAMEGHA BAHAN AIRA KHARBELA SWAIN",
+      "Party": "BJP",
+      "Margin": 236955,
+      "Total Votes": 947569,
+      "Ranks": ["BJP", "INC", "IND", "BSP", "RPI", "BMVP"],
+      "Runner": "INC"
+    },
+    "BERHAMPORE": {
+      "Constituency-code": "",
+      "Name": "CHANDRA SEKHAR SAHU",
+      "Party": "INC",
+      "Margin": 51657,
+      "Total Votes": 719379,
+      "Ranks": ["INC", "BJP", "IND", "IND"],
+      "Runner": "BJP"
+    },
+    "BHADRAK": {
+      "Constituency-code": "",
+      "Name": "ARJUN CHARAN SETHI",
+      "Party": "BJD",
+      "Margin": 94769,
+      "Total Votes": 932276,
+      "Ranks": ["BJD", "INC", "IND", "BSP"],
+      "Runner": "INC"
+    },
+    "BHUBANESWAR": {
+      "Constituency-code": "",
+      "Name": "PRASANNA KUMAR PATASANI",
+      "Party": "BJD",
+      "Margin": 112279,
+      "Total Votes": 853005,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "IND",
+        "IND",
+        "RPI",
+        "BSP",
+        "SP",
+        "ABHM",
+        "JD(U)",
+        "IND"
+      ],
+      "Runner": "INC"
+    },
+    "BOLANGIR": {
+      "Constituency-code": "",
+      "Name": "SANGEETA KUMARI SINGH DEO",
+      "Party": "BJP",
+      "Margin": 100682,
+      "Total Votes": 728378,
+      "Ranks": ["BJP", "INC", "IND", "BSP", "IND", "IND", "SP"],
+      "Runner": "INC"
+    },
+    "CUTTACK": {
+      "Constituency-code": "",
+      "Name": "BHARTRUHARI MAHTAB",
+      "Party": "BJD",
+      "Margin": 173198,
+      "Total Votes": 820302,
+      "Ranks": ["BJD", "INC"],
+      "Runner": "INC"
+    },
+    "DEOGARH": {
+      "Constituency-code": "",
+      "Name": "DHARMENDRA PRADHAN",
+      "Party": "BJP",
+      "Margin": 79096,
+      "Total Votes": 823301,
+      "Ranks": ["BJP", "INC", "IND", "BSP", "SP", "IND"],
+      "Runner": "INC"
+    },
+    "DHENKANAL": {
+      "Constituency-code": "",
+      "Name": "TATHAGATA SATAPATHY",
+      "Party": "BJD",
+      "Margin": 122882,
+      "Total Votes": 790367,
+      "Ranks": ["BJD", "INC", "SP", "IND", "RPI"],
+      "Runner": "INC"
+    },
+    "JAGATSINGHPUR": {
+      "Constituency-code": "",
+      "Name": "BRAHMANANDA PANDA",
+      "Party": "BJD",
+      "Margin": 57262,
+      "Total Votes": 926511,
+      "Ranks": ["BJD", "INC", "IND", "BSP", "SHS"],
+      "Runner": "INC"
+    },
+    "JAJPUR": {
+      "Constituency-code": "",
+      "Name": "MOHAN JENA",
+      "Party": "BJD",
+      "Margin": 51466,
+      "Total Votes": 876208,
+      "Ranks": ["BJD", "INC", "IND", "BMVP"],
+      "Runner": "INC"
+    },
+    "KALAHANDI": {
+      "Constituency-code": "",
+      "Name": "BIKRAM KESHARI DEO",
+      "Party": "BJP",
+      "Margin": 34122,
+      "Total Votes": 754128,
+      "Ranks": ["BJP", "INC", "SP", "RPI"],
+      "Runner": "INC"
+    },
+    "KENDRAPARA": {
+      "Constituency-code": "",
+      "Name": "ARCHANA NAYAK",
+      "Party": "BJD",
+      "Margin": 86843,
+      "Total Votes": 836265,
+      "Ranks": ["BJD", "INC", "IND"],
+      "Runner": "INC"
+    },
+    "KEONJHAR": {
+      "Constituency-code": "",
+      "Name": "ANANTA NAYAK",
+      "Party": "BJP",
+      "Margin": 49209,
+      "Total Votes": 814662,
+      "Ranks": ["BJP", "INC", "IND", "IND", "IND", "IND"],
+      "Runner": "INC"
+    },
+    "KORAPUT": {
+      "Constituency-code": "",
+      "Name": "GIRIDHAR GAMANG",
+      "Party": "INC",
+      "Margin": 43267,
+      "Total Votes": 735667,
+      "Ranks": ["INC", "BJD", "BSP", "CPI(ML)(L)"],
+      "Runner": "BJD"
+    },
+    "MAYURBHANJ": {
+      "Constituency-code": "",
+      "Name": "SUDAM MARNDI",
+      "Party": "JMM",
+      "Margin": 7972,
+      "Total Votes": 695997,
+      "Ranks": ["JMM", "BJP", "INC", "BSP"],
+      "Runner": "BJP"
+    },
+    "NOWRANGPUR": {
+      "Constituency-code": "",
+      "Name": "PARSURAM MAJHI",
+      "Party": "BJP",
+      "Margin": 24890,
+      "Total Votes": 780728,
+      "Ranks": ["BJP", "INC", "BSP"],
+      "Runner": "INC"
+    },
+    "PHULBANI": {
+      "Constituency-code": "",
+      "Name": "SUGRIB SINGH",
+      "Party": "BJD",
+      "Margin": 19272,
+      "Total Votes": 787293,
+      "Ranks": ["BJD", "INC", "IND", "IND", "BSP", "IND", "RPI"],
+      "Runner": "INC"
+    },
+    "PURI": {
+      "Constituency-code": "",
+      "Name": "BRAJA KISHORE TRIPATHY",
+      "Party": "BJD",
+      "Margin": 60960,
+      "Total Votes": 888955,
+      "Ranks": ["BJD", "INC", "CPI(ML)(L)"],
+      "Runner": "INC"
+    },
+    "SAMBALPUR": {
+      "Constituency-code": "",
+      "Name": "PRASANNA ACHARYA",
+      "Party": "BJD",
+      "Margin": 14770,
+      "Total Votes": 810601,
+      "Ranks": ["BJD", "INC", "BSP"],
+      "Runner": "INC"
+    },
+    "SUNDARGARH": {
+      "Constituency-code": "",
+      "Name": "JUAL ORAM",
+      "Party": "BJP",
+      "Margin": 39676,
+      "Total Votes": 732351,
+      "Ranks": ["BJP", "INC", "IND", "BSP", "JKP"],
+      "Runner": "INC"
+    }
+  },
+  "2009": {
+    "ASKA": {
+      "Constituency-code": "",
+      "Name": "NITYANANDA PRADHAN",
+      "Party": "BJD",
+      "Margin": 232834,
+      "Total Votes": 701880,
+      "Ranks": ["BJD", "INC", "BJP", "IND", "KS", "IND", "SAMO", "IND", "RSP"],
+      "Runner": "INC"
+    },
+    "BALASORE": {
+      "Constituency-code": "",
+      "Name": "SRIKANT KUMAR JENA",
+      "Party": "INC",
+      "Margin": 38900,
+      "Total Votes": 892262,
+      "Ranks": [
+        "INC",
+        "NCP",
+        "BJP",
+        "JMM",
+        "SAMO",
+        "IND",
+        "JHKP",
+        "BSP",
+        "IND"
+      ],
+      "Runner": "NCP"
+    },
+    "BARGARH": {
+      "Constituency-code": "",
+      "Name": "SANJAY BHOI",
+      "Party": "INC",
+      "Margin": 98444,
+      "Total Votes": 919625,
+      "Ranks": ["INC", "BJD", "BJP", "BSP", "IND", "KOKD"],
+      "Runner": "BJD"
+    },
+    "BERHAMPORE": {
+      "Constituency-code": "",
+      "Name": "SIDHANT MOHAPATRA",
+      "Party": "BJD",
+      "Margin": 57287,
+      "Total Votes": 710923,
+      "Ranks": ["BJD", "INC", "BJP", "BSP", "IND", "IND", "KS", "IND", "IND"],
+      "Runner": "INC"
+    },
+    "BHADRAK": {
+      "Constituency-code": "",
+      "Name": "ARJUN CHARAN SETHI",
+      "Party": "BJD",
+      "Margin": 54938,
+      "Total Votes": 929162,
+      "Ranks": ["BJD", "INC", "BJP", "IND", "IND", "BSP"],
+      "Runner": "INC"
+    },
+    "BHUBANESWAR": {
+      "Constituency-code": "",
+      "Name": "PRASANNA KUMAR PATASANI",
+      "Party": "BJD",
+      "Margin": 252760,
+      "Total Votes": 711041,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "BOP",
+        "IND",
+        "IND",
+        "IND",
+        "BSP",
+        "LJP",
+        "IND",
+        "JHKP",
+        "RPI(A)",
+        "KS"
+      ],
+      "Runner": "INC"
+    },
+    "BOLANGIR": {
+      "Constituency-code": "",
+      "Name": "KALIKESH NARAYAN SINGH DEO",
+      "Party": "BJD",
+      "Margin": 90835,
+      "Total Votes": 1012022,
+      "Ranks": ["BJD", "INC", "BJP", "SAMO", "BSP"],
+      "Runner": "INC"
+    },
+    "CUTTACK": {
+      "Constituency-code": "",
+      "Name": "BHARTRUHARI MAHTAB",
+      "Party": "BJD",
+      "Margin": 236292,
+      "Total Votes": 813499,
+      "Ranks": ["BJD", "INC", "BJP", "BOP", "IND", "BSP", "KS"],
+      "Runner": "INC"
+    },
+    "DHENKANAL": {
+      "Constituency-code": "",
+      "Name": "TATHAGATA SATPATHY",
+      "Party": "BJD",
+      "Margin": 186587,
+      "Total Votes": 856631,
+      "Ranks": ["BJD", "INC", "BJP", "BSP", "KS"],
+      "Runner": "INC"
+    },
+    "JAGATSINGHPUR": {
+      "Constituency-code": "",
+      "Name": "BIBHU PRASAD TARAI",
+      "Party": "CPI",
+      "Margin": 76735,
+      "Total Votes": 983313,
+      "Ranks": ["CPI", "INC", "BJP", "SAMO", "BSP"],
+      "Runner": "INC"
+    },
+    "JAJPUR": {
+      "Constituency-code": "",
+      "Name": "MOHAN JENA",
+      "Party": "BJD",
+      "Margin": 127747,
+      "Total Votes": 817108,
+      "Ranks": ["BJD", "INC", "BJP", "IND", "SAMO", "OMM", "IND", "JHKP"],
+      "Runner": "INC"
+    },
+    "KALAHANDI": {
+      "Constituency-code": "",
+      "Name": "BHAKTA CHARAN DAS",
+      "Party": "INC",
+      "Margin": 154037,
+      "Total Votes": 978393,
+      "Ranks": ["INC", "BJD", "BJP", "BSP", "IND", "IND", "SP", "CPI(ML)(L)"],
+      "Runner": "BJD"
+    },
+    "KANDHAMAL": {
+      "Constituency-code": "",
+      "Name": "RUDRAMADHAB RAY",
+      "Party": "BJD",
+      "Margin": 151007,
+      "Total Votes": 707748,
+      "Ranks": ["BJD", "INC", "BJP", "SP", "IND", "IND", "IND", "BSP", "IND"],
+      "Runner": "INC"
+    },
+    "KENDRAPARA": {
+      "Constituency-code": "",
+      "Name": "BAIJAYANT PANDA",
+      "Party": "BJD",
+      "Margin": 127107,
+      "Total Votes": 983010,
+      "Ranks": ["BJD", "INC", "BJP", "BSP", "SAMO", "IND", "CPI(ML)(L)", "KS"],
+      "Runner": "INC"
+    },
+    "KEONJHAR": {
+      "Constituency-code": "",
+      "Name": "YASHBANT NARAYAN SINGH LAGURI",
+      "Party": "BJD",
+      "Margin": 126484,
+      "Total Votes": 891746,
+      "Ranks": ["BJD", "INC", "BJP", "IND", "JMM", "IND", "BSP"],
+      "Runner": "INC"
+    },
+    "KORAPUT": {
+      "Constituency-code": "",
+      "Name": "JAYARAM PANGI",
+      "Party": "BJD",
+      "Margin": 96360,
+      "Total Votes": 759619,
+      "Ranks": ["BJD", "INC", "BJP", "CPI(ML)(L)", "BSP", "SAMO"],
+      "Runner": "INC"
+    },
+    "MAYURBHANJ": {
+      "Constituency-code": "",
+      "Name": "LAXMAN TUDU",
+      "Party": "BJD",
+      "Margin": 66178,
+      "Total Votes": 824754,
+      "Ranks": [
+        "BJD",
+        "JMM",
+        "BJP",
+        "INC",
+        "IND",
+        "JDP",
+        "IND",
+        "BSP",
+        "SP",
+        "IND"
+      ],
+      "Runner": "JMM"
+    },
+    "NABARANGPUR": {
+      "Constituency-code": "",
+      "Name": "PRADEEP KUMAR MAJHI",
+      "Party": "INC",
+      "Margin": 29977,
+      "Total Votes": 791935,
+      "Ranks": ["INC", "BJD", "BJP", "BSP"],
+      "Runner": "BJD"
+    },
+    "PURI": {
+      "Constituency-code": "",
+      "Name": "PINAKI MISRA",
+      "Party": "BJD",
+      "Margin": 211305,
+      "Total Votes": 910151,
+      "Ranks": ["BJD", "INC", "BJP", "IND", "KS", "BSP", "CPI(ML)(L)"],
+      "Runner": "INC"
+    },
+    "SAMBALPUR": {
+      "Constituency-code": "",
+      "Name": "AMARNATH PRADHAN",
+      "Party": "INC",
+      "Margin": 14874,
+      "Total Votes": 800420,
+      "Ranks": ["INC", "BJD", "BJP", "IND", "BSP", "KOKD", "RPI"],
+      "Runner": "BJD"
+    },
+    "SUNDARGARH": {
+      "Constituency-code": "",
+      "Name": "HEMANAND BISWAL",
+      "Party": "INC",
+      "Margin": 11624,
+      "Total Votes": 766742,
+      "Ranks": ["INC", "BJP", "JMM", "CPM", "IND", "JDP", "BSP", "KOKD", "IND"],
+      "Runner": "BJP"
+    }
+  },
+  "2014": {
+    "BARGARH": {
+      "Constituency-code": "1",
+      "Name": "PRABHAS KUMAR SINGH",
+      "Party": "BJD",
+      "Margin": 11178,
+      "Total Votes": 1123301,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "PASCHIMANCHAL VIKAS PARTY",
+        "CPI",
+        "AAP",
+        "BSP",
+        "AITMC",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "SUNDARGARH": {
+      "Constituency-code": "2",
+      "Name": "JUAL @ JUEL ORAM",
+      "Party": "BJP",
+      "Margin": 18829,
+      "Total Votes": 1010711,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "SUCI(C)",
+        "BSP",
+        "IND",
+        "KOSAL KRANTI DAL",
+        "AAP",
+        "IND",
+        "JHARKHAND DISOM PARTY",
+        "IND",
+        "BAHUJAN MUKTI PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "SAMBALPUR": {
+      "Constituency-code": "3",
+      "Name": "NAGENDRA KUMAR PRADHAN",
+      "Party": "BJD",
+      "Margin": 30576,
+      "Total Votes": 984309,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "BSP",
+        "AAP",
+        "IND",
+        "SUCI(C)",
+        "IND",
+        "IND",
+        "PROUTIST BLOC, INDIA",
+        "PASCHIMANCHAL VIKAS PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "KEONJHAR": {
+      "Constituency-code": "4",
+      "Name": "SAKUNTALA LAGURI",
+      "Party": "BJD",
+      "Margin": 157317,
+      "Total Votes": 1083869,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "IND",
+        "IND",
+        "RASHTRIYA INDEPNDENT MORCHA",
+        "OJM",
+        "BSP",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "MAYURBHANJ": {
+      "Constituency-code": "5",
+      "Name": "RAMA CHANDRA HANSDAH",
+      "Party": "BJD",
+      "Margin": 122866,
+      "Total Votes": 1053399,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "JMM",
+        "INC",
+        "AAMA ODISHA PARTY",
+        "BSP",
+        "AAP",
+        "IND",
+        "AJSU PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "BALASORE": {
+      "Constituency-code": "6",
+      "Name": "RABINDRA KUMAR JENA",
+      "Party": "BJD",
+      "Margin": 141825,
+      "Total Votes": 1049450,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "CPI",
+        "AITMC",
+        "IND",
+        "BSP",
+        "AAP",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "BHADRAK": {
+      "Constituency-code": "7",
+      "Name": "ARJUN CHARAN SETHI",
+      "Party": "BJD",
+      "Margin": 179359,
+      "Total Votes": 1081339,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "CPI",
+        "BSP",
+        "AAP",
+        "AAMA ODISHA PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "JAJPUR": {
+      "Constituency-code": "8",
+      "Name": "RITA TARAI",
+      "Party": "BJD",
+      "Margin": 320271,
+      "Total Votes": 980435,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "IND",
+        "AAP",
+        "SUCI(C)",
+        "BSP",
+        "BAHUJAN MUKTI PARTY",
+        "SKD",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "DHENKANAL": {
+      "Constituency-code": "9",
+      "Name": "TATHAGATA SATPATHY",
+      "Party": "BJD",
+      "Margin": 137340,
+      "Total Votes": 1042101,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "AMBEDKARITE PARTY OF INDIA",
+        "IND",
+        "BSP",
+        "AAMA ODISHA PARTY",
+        "AAP",
+        "SUCI(C)",
+        "IND",
+        "BAHUJAN MUKTI PARTY",
+        "SKD",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "BOLANGIR": {
+      "Constituency-code": "10",
+      "Name": "KALIKESH NARAYAN SINGH DEO",
+      "Party": "BJD",
+      "Margin": 104299,
+      "Total Votes": 1170405,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "AAP",
+        "AMBEDKARITE PARTY OF INDIA",
+        "BSP",
+        "IND",
+        "AAMA ODISHA PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "KALAHANDI": {
+      "Constituency-code": "11",
+      "Name": "ARKA KESHARI DEO",
+      "Party": "BJD",
+      "Margin": 56347,
+      "Total Votes": 1117536,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "SP",
+        "BSP",
+        "IND",
+        "AAMA ODISHA PARTY",
+        "SAMO",
+        "AMBEDKARITE PARTY OF INDIA",
+        "OJM",
+        "AAP",
+        "BAHUJAN MUKTI PARTY",
+        "KALINGA SENA",
+        "COMMUNIST PARTY OF INDIA  (MARXIST-LENINIST)  (LIBERATION)",
+        "SKD",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "NABARANGPUR": {
+      "Constituency-code": "12",
+      "Name": "BALABHADRA MAJHI",
+      "Party": "BJD",
+      "Margin": 2042,
+      "Total Votes": 1022172,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "BSP",
+        "OJM",
+        "AAMA ODISHA PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "KANDHAMAL": {
+      "Constituency-code": "13",
+      "Name": "HEMENDRA CHANDRA SINGH",
+      "Party": "BJD",
+      "Margin": 181017,
+      "Total Votes": 839415,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "IND",
+        "BSP",
+        "AAP",
+        "AAMA ODISHA PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "CUTTACK": {
+      "Constituency-code": "14",
+      "Name": "BHARTRUHARI MAHATAB",
+      "Party": "BJD",
+      "Margin": 306762,
+      "Total Votes": 978604,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "AAMA ODISHA PARTY",
+        "IND",
+        "AAP",
+        "BSP",
+        "SUCI(C)",
+        "AITMC",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "KENDRAPARA": {
+      "Constituency-code": "15",
+      "Name": "BAIJAYANT PANDA",
+      "Party": "BJD",
+      "Margin": 209108,
+      "Total Votes": 1140999,
+      "Ranks": ["BJD", "INC", "BJP", "BSP", "IND", "AAP", "IND", "NOTA"],
+      "Runner": "INC"
+    },
+    "JAGATSINGHPUR": {
+      "Constituency-code": "16",
+      "Name": "KULAMANI SAMAL",
+      "Party": "BJD",
+      "Margin": 276394,
+      "Total Votes": 1131932,
+      "Ranks": ["BJD", "INC", "BJP", "CPI", "BSP", "AAP", "IND", "NOTA"],
+      "Runner": "INC"
+    },
+    "PURI": {
+      "Constituency-code": "17",
+      "Name": "PINAKI MISRA",
+      "Party": "BJD",
+      "Margin": 263361,
+      "Total Votes": 1039389,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "KALINGA SENA",
+        "BSP",
+        "COMMUNIST PARTY OF INDIA  (MARXIST-LENINIST)  (LIBERATION)",
+        "AAP",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "BHUBANESWAR": {
+      "Constituency-code": "18",
+      "Name": "PRASANNA KUMAR PATASANI",
+      "Party": "BJD",
+      "Margin": 189477,
+      "Total Votes": 891822,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "AAMA ODISHA PARTY",
+        "AAP",
+        "IND",
+        "BSP",
+        "SP",
+        "SAMO",
+        "PROUTIST BLOC, INDIA",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "ASKA": {
+      "Constituency-code": "19",
+      "Name": "LADU KISHORE SWAIN",
+      "Party": "BJD",
+      "Margin": 311997,
+      "Total Votes": 896281,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "AAP",
+        "BSP",
+        "AITMC",
+        "IND",
+        "IND",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "BERHAMPUR": {
+      "Constituency-code": "20",
+      "Name": "SIDHANT MOHAPATRA",
+      "Party": "BJD",
+      "Margin": 127720,
+      "Total Votes": 905362,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "CPM",
+        "AAP",
+        "IND",
+        "BSP",
+        "IND",
+        "IND",
+        "AITMC",
+        "SKD",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    },
+    "KORAPUT": {
+      "Constituency-code": "21",
+      "Name": "JHINA HIKAKA",
+      "Party": "BJD",
+      "Margin": 19328,
+      "Total Votes": 989444,
+      "Ranks": [
+        "BJD",
+        "INC",
+        "BJP",
+        "BSP",
+        "AMBEDKARITE PARTY OF INDIA",
+        "IND",
+        "COMMUNIST PARTY OF INDIA  (MARXIST-LENINIST)  (LIBERATION)",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "SKD",
+        "NOTA"
+      ],
+      "Runner": "INC"
+    }
+  },
+  "2019": {
+    "BARGARH": {
+      "Constituency-code": "1",
+      "Name": "SURESH PUJARI",
+      "Party": "BJP",
+      "Margin": 63939,
+      "Total Votes": 1247912,
+      "Ranks": ["BJP", "BJD", "INC", "BSP", "IND", "IND", "NOTA"],
+      "Runner": "BJD"
+    },
+    "SUNDARGARH": {
+      "Constituency-code": "2",
+      "Name": "JUAL ORAM",
+      "Party": "BJP",
+      "Margin": 223065,
+      "Total Votes": 1100129,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "IND",
+        "SUCI(C)",
+        "AAP",
+        "IND",
+        "HINDUSTHAN NIRMAN DAL",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "SAMBALPUR": {
+      "Constituency-code": "3",
+      "Name": "NITESH GANGA DEB",
+      "Party": "BJP",
+      "Margin": 9162,
+      "Total Votes": 1124455,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BSP",
+        "AMBEDKARITE PARTY OF INDIA",
+        "IND",
+        "AMBEDKAR NATIONAL CONGRESS",
+        "PRAGATISHIL SAMAJWADI PARTY (LOHIA)",
+        "SUCI(C)",
+        "GGP",
+        "BHARAT PRABHAT PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KEONJHAR": {
+      "Constituency-code": "4",
+      "Name": "CHANDRANI MURMU",
+      "Party": "BJD",
+      "Margin": 66203,
+      "Total Votes": 1176292,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "RASHTRIYA INDEPNDENT MORCHA",
+        "ABHM",
+        "BSP",
+        "AIFB",
+        "BAHUJAN MUKTI PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "MAYURBHANJ": {
+      "Constituency-code": "5",
+      "Name": "BISHWESWAR TUDU",
+      "Party": "BJP",
+      "Margin": 25256,
+      "Total Votes": 1150357,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "JMM",
+        "IND",
+        "IND",
+        "BSP",
+        "BAHUJAN MUKTI PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "BALASORE": {
+      "Constituency-code": "6",
+      "Name": "PRATAP CHANDRA SARANGI",
+      "Party": "BJP",
+      "Margin": 12956,
+      "Total Votes": 1157871,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "AITMC",
+        "IND",
+        "IND",
+        "IND",
+        "IND",
+        "AMBEDKAR NATIONAL CONGRESS",
+        "PURVANCHAL JANTA PARTY (SECULAR)",
+        "PRAGATISHIL SAMAJWADI PARTY (LOHIA)",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "BHADRAK": {
+      "Constituency-code": "7",
+      "Name": "MANJULATA MANDAL",
+      "Party": "BJD",
+      "Margin": 28803,
+      "Total Votes": 1223754,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "BSP",
+        "AITMC",
+        "IND",
+        "KALINGA SENA",
+        "SUCI(C)",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "JAJPUR": {
+      "Constituency-code": "8",
+      "Name": "SARMISTHA SETHI",
+      "Party": "BJD",
+      "Margin": 101693,
+      "Total Votes": 1092084,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "SUCI(C)",
+        "PROUTIST BLOC, INDIA",
+        "BAHUJAN MUKTI PARTY",
+        "JAI PRAKASH JANATA DAL",
+        "FREETHOUGHT PARTY OF INDIA",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "DHENKANAL": {
+      "Constituency-code": "9",
+      "Name": "MAHESH SAHOO",
+      "Party": "BJD",
+      "Margin": 35412,
+      "Total Votes": 1131522,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "BSP",
+        "HINDUSTHAN NIRMAN DAL",
+        "AMBEDKARITE PARTY OF INDIA",
+        "SKD",
+        "SUCI(C)",
+        "BHARTIYA MANAVADHIKAAR FEDERAL PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "BOLANGIR": {
+      "Constituency-code": "10",
+      "Name": "SANGEETA KUMARI SINGH DEO",
+      "Party": "BJP",
+      "Margin": 19516,
+      "Total Votes": 1306705,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "AMBEDKARITE PARTY OF INDIA",
+        "BSP",
+        "IND",
+        "SUCI(C)",
+        "BAHUJAN MUKTI PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KALAHANDI": {
+      "Constituency-code": "11",
+      "Name": "BASANTA KUMAR PANDA",
+      "Party": "BJP",
+      "Margin": 26814,
+      "Total Votes": 1228292,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BAHUJAN MUKTI PARTY",
+        "AMBEDKARITE PARTY OF INDIA",
+        "BSP",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "NABARANGPUR": {
+      "Constituency-code": "12",
+      "Name": "RAMESH CHANDRA MAJHI",
+      "Party": "BJD",
+      "Margin": 41634,
+      "Total Votes": 1159700,
+      "Ranks": ["BJD", "INC", "BJP", "BSP", "NOTA"],
+      "Runner": "INC"
+    },
+    "KANDHAMAL": {
+      "Constituency-code": "13",
+      "Name": "ACHYUTANANDA SAMANTA",
+      "Party": "BJD",
+      "Margin": 149216,
+      "Total Votes": 941985,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "BSP",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "CUTTACK": {
+      "Constituency-code": "14",
+      "Name": "BHARTRUHARI MAHTAB",
+      "Party": "BJD",
+      "Margin": 121201,
+      "Total Votes": 1059490,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "IND",
+        "BSP",
+        "KRUPAA PARTY",
+        "IND",
+        "SUCI(C)",
+        "BHARAT PRABHAT PARTY",
+        "KALINGA SENA",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "KENDRAPARA": {
+      "Constituency-code": "15",
+      "Name": "ANUBHAV MOHANTY",
+      "Party": "BJD",
+      "Margin": 152584,
+      "Total Votes": 1236466,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "SP",
+        "IND",
+        "KRUPAA PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "JAGATSINGHPUR": {
+      "Constituency-code": "16",
+      "Name": "RAJASHREE MALLICK",
+      "Party": "BJD",
+      "Margin": 271655,
+      "Total Votes": 1229190,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "BSP",
+        "FREETHOUGHT PARTY OF INDIA",
+        "IND",
+        "AMBEDKARITE PARTY OF INDIA",
+        "ABHM",
+        "JAI PRAKASH JANATA DAL",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "PURI": {
+      "Constituency-code": "17",
+      "Name": "PINAKI MISRA",
+      "Party": "BJD",
+      "Margin": 11714,
+      "Total Votes": 1135620,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "BSP",
+        "ABHM",
+        "COMMUNIST PARTY OF INDIA  (MARXIST-LENINIST)  (LIBERATION)",
+        "KALINGA SENA",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "BHUBANESWAR": {
+      "Constituency-code": "18",
+      "Name": "APARAJITA SARANGI",
+      "Party": "BJP",
+      "Margin": 23839,
+      "Total Votes": 1005215,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "CPM",
+        "IND",
+        "KRUPAA PARTY",
+        "BSP",
+        "IND",
+        "IND",
+        "AITMC",
+        "FREETHOUGHT PARTY OF INDIA",
+        "IND",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "KALINGA SENA",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "ASKA": {
+      "Constituency-code": "19",
+      "Name": "PRAMILA BISOYI",
+      "Party": "BJD",
+      "Margin": 204707,
+      "Total Votes": 1013862,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "CPI",
+        "BSP",
+        "IND",
+        "IND",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "AIFB",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "BERHAMPUR": {
+      "Constituency-code": "20",
+      "Name": "CHANDRA SEKHAR SAHU",
+      "Party": "BJD",
+      "Margin": 94844,
+      "Total Votes": 989910,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "ODISHA PRAGATI DAL",
+        "SUCI(C)",
+        "BSP",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "KORAPUT": {
+      "Constituency-code": "21",
+      "Name": "SAPTAGIRI SANKAR ULAKA",
+      "Party": "INC",
+      "Margin": 3613,
+      "Total Votes": 1080161,
+      "Ranks": [
+        "INC",
+        "BJD",
+        "BJP",
+        "BSP",
+        "COMMUNIST PARTY OF INDIA  (MARXIST-LENINIST)  (LIBERATION)",
+        "AMBEDKARITE PARTY OF INDIA",
+        "COMMUNIST PARTY OF INDIA (MARXIST-LENINIST) RED STAR",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    }
+  },
+  "2024": {
+    "BARGARH": {
+      "Constituency-code": "1",
+      "Name": "PRADEEP PUROHIT",
+      "Party": "BJP",
+      "Margin": 246598,
+      "Total Votes": 1300266,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BSP",
+        "IND",
+        "NATIONAL APNI PARTY",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "SUNDARGARH": {
+      "Constituency-code": "2",
+      "Name": "JUAL ORAM",
+      "Party": "BJP",
+      "Margin": 136947,
+      "Total Votes": 1148968,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "SUCI(C)",
+        "IND",
+        "NATIONAL APNI PARTY",
+        "NABA BHARATA NIRMANA SEVA PARTY",
+        "JHARKHAND PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "SAMBALPUR": {
+      "Constituency-code": "3",
+      "Name": "DHARMENDRA PRADHAN",
+      "Party": "BJP",
+      "Margin": 116629,
+      "Total Votes": 1190616,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BSP",
+        "IND",
+        "IND",
+        "IND",
+        "SUCI(C)",
+        "IND",
+        "KOSAL JANATA DAL",
+        "BHARATIYA NYAY-ADHIKAR RAKSHA PARTY",
+        "NATIONAL JAN DAL",
+        "PASCHIMANCHAL VIKAS PARTY",
+        "RASHTRIYA MANAV PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KEONJHAR": {
+      "Constituency-code": "4",
+      "Name": "ANANTA NAYAK",
+      "Party": "BJP",
+      "Margin": 94927,
+      "Total Votes": 1252761,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "IND",
+        "MANAS LOKSHAKTI DAL",
+        "IND",
+        "IND",
+        "SUCI(C)",
+        "IND",
+        "BSP",
+        "AJSU PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "MAYURBHANJ": {
+      "Constituency-code": "5",
+      "Name": "NABA CHARAN MAJHI",
+      "Party": "BHARATHEEYA JAWAN KISAN PARTY",
+      "Margin": 3175,
+      "Total Votes": 23028,
+      "Ranks": [
+        "BHARATHEEYA JAWAN KISAN PARTY",
+        "NOTA"
+      ]
+    },
+    "BALASORE": {
+      "Constituency-code": "6",
+      "Name": "PRATAP CHANDRA SARANGI",
+      "Party": "BJP",
+      "Margin": 145673,
+      "Total Votes": 1235600,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BSP",
+        "NATIONAL APNI PARTY",
+        "IND",
+        "IND",
+        "IND",
+        "KRUPAA PARTY",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "BHADRAK": {
+      "Constituency-code": "7",
+      "Name": "AVIMANYU SETHI",
+      "Party": "BJP",
+      "Margin": 89600,
+      "Total Votes": 1291183,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "SUCI(C)",
+        "BSP",
+        "AMBEDKARITE PARTY OF INDIA",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "JAJPUR": {
+      "Constituency-code": "8",
+      "Name": "SARMISTHA SETHI",
+      "Party": "BJD",
+      "Margin": 469,
+      "Total Votes": 1151847,
+      "Ranks": [
+        "BJD",
+        "BJP",
+        "INC",
+        "SUCI(C)",
+        "BSP",
+        "IND",
+        "IND",
+        "AMBEDKARITE PARTY OF INDIA",
+        "MANAS LOKSHAKTI DAL",
+        "IND",
+        "IND",
+        "JANTA DARBAR PARTY",
+        "GANA SURAKSHA PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJP"
+    },
+    "DHENKANAL": {
+      "Constituency-code": "9",
+      "Name": "RUDRA NARAYAN PANY",
+      "Party": "UTKAL SAMAJ",
+      "Margin": 1603,
+      "Total Votes": 15334,
+      "Ranks": [
+        "UTKAL SAMAJ",
+        "NOTA"
+      ]
+    },
+    "BOLANGIR": {
+      "Constituency-code": "10",
+      "Name": "SANGEETA KUMARI SINGH DEO",
+      "Party": "BJP",
+      "Margin": 130232,
+      "Total Votes": 1394081,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "SUCI(C)",
+        "BSP",
+        "IND",
+        "AMBEDKARITE PARTY OF INDIA",
+        "IND",
+        "NATIONAL APNI PARTY",
+        "EKAM SANATAN BHARAT DAL",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KALAHANDI": {
+      "Constituency-code": "11",
+      "Name": "MALVIKA DEVI",
+      "Party": "BJP",
+      "Margin": 130268,
+      "Total Votes": 1322799,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "IND",
+        "BSP",
+        "IND",
+        "SP",
+        "IND",
+        "IND",
+        "IND",
+        "SAMRUDDHA ODISHA",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "NABARANGPUR": {
+      "Constituency-code": "12",
+      "Name": "BALABHADRA MAJHI",
+      "Party": "BJP",
+      "Margin": 85882,
+      "Total Votes": 1236661,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "SUCI(C)",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KANDHAMAL": {
+      "Constituency-code": "13",
+      "Name": "SUKANTA KUMAR PANIGRAHI",
+      "Party": "BJP",
+      "Margin": 19676,
+      "Total Votes": 990520,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "MANAS LOKSHAKTI DAL",
+        "IND",
+        "BSP",
+        "NATIONAL JAN DAL",
+        "KALINGA SENA",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "CUTTACK": {
+      "Constituency-code": "14",
+      "Name": "BHARTRUHARI MAHTAB",
+      "Party": "BJP",
+      "Margin": 55828,
+      "Total Votes": 1116941,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BSP",
+        "IND",
+        "IND",
+        "KRUPAA PARTY",
+        "SUCI(C)",
+        "IND",
+        "SAMRUDDHA ODISHA",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KENDRAPARA": {
+      "Constituency-code": "15",
+      "Name": "BAIJAYANT PANDA",
+      "Party": "BJP",
+      "Margin": 65235,
+      "Total Votes": 1272561,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "SUCI(C)",
+        "BSP",
+        "AKHIL BHARTIYA PARIVAR PARTY",
+        "IND",
+        "IND",
+        "IND",
+        "ODISHA JANATA PARTY",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "JAGATSINGHPUR": {
+      "Constituency-code": "16",
+      "Name": "BIBHU PRASAD TARAI",
+      "Party": "BJP",
+      "Margin": 39229,
+      "Total Votes": 1280103,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "CPI",
+        "AMBEDKARITE PARTY OF INDIA",
+        "BSP",
+        "SUCI(C)",
+        "IND",
+        "SAMRUDDHA ODISHA",
+        "IND",
+        "UTKAL SAMAJ",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "PURI": {
+      "Constituency-code": "17",
+      "Name": "SAMBIT PATRA",
+      "Party": "BJP",
+      "Margin": 102336,
+      "Total Votes": 1191034,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "BSP",
+        "SUCI(C)",
+        "IND",
+        "IND",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "BHUBANESWAR": {
+      "Constituency-code": "18",
+      "Name": "APARAJITA SARANGI",
+      "Party": "BJP",
+      "Margin": 33577,
+      "Total Votes": 1077476,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "CPIM",
+        "IND",
+        "IND",
+        "IND",
+        "IND",
+        "ODISHA JANATA PARTY",
+        "KALINGA SENA",
+        "SUPREME ZERO PARTY OF BHARAT",
+        "BHARATIYA BIKASH PARISHAD",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "ASKA": {
+      "Constituency-code": "19",
+      "Name": "ANITA SUBHADARSHINI",
+      "Party": "BJP",
+      "Margin": 99273,
+      "Total Votes": 1016047,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "IND",
+        "SUCI(C)",
+        "SANATAN SANSKRITI RAKSHA DAL",
+        "BSP",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "BERHAMPUR": {
+      "Constituency-code": "20",
+      "Name": "DR. PRADEEP KUMAR PANIGRAHY",
+      "Party": "BJP",
+      "Margin": 163805,
+      "Total Votes": 1038806,
+      "Ranks": [
+        "BJP",
+        "BJD",
+        "INC",
+        "IND",
+        "BSP",
+        "SUCI(C)",
+        "IND",
+        "NABA BHARATA NIRMANA SEVA PARTY",
+        "IND",
+        "BHARATIYA BIKASH PARISHAD",
+        "AIFB",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    },
+    "KORAPUT": {
+      "Constituency-code": "21",
+      "Name": "SAPTAGIRI SANKAR ULAKA",
+      "Party": "INC",
+      "Margin": 146498,
+      "Total Votes": 1144023,
+      "Ranks": [
+        "INC",
+        "BJD",
+        "BJP",
+        "BSP",
+        "CPI  (MARXIST-LENINIST)  (LIBERATION)",
+        "IND",
+        "IND",
+        "IND",
+        "NABA BHARATA NIRMANA SEVA PARTY",
+        "RPI(A)",
+        "SUCI(C)",
+        "NOTA"
+      ],
+      "Runner": "BJD"
+    }
+  }
+}
