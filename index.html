@@ -1,0 +1,245 @@
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-72962247-3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-72962247-3");
+    </script>
+
+    <title>India General Election Results Explorer</title>
+
+    <!--Scripts-->
+
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/bootstrap/bootstrap.min.js"></script>
+
+    <script src="scripts/d3.v4.js"></script>
+    <script src="scripts/queue.js"></script>
+    <script src="scripts/select2.min.js"></script>
+    <script src="scripts/topojson.v2.min.js"></script>
+    <link href="scripts/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/select2.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="section">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <nav class="navbar navbar">
+      <div class="vis-heading">
+        <div
+          style="
+            margin-left: -100%;
+            color: black;
+            font-size: 20px;
+            z-index: -10;
+          "
+        >
+          General Election Results Explorer
+        </div>
+      </div>
+      <div class="container-fluid">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a data-toggle="tab" href="#india-tab">Alliances</a>
+          </li>
+          <li><a data-toggle="tab" href="#map-tab">State Map</a></li>
+          <li><a data-toggle="tab" href="#margin-tab">Voter Margin</a></li>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="search">
+              State:
+              <select class="state-select" name="states"></select>
+            </li>
+            <li class="search">
+              Constituency:
+              <select class="constituency-select" name="states"></select>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="tab-content">
+      <div id="india-tab" class="tab-pane fade in active">
+        <div class="section">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <div
+                style="color: #696969; font-size: 20px"
+                id="india-switch-div"
+              >
+                Cartogram &nbsp<label class="switch">
+                  <input type="checkbox" class="india-switch" />
+                  <span class="slider round"></span>
+                </label>
+                &nbsp Geographic Map
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+          </div>
+          <div class="row" style="overflow-x: hidden">
+            <div class="col-md-12">
+              <div id="india"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="map-tab" class="tab-pane fade">
+        <div class="section">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <div style="color: #696969; font-size: 20px" id="map-switch-div">
+                Cartogram &nbsp<label class="switch">
+                  <input type="checkbox" class="map-switch" />
+                  <span class="slider round"></span>
+                </label>
+                &nbsp Geographic Map
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div id="year-slider-map"></div>
+              <br /><br />
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <div class="row" style="overflow-x: hidden">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+              <div id="map"></div>
+            </div>
+            <div class="col-md-4">
+              <div id="map-legend"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="margin-tab" class="tab-pane fade">
+        <div class="section">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div
+                style="color: #696969; font-size: 20px"
+                id="margin-switch-div"
+              >
+                Votes &nbsp<label class="switch">
+                  <input type="checkbox" class="margin-switch" />
+                  <span class="slider round"></span>
+                </label>
+                &nbsp Percentage
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div id="margin"></div>
+              <br />
+              <h3>Margin Map for 2024</h3>
+              <div id="margin-map"></div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h3>About the Data</h3>
+          <p>
+            The visualization is made from the datasets available at
+            <a href="http://results.eci.gov.in/pc/en/partywise/index.htm"
+              >ECI</a
+            >
+            and
+            <a href="https://github.com/datameet/india-election-data"
+              >Datameet</a
+            >
+          </p>
+          <p>
+            Created at:
+            <a href="http://info-design-lab.github.io"
+              >Information Design Lab IDC IIT Bombay
+            </a>
+          </p>
+          <p>Published on: XX May 2025</p>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div id="disqus_thread"></div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+
+    <script src="js/india.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/margin.js"></script>
+    <script>
+      // In your Javascript (external .js resource or <script> tag)
+      $(document).ready(function () {
+        $(".state-select").select2();
+        $(".constituency-select").select2();
+      });
+    </script>
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+      // var disqus_config = function () {
+      // this.page.url = "https://info-design-lab.github.io/election2019/";  // Replace PAGE_URL with your page's canonical URL variable
+      // this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      // };
+      // (function() { // DON'T EDIT BELOW THIS LINE
+      // var d = document, s = d.createElement('script');
+      // s.src = 'https://india-general-election-results-explorer.disqus.com/embed.js';
+      // s.setAttribute('data-timestamp', +new Date());
+      // (d.head || d.body).appendChild(s);
+      // })();
+      //
+    </script>
+    <!-- // <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  	// </script>
+	  	// <script id="dsq-count-scr" src="//india-general-election-results-explorer.disqus.com/count.js" async></script> -->
+
+    <!-- <script
+      async
+      src="https://talk.hyvor.com/embed/embed.js"
+      type="module"
+    ></script>
+    <hyvor-talk-comments
+      website-id="13015"
+      page-id="http://127.0.0.1:5500/recent%202024/Recent%202024%20Project/index.html"
+    ></hyvor-talk-comments> -->
+  </body>
+</html>
